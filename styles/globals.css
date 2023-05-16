@@ -1,0 +1,10 @@
+body{
+    background-color: black;
+    padding: 0;
+    color: white;
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    max-width: 100vw;
+    overflow-x: hidden;
+}

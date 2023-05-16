@@ -3,7 +3,7 @@ import Home from "./home/home";
 
 const App = () => {
   return (
-    <div className="app">
+    <div className="app" id="home-component">
       <Home />
     </div>
   );

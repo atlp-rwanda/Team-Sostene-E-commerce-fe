@@ -1,5 +1,7 @@
 # Team-Sostene-E-commerce-fe
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/atlp-rwanda/Team-Sostene-E-commerce-fe/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/atlp-rwanda/Team-Sostene-E-commerce-fe/tree/main) [![Maintainability](https://api.codeclimate.com/v1/badges/f0a52dd547c57cd95108/maintainability)](https://codeclimate.com/github/atlp-rwanda/Team-Sostene-E-commerce-fe/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/f0a52dd547c57cd95108/test_coverage)](https://codeclimate.com/github/atlp-rwanda/Team-Sostene-E-commerce-fe/test_coverage)
+
 This is a basic template for building a React application using Webpack and Babel. It provides a simple setup for bundling and transpiling your React code.
 
 ## Features

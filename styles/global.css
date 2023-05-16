@@ -1,0 +1,17 @@
+body{
+    background-color: black;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: white;
+}
+
+*{
+    box-sizing: border-box;
+}
+.app{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: center;
+    width: 100%;
+
+}

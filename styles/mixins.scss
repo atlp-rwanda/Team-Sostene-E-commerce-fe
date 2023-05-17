@@ -1,0 +1,183 @@
+@import "variables";
+
+@mixin transition {
+  transition: all 0.3s ease-out;
+}
+
+@mixin background-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin h3 {
+  margin-top: 16px;
+  font-family: $open-sans-semi-bold;
+  font-weight: 600;
+  font-size: (16px);
+  letter-spacing: 0.17em;
+  line-height: 1;
+  text-align: left;
+  color: $music-page-white;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+@mixin svg-interaction {
+  svg {
+    path,
+    circle,
+    rect {
+      @include transition;
+    }
+
+    &:hover {
+      path,
+      circle,
+      rect {
+        stroke: $red;
+      }
+    }
+  }
+}
+
+@mixin mq($size) {
+  @media screen and (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin mqh($size) {
+  @media screen and (max-height: $size) {
+    @content;
+  }
+}
+
+@mixin scroll-bar {
+  &::-webkit-scrollbar {
+    width: (7px);
+
+    @include mq($xls) {
+      display: none;
+    }
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: lighten($color: $gray, $amount: 1);
+
+    @include mq($xls) {
+      display: none;
+    }
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: darken($color: $gray, $amount: 20);
+    border-radius: 100px;
+
+    @include mq($xls) {
+      display: none;
+    }
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: darken($color: $gray, $amount: 20);
+
+    @include mq($xls) {
+      display: none;
+    }
+  }
+}
+
+@mixin poppins-regular-16 {
+  font-family: $Heebo_Regular;
+  font-size: 16px;
+  color: $gray_color;
+}
+
+@mixin scroll-bar-hidden {
+  &::-webkit-scrollbar {
+    width: calc(10px / $divider);
+    display: none;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: lighten($color: $gray-main-color, $amount: 1);
+    display: none;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: darken($color: #262926, $amount: 20);
+    border-radius: 100px;
+    display: none;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #262926;
+    display: none;
+  }
+}
+
+@mixin over-scroll-row {
+  @include mq($xls) {
+    width: auto;
+    flex-wrap: nowrap;
+    max-width: 100vw;
+    overflow: scroll;
+    @include scroll-bar-hidden;
+  }
+}
+
+@mixin col-md-xls {
+  @include mq($xls) {
+    max-width: calc((100% / 2) - 15px);
+    min-width: calc((100% / 2) - 15px);
+  }
+  
+  @include mq($xxsh) {
+    max-width: calc((100% / 1.5) - 15px);
+    min-width: calc((100% / 1.5) - 15px);
+  }
+}
+
+@mixin grid($cols, $margin) {
+  -ms-flex: 0 0 (100%/ ($cols + $margin));
+  flex: 0 0 (100%/ ($cols + $margin));
+  max-width: (100%/ ($cols + $margin));
+  margin-right: ((100% / $cols)- (100%/ ($cols + $margin)));
+  margin-top: ((100% / $cols)- (100%/ ($cols + $margin)));
+
+  @include mq($xls) {
+    margin-top: 12%;
+  }
+}
+@function pxToVh($element) {
+  @return #{($element/1080) * 100}vh;
+}
+
+@function pxToVw($element) {
+  @return #{($element/1920) * 100}vw;
+}
+
+@function pxToEm($element) {
+  @return #{$element/16}em;
+}
+
+@function toPerc($element) {
+  @return #{$element * 100%};
+}
+
+@mixin scaleFont($size) {
+  font-size: $size + 0px;
+  @include mq($xlg) {
+    font-size: pxToEm($size);
+  }
+  @include mq($xls) {
+    font-size: $size * 0.8px;
+  }
+}

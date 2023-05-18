@@ -16,7 +16,8 @@ To get started with the development or deployment of this application, follow th
    git clone <repository-url>
 
    ```
-2. Run the project: 
+
+2. Run the project:
 
 ```
    yarn install
@@ -24,7 +25,9 @@ To get started with the development or deployment of this application, follow th
    yarn run build
    yarn run preview
 ```
-## scripts: 
+
+## scripts:
+
     - dev: Starts the development server.
     - build: Builds the application for production.
     - lint: Runs ESLint to lint the source code.
@@ -36,10 +39,11 @@ The main dependencies used in this project are:
 
 - React with Typescript: for building user interfaces.
 - React DOM: A package for React-specific DOM operations.
-The main dependencies used in this project are:
+  The main dependencies used in this project are:
 - [Vite](https://vitejs.dev/): A fast and opinionated web dev build tool.
 
 For a complete list of dependencies and devDependencies, refer to the `package.json` file.
 
 ## License
+
 [MIT License](https://opensource.org/licenses/MIT)

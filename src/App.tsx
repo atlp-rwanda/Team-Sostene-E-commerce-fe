@@ -1,13 +1,16 @@
-import Home from './components/home/home'
-import { Provider } from 'react-redux'
-import store from './redux/store'
+import { Route, Routes } from 'react-router';
+import Home from './pages/home/home';
+import store from './redux/store';
+import { Provider } from 'react-redux';
 
 function App() {
   return (
-    <div>
+    <div data-testid="app">
       <Provider store={store}>
-        <Home />
-        </Provider>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+        </Routes>
+      </Provider>
     </div>
   );
 }

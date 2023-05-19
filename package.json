@@ -39,5 +39,9 @@
       "yarn run lint-fix",
       "yarn run test"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/atlp-rwanda/Team-Sostene-E-commerce-fe.git",
+  "author": "AdrineUwera <a.uwera@alustudent.com>",
+  "license": "MIT"
 }

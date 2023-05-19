@@ -1,0 +1,16 @@
+version: 2.1
+jobs:
+  run_setup:
+    docker:
+      - image: circleci/node:14
+
+    steps:
+      - checkout
+      - run:
+          name: Install yarn dependencies
+          command: yarn install
+      
+workflows:
+  build_tests:
+    jobs:
+      - run_setup

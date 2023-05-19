@@ -1,4 +1,4 @@
-import "./home.css";
+import './home.css';
 
 function Home() {
   return (
@@ -8,11 +8,7 @@ function Home() {
         <p>This is dem home</p>
         <div className="boxsm">
           <div className="left">
-            <img
-              src="./images/clientworking.png"
-              alt="woman"
-              className="client"
-            />
+            <img src="./images/clientworking.png" alt="woman" className="client" />
             <img src="./svgs/view-grid.svg" alt="icon" className="icon" />
           </div>
           <div className="right">

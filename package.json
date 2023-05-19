@@ -6,8 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "format": "prettier --write \"**/*.{js,jsx,json,md,ts,tsx}\"",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "prepare": "husky install",
+    "preview": "vite preview",
+    "lint-fix": "eslint ./ --fix",
+    "test": "echo testing"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -22,7 +26,18 @@
     "eslint": "^8.38.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8",
     "typescript": "^5.0.2",
     "vite": "^4.3.2"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,scss,tsx,js,html,json,md}": [
+      "yarn run format",
+      "yarn run lint",
+      "yarn run lint-fix",
+      "yarn run test"
+    ]
   }
 }

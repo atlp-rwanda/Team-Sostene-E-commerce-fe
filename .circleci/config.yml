@@ -3,13 +3,20 @@ jobs:
   run_setup:
     docker:
       - image: circleci/node:14
-
+        environment:
+          CC_TEST_REPORTER_ID: 20e31a8c5701539a1ca83b845034561822de032ecf481f53e1b31ba35c6761f9
     steps:
       - checkout
       - run:
           name: Install yarn dependencies
           command: yarn install
-      
+      - run:
+          name: Upload Coverage to CodeClimate
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+            ./cc-test-reporter before-build
+            ./cc-test-reporter after-build --exit-code $? -t lcov --prefix coverage
 workflows:
   build_tests:
     jobs:

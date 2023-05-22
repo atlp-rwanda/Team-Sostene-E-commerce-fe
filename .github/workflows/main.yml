@@ -1,0 +1,29 @@
+name: Run tests and upload coverage
+
+on:
+  push:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Install npm dev dependencies
+        run: yarn add jest coveralls
+
+      - name: Run tests with coverage
+        run: yarn run coverage

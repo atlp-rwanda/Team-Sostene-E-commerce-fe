@@ -17,8 +17,9 @@ module.exports = {
     '\\.module.scss$',
     '\\.module.css$',
   ],
-  testMatch: ['<rootDir>/src/tests/**/*.test.(ts|tsx)', '<rootDir>/src/tests/**/*.spec.(ts|tsx)'],
+  testMatch: ['<rootDir>/src/**/*.test.(ts|tsx)', '<rootDir>/src/**/*.spec.(ts|tsx)'],
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
+  collectCoverageFrom: ['src/**/*.ts', 'src/**/*.tsx'],
   globals: {
     'ts-jest': {
       tsconfig: 'tsconfig.json',

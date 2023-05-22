@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface countState {
   counter: number;
@@ -6,20 +6,20 @@ interface countState {
 }
 
 const counterSlice = createSlice({
-  name: "counter",
+  name: 'counter',
   initialState: {
-    counter:0,
+    counter: 0,
     status: 'idle',
   } as countState,
   reducers: {
     increment: (state) => {
-      state.counter +=1;
+      state.counter += 1;
     },
     addValue: (state, action: PayloadAction<number>) => {
-        const task = action.payload;
-        state.counter +=task;
-      },
+      const task = action.payload;
+      state.counter += task;
+    },
   },
 });
- export const { addValue,increment } = counterSlice.actions
- export default counterSlice.reducer
+export const { addValue, increment } = counterSlice.actions;
+export default counterSlice.reducer;

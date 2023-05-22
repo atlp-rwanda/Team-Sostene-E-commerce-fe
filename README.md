@@ -1,4 +1,3 @@
-
 # Team-Sostene-E-commerce-fe :shopping_cart:
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/atlp-rwanda/Team-Sostene-E-commerce-fe/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/atlp-rwanda/Team-Sostene-E-commerce-fe/tree/main) [![Maintainability](https://api.codeclimate.com/v1/badges/f0a52dd547c57cd95108/maintainability)](https://codeclimate.com/github/atlp-rwanda/Team-Sostene-E-commerce-fe/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/f0a52dd547c57cd95108/test_coverage)](https://codeclimate.com/github/atlp-rwanda/Team-Sostene-E-commerce-fe/test_coverage)
 [![Coverage Status](https://github.com/atlp-rwanda/Team-Sostene-E-commerce-fe/actions/workflows/main.yml/badge.svg)](https://github.com/atlp-rwanda/Team-Sostene-E-commerce-fe/actions/workflows/main.yml)
@@ -33,14 +32,14 @@ The project follows a well-structured and modular architecture, with separate co
 
 ## Setup :point_down:
 
-### Getting started 
+### Getting started
 
 To get started with the frontend, follow the steps below:
 
 1. Clone the repository: `git clone https://github.com/atlp-rwanda/Team-Sostene-E-commerce-fe.git`
 2. Navigate to the project directory: `cd Team-Sostene-E-commerce-fe`
 3. Install dependencies: `yarn install`
-5. Start the development server: `yarn run dev`
+4. Start the development server: `yarn run dev`
 
 The application will be accessible at `http://localhost:5173` in your browser.
 
@@ -48,11 +47,11 @@ The application will be accessible at `http://localhost:5173` in your browser.
 
 - Run the build script: `yarn run build`
 
-   This will create a dist folder. This is where the production build will be. 
+  This will create a dist folder. This is where the production build will be.
 
 - To preview the production build run `yarn run preview`.
 
-    The production build preview will be accessible at `http://localhost:4173` by default.
+  The production build preview will be accessible at `http://localhost:4173` by default.
 
 - To lint the source code with ESLint run `yarn run lint`.
 
@@ -67,7 +66,6 @@ yarn run test
 ```
 
 This will run all the tests and provide a summary of the test results.
-
 
 ### Dependencies :package:
 
@@ -115,6 +113,7 @@ To deploy the frontend using Vercel, the following these steps were taken and pr
 1. Visited [Vercel](https://vercel.com/).
 
 2. **Connect the frontend repository to Vercel:**
+
 - Chose a name for the project.
 - On the Vercel dashboard, added a New Project imported from GitHub.
 - Selected GitHub and authenticated.
@@ -127,7 +126,7 @@ To deploy the frontend using Vercel, the following these steps were taken and pr
 
 4. **Configure environment variables:**
 
-- Added environment variables (e.g., API endpoints or secrets) in the Vercel project settings. 
+- Added environment variables (e.g., API endpoints or secrets) in the Vercel project settings.
 
 5. **Initial deployment:**
 
@@ -148,10 +147,9 @@ To deploy the frontend using Vercel, the following these steps were taken and pr
 
 ## Contribute :art:
 
-Contributions are welcome from team members! 
+Contributions are welcome from team members!
 
     To contribute, create a pull request to the develop branch.
-
 
 ## License :card_index:
 

@@ -1,0 +1,43 @@
+
+@import './variables.scss';
+@import "./mixins.scss";
+@import  "./fonts.css";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
+  background-color: $white;
+  @include scroll-bar;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100vw;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  color: $black;
+  text-decoration: none;
+  font-family: $interRegular;
+  cursor: pointer;
+  @include transition;
+  &:hover{
+    color: $gray;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app{
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  justify-content: center;
+  width: 100%;
+  color: $black;
+}

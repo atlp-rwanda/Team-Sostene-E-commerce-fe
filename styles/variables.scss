@@ -1,0 +1,43 @@
+// fonts
+$interBlack: "Inter-Black.ttf";
+$interBold: "Inter-Bold.ttf";
+$interExtraBold: "Inter-ExtraBold.ttf";
+$interExtraLight: "Inter-ExtraLight.ttf";
+$interMedium: "Inter-Medium.ttf";
+$interRegular: "Inter-Regular.ttf";
+$interThin: "Inter-Thin.ttf";
+$interSemiBold: "Inter-SemiBold.ttf";
+
+//  colors
+$red:#DB4444;
+$yellow:#FFAD33;
+$black:#000000;
+$white:#ffffff;
+$gray:rgba(0, 0, 0, 50%);
+$green:#00FF66;
+$lightGray:rgba(0, 0, 0, .3);
+
+// srceen sizes
+$sm:500px;
+$xxs:320px;
+$xxsh:425px;
+$xls:600px;
+$xlsb:692;
+$xlsh:500px;
+$xms:375px;
+$mdb: 991px;
+$smb: 576px;
+$md:780px;
+$lgh:930px;
+$lg:1024px;
+$lgd:1166px;
+$xlg:1600px;
+$xlg1920:1920px;
+$xxlg:5000px;
+$headervh:100vh;
+$header-padding:10vw;
+$divider: calc(4 / 3);
+$xd-width:1920;
+$xd-height:1080;
+$width-of-container: calc(85px / $divider);
+$menu-height:54px;

@@ -1,6 +1,7 @@
 
 # Team-Sostene-E-commerce-fe :shopping_cart:
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/atlp-rwanda/Team-Sostene-E-commerce-fe/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/atlp-rwanda/Team-Sostene-E-commerce-fe/tree/main) [![Maintainability](https://api.codeclimate.com/v1/badges/f0a52dd547c57cd95108/maintainability)](https://codeclimate.com/github/atlp-rwanda/Team-Sostene-E-commerce-fe/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/f0a52dd547c57cd95108/test_coverage)](https://codeclimate.com/github/atlp-rwanda/Team-Sostene-E-commerce-fe/test_coverage)  
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/atlp-rwanda/Team-Sostene-E-commerce-fe/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/atlp-rwanda/Team-Sostene-E-commerce-fe/tree/main) [![Maintainability](https://api.codeclimate.com/v1/badges/f0a52dd547c57cd95108/maintainability)](https://codeclimate.com/github/atlp-rwanda/Team-Sostene-E-commerce-fe/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/f0a52dd547c57cd95108/test_coverage)](https://codeclimate.com/github/atlp-rwanda/Team-Sostene-E-commerce-fe/test_coverage)
+[![Coverage Status](https://github.com/atlp-rwanda/Team-Sostene-E-commerce-fe/actions/workflows/main.yml/badge.svg)](https://github.com/atlp-rwanda/Team-Sostene-E-commerce-fe/actions/workflows/main.yml)
 
 This frontend component of an e-commerce application, developed with the PERN stack (PostgreSQL, Express.js, React, Node.js) :four_leaf_clover: , provides a user interface to interact with the e-commerce platform.
 

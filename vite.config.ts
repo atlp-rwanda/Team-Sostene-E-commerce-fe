@@ -15,7 +15,10 @@ export default defineConfig({
         functions: 80,
         branches: 80,
         statements: 80,
-        all: true
+        all: true,
+        exclude: [
+          '**/*.storybook', '**/*.stories.{ts,tsx}'
+        ],
       }
     },
     

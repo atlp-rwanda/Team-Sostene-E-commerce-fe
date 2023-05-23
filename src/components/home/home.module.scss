@@ -1,0 +1,80 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+.home {
+  :global {
+    background-color: $white;
+    color: $black;
+    height: 100vh;
+    display: flex;
+    padding-top: 4rem;
+    width: 50vw;
+    max-width: 50vw;
+    flex-direction: column;
+    gap: 2rem;
+    @include mq($xlg) {
+      width: 60vw;
+      max-width: 60vw;
+    }
+    @include mq($lg) {
+      width: 70vw;
+      max-width: 70vw;
+    }
+    @include mq($md) {
+      width: 80vw;
+      max-width: 80vw;
+    }
+    .demo {
+      width: 100%;
+      height: 80%;
+      padding: 1rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(0, 0, 0, 0.261);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .demo p {
+      font-size: pxToEm(18);
+      font-weight: 600;
+    }
+    .boxsm {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      border-radius: inherit;
+    }
+    .right,
+    .left {
+      position: relative;
+      padding: 1rem;
+      border-radius: 1rem;
+      background-color: $green;
+      height: 40vh;
+    }
+    .right .client,
+    .left .client {
+      position: absolute;
+      inset: 0;
+      min-width: 100%;
+      min-height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: inherit;
+      object-fit: cover;
+      margin: 0;
+    }
+    .right {
+      transform: rotate(45deg);
+      cursor: pointer;
+      @include transition;
+    }
+    .right .icon,
+    .left .icon {
+      position: absolute;
+      z-index: 3;
+      left: -50%;
+      top: 50%;
+      transform: translate(50%, 50%);
+    }
+  }
+}

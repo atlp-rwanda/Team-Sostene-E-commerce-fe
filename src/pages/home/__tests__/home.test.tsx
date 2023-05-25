@@ -1,4 +1,3 @@
-import { describe, it } from '@jest/globals';
 import { render, fireEvent, screen } from '@testing-library/react';
 import Home from '../home';
 import { Provider } from 'react-redux';

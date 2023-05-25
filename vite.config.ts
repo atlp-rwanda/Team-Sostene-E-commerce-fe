@@ -1,15 +1,22 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+/// <reference types="vitest" />
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  build: {
-    assetsInlineLimit: 0,
-    rollupOptions: {
-      output: {
-        manualChunks: undefined,
-      },
+  test: {
+    globals: true,
+    environment:  'jsdom',
+    setupFiles: './src/setupTests.tsx',
+    coverage: {
+        provider: 'istanbul',
+        reporter: ['text', 'json', 'html', 'lcov'],
+        lines: 80,
+        functions: 80,
+        branches: 80,
+        statements: 80,
+        all: true
+      }
     },
-  },
-  base: './',
-});
+    
+})

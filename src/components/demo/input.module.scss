@@ -1,0 +1,37 @@
+.widthLong {
+    width: 100%;
+    padding: 15px;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    background: #3633326d;
+    display: block;
+    margin-bottom: 20px;
+}
+.widthShort {
+    width: 100%;
+    padding: 6px;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    background: #3633326d;
+}
+/* .width{
+    width: 10%;
+} */
+.border-sharp{
+    border-radius: 0px;
+}
+.border--round{
+    border-radius: 5px;
+}
+.all:focus{
+  background-color: #f4eded;
+  outline: none;
+}
+
+
+
+
+
+

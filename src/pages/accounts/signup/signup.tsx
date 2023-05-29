@@ -9,6 +9,7 @@ import { useAppDispatch } from '../../../redux/hooks';
 import loader from '../../../assets/spinner.svg';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 function Signup() {
   const dispatch = useAppDispatch();
@@ -132,7 +133,7 @@ function Signup() {
           </button>
         </div>
         <h2>
-          Already have an account? <a href="#">Login</a>
+          Already have an account? <Link to="/accounts/Login">Login</Link>
         </h2>
       </form>
       <div>

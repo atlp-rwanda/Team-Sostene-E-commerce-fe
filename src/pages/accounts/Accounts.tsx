@@ -4,6 +4,7 @@ import { AccountsLoader } from '../../components/Loaders/Loaders';
 
 const Tfa = lazy(() => import('./tfa/Tfa'));
 const Signup = lazy(() => import('./signup/signup'));
+const Login = lazy(() => import('./login/Login'));
 
 export default function Accounts() {
   return (
@@ -12,6 +13,8 @@ export default function Accounts() {
         <Routes>
           <Route path="/authenticate" element={<Tfa />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/authenticate" element={<Tfa />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Suspense>
     </div>

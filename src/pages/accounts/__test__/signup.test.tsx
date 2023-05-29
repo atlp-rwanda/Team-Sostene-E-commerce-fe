@@ -4,13 +4,16 @@ import store from '../../../redux/store';
 import Signup from '../signup/signup';
 import ButtonProps from '../signup/components/button/button';
 import LabelProps from '../signup/components/label/label';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('handle submit', () => {
   it('should check if the username is correct', async () => {
     const { getByTestId } = render(
-      <Provider store={store}>
-        <Signup />
-      </Provider>
+      <BrowserRouter>
+        <Provider store={store}>
+          <Signup />
+        </Provider>
+      </BrowserRouter>
     );
     fireEvent.change(getByTestId('name'), { target: { value: 'test' } });
     expect(getByTestId('name')).toBeInTheDocument();
@@ -25,9 +28,11 @@ describe('handle submit', () => {
 describe('handle the email input', () => {
   it('should check if the email is correctly written', async () => {
     const { getByTestId } = render(
-      <Provider store={store}>
-        <Signup />
-      </Provider>
+      <BrowserRouter>
+        <Provider store={store}>
+          <Signup />
+        </Provider>
+      </BrowserRouter>
     );
     fireEvent.change(getByTestId('email'), { target: { value: 'test@gmail.com' } });
     expect(getByTestId('email')).toBeInTheDocument();
@@ -43,9 +48,11 @@ describe('handle the email input', () => {
 describe('handle the password input', () => {
   it('should check if the password is correctly written', async () => {
     const { getByTestId } = render(
-      <Provider store={store}>
-        <Signup />
-      </Provider>
+      <BrowserRouter>
+        <Provider store={store}>
+          <Signup />
+        </Provider>
+      </BrowserRouter>
     );
     fireEvent.change(getByTestId('name'), { target: { value: 'test' } });
     fireEvent.change(getByTestId('email'), { target: { value: 'test@gmail.com' } });
@@ -63,9 +70,11 @@ describe('handle the password input', () => {
 describe('handle the password input', () => {
   it('should set the correct error message for invalid password requirements', async () => {
     const { getByTestId } = render(
-      <Provider store={store}>
-        <Signup />
-      </Provider>
+      <BrowserRouter>
+        <Provider store={store}>
+          <Signup />
+        </Provider>
+      </BrowserRouter>
     );
 
     fireEvent.change(getByTestId('name'), { target: { value: 'test' } });
@@ -80,9 +89,11 @@ describe('handle the password input', () => {
 describe('test signup page', () => {
   it('should test signup page', async () => {
     render(
-      <Provider store={store}>
-        <Signup />
-      </Provider>
+      <BrowserRouter>
+        <Provider store={store}>
+          <Signup />
+        </Provider>
+      </BrowserRouter>
     );
     expect(screen.getByTestId('signup')).toBeInTheDocument();
     expect(screen.getByText('Enter your details below')).toBeInTheDocument();

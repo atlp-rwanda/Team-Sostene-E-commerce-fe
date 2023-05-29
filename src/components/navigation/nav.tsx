@@ -5,6 +5,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo from '../../../public/svgs/Vector.svg';
+import { logout } from '../../helpers/auth';
+import { useAppSelector } from '../../redux/hooks';
 
 const Navigation = () => {
   const divRef = useRef<HTMLDivElement | null>(null);
@@ -13,6 +15,7 @@ const Navigation = () => {
 
   const [isProfileIcon, setisProfileIcon] = useState(false);
   const [isHomeIcon, setisHomeIcon] = useState(false);
+  const { value } = useAppSelector((state) => state.token);
 
   const toggleVisibility = () => {
     const divElement = divRef.current;
@@ -62,12 +65,11 @@ const Navigation = () => {
                   &nbsp;&nbsp;About
                 </li>
               </Link>
-              <Link to="/accounts/signup" className={styles.Link}>
-                <li>
-                  <FontAwesomeIcon icon="arrow-right-from-bracket" />
-                  &nbsp;&nbsp;SignUp
-                </li>
-              </Link>
+              {!value && (
+                <Link to="/accounts/login" className={styles.Link}>
+                  <li>Login</li>
+                </Link>
+              )}
             </ul>
           </nav>
         </div>
@@ -100,7 +102,7 @@ const Navigation = () => {
                   &nbsp;&nbsp;Wishlist
                 </li>
               </Link>
-              <Link to="#" className={styles.Link}>
+              <Link to="/" onClick={() => logout()} className={styles.Link}>
                 <li>
                   <FontAwesomeIcon icon="arrow-right-from-bracket" className={`${styles.logout}`} />
                   &nbsp;&nbsp;LogOut
@@ -144,9 +146,11 @@ const Navigation = () => {
             <Link to="/about_us" className={styles.Link}>
               <li>About</li>
             </Link>
-            <Link to="/accounts/signup" className={styles.Link}>
-              <li>SignUp</li>
-            </Link>
+            {!value && (
+              <Link to="/accounts/signup" className={styles.Link}>
+                <li>Sign Up</li>
+              </Link>
+            )}
           </ul>
         </nav>
         <FontAwesomeIcon icon="bars" className={styles.bars} />
@@ -157,12 +161,14 @@ const Navigation = () => {
           </div>
           <FontAwesomeIcon icon="heart" className={`${styles.light} ${styles.heart}`} />
           <FontAwesomeIcon icon="cart-shopping" className={`${styles.light} ${styles.cart}`} />
-          <FontAwesomeIcon
-            icon="user"
-            className={`${styles.light} ${styles.user}`}
-            onClick={handleProfile}
-            aria-label="user-icon"
-          />
+          {value && (
+            <FontAwesomeIcon
+              icon="user"
+              className={`${styles.light} ${styles.user}`}
+              onClick={handleProfile}
+              aria-label="user-icon"
+            />
+          )}
           <FontAwesomeIcon
             icon="house"
             className={`${styles.light} ${styles.house}`}

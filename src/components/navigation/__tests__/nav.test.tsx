@@ -4,13 +4,23 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { BrowserRouter } from 'react-router-dom';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { Provider } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
+
+const Demostore = configureStore({
+  reducer: function (state = { token: { value: 'initialTokenValue' } }) {
+    return state
+  }
+});
 
 const MockNav = () => {
   library.add(fab, fas);
   return (
+    <Provider store={Demostore}>
     <BrowserRouter>
       <Navigation />
     </BrowserRouter>
+    </Provider>
   );
 };
 describe('tetsing the nav', function () {

@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { increment } from '../../redux/slices/counterSlice';
 import { SetStateAction, useState } from 'react';
-import GoogleBtn from '../../components/googleLogin/button';
 
 function Home() {
   const { counter } = useAppSelector((state) => state.count);
@@ -32,7 +31,6 @@ function Home() {
       <Link to={`/accounts/authenticate`} state={{ email }}>
         Click Here to go TFA
       </Link>
-      <GoogleBtn width="300" />
     </div>
   );
 }

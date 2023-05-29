@@ -1,5 +1,7 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import counterReducer from './slices/counterSlice';
+import authReducer from '../pages/accounts/login/redux/loginSlice';
+import tokenReducer from '../redux/slices/tokenSlice';
 import {
   FLUSH,
   PAUSE,
@@ -11,13 +13,13 @@ import {
   persistStore,
 } from 'redux-persist';
 import storage from 'redux-persist/es/storage';
-import tokenReducer from './slices/tokenSlice';
 import tfaReducer from '../pages/accounts/tfa/redux/tfaSlice';
 import signupSlice from './slices/signup';
 
 const rootReducer = combineReducers({
   count: counterReducer,
   twoFactor: tfaReducer,
+  auth: authReducer,
   token: tokenReducer,
   // add your new reducer created
   signup: signupSlice,
@@ -45,4 +47,5 @@ export const persistor = persistStore(store);
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+
 export default store;

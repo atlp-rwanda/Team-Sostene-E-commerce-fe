@@ -188,3 +188,13 @@
     font-size: calc($size * 0.7px);
   }
 }
+
+.app{
+  width: 100%;
+  color: $black;
+}
+#root {
+  width: 100%;
+}
+$transparent-bg: #f0f0f0;
+$white-two: #f1f1f1;

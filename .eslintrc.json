@@ -3,14 +3,15 @@
     "browser": true,
     "es2021": true,
     "node": true,
-    "jest": true
+    "vitest-globals/env": true
   },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:vitest-globals/recommended"
   ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
@@ -21,7 +22,6 @@
   "plugins": ["react", "prettier", "@typescript-eslint"],
   "ignorePatterns": ["**/*.css", "**/*.scss"],
   "rules": {
-    "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "padding-line-between-statements": [
       "error",

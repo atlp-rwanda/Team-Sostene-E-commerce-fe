@@ -3,6 +3,8 @@
 
 yarn lint-staged
 
+yarn run test
+
 git add .
 
 exit 0

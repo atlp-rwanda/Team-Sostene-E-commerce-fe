@@ -23,6 +23,7 @@
   "plugins": ["react", "prettier", "@typescript-eslint"],
   "ignorePatterns": ["**/*.css", "**/*.scss"],
   "rules": {
+    "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "padding-line-between-statements": [
       "error",

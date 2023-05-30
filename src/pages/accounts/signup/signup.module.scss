@@ -1,0 +1,112 @@
+$container-width: 600px;
+$container-height: 500px;
+$container-background: #f3f3f3;
+$container-margin-top: 5%;
+$container-margin-left: 30%;
+$h1-text-align: center;
+$h1-font-family: 'Inter', sans-serif;
+$h1-font-weight: bolder;
+$h1-font-size: 24px;
+$h1-padding-top: 5%;
+$h3-text-align: center;
+$h3-font-family: 'Poppins', sans-serif;
+$h3-font-size: 16px;
+$h3-font-weight: lighter;
+$h2-font-family: 'Poppins', sans-serif;
+$h2-text-align: center;
+$h2-font-size: 16px;
+$h2-margin-left: 2rem;
+$h2-font-weight: lighter;
+$h2-color: #656566;
+$h2-margin-top: 10%;
+$a-color: #656566;
+$text-decoration: underline;
+$button-background: #ff8c42;
+$button-margin-left: 10%;
+$button-padding: 15px;
+$button-width: 78%;
+$button-border: none;
+$button-border-radius: 5px;
+$color: #fff;
+$fontsize: 15px;
+
+.container {
+  width: $container-width;
+  height: $container-height;
+  background: $container-background;
+  margin-top: $container-margin-top;
+  margin-left: $container-margin-left;
+}
+
+h1 {
+  font-family: $h1-font-family;
+  font-weight: $h1-font-weight;
+  padding-top: $h1-padding-top;
+  text-align: $h1-text-align;
+  font-size: $h1-font-size;
+}
+
+h3 {
+  font-family: $h3-font-family;
+  font-size: $h3-font-size;
+  font-weight: $h3-font-weight;
+  text-align: $h3-text-align;
+}
+
+h2 {
+  font-family: $h2-font-family;
+  font-size: $h2-font-size;
+  margin-left: $h2-margin-left;
+  font-weight: $h2-font-weight;
+  color: $h2-color;
+  margin-top: $h2-margin-top;
+  text-align: $h2-text-align;
+}
+
+a {
+  color: $a-color;
+  text-decoration: $text-decoration;
+}
+
+button {
+  background: $button-background;
+  padding: $button-padding;
+  width: $button-width;
+  border: $button-border;
+  border-radius: $button-border-radius;
+  margin-left: $button-margin-left;
+  color: $color;
+  font-size: $fontsize;
+}
+
+// Media queries
+@media only screen and (max-width: 620px) {
+  .container {
+    width: 90vw;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  h2 {
+    margin-left: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    width: 70vw;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-height: 620px) {
+  .container {
+    width: 90vw;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  h2 {
+    font-size: 6px;
+    margin: auto;
+  }
+}
+

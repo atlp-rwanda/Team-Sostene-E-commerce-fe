@@ -61,10 +61,10 @@ const Navigation = () => {
                   &nbsp;&nbsp;About
                 </li>
               </Link>
-              <Link to="#" className={styles.Link}>
+              <Link to="/accounts/signup" className={styles.Link}>
                 <li>
                   <FontAwesomeIcon icon="arrow-right-from-bracket" />
-                  &nbsp;&nbsp;Login
+                  &nbsp;&nbsp;SignUp
                 </li>
               </Link>
             </ul>
@@ -127,7 +127,7 @@ const Navigation = () => {
           />
         </i>
         <div className={styles.vectors}>
-          <img className={styles.logo__icon} src="./svgs/Vector.svg" />
+          <img className={styles.logo__icon} src="../../../public/svgs/Vector.svg" />
           <strong>
             SHOP<span>SPREE</span>
           </strong>
@@ -143,8 +143,8 @@ const Navigation = () => {
             <Link to="#" className={styles.Link}>
               <li>About</li>
             </Link>
-            <Link to="#" className={styles.Link}>
-              <li>Login</li>
+            <Link to="/accounts/signup" className={styles.Link}>
+              <li>SignUp</li>
             </Link>
           </ul>
         </nav>

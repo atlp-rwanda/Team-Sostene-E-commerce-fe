@@ -1,0 +1,48 @@
+// Define variables
+$small-width: 10%;
+$medium-width: 15%;
+$large-width: 80%;
+$default-width: 10%;
+$primary-color: #FF8C42;
+$btn-font-family: 'Poppins', sans-serif;
+$btn-font-weight: bold;
+
+// Define styles using variables
+.size--small {
+  width: $small-width;
+  border: none;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.size--medium {
+  width: $medium-width;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+.size--large {
+  padding: 15px;
+  width: $large-width;
+  border: none;
+  border-radius: 5px;
+}
+
+.size--default {
+  width: $default-width;
+  border: none;
+  border-radius: 5px;
+}
+
+.color--primary {
+  background: $primary-color;
+}
+
+.btn {
+  cursor: pointer;
+  color: #fff;
+  font-family: $btn-font-family;
+  font-weight: $btn-font-weight;
+  background: #FF8C42;
+}

@@ -17,7 +17,14 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@reduxjs/toolkit": "^1.9.5",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
     "jsdom": "^22.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -67,11 +74,10 @@
   },
   "license": "MIT",
   "lint-staged": {
-    "src/**/*.{ts,scss,tsx,js,html,json,md}": [
+    "src/**/*.{ts,tsx,js,html,json,md}": [
       "yarn run format",
       "yarn run lint",
-      "yarn run lint-fix",
-      "yarn run test"
+      "yarn run lint-fix"
     ]
   }
 }

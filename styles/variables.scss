@@ -7,15 +7,23 @@ $interMedium: "Inter-Medium.ttf";
 $interRegular: "Inter-Regular.ttf";
 $interThin: "Inter-Thin.ttf";
 $interSemiBold: "Inter-SemiBold.ttf";
+$logoText: fantasy;
 
 //  colors
 $red:#DB4444;
 $yellow:#FFAD33;
 $black:#000000;
 $white:#ffffff;
+$lightBlack:#3c2a2a;
 $gray:rgba(0, 0, 0, 50%);
 $green:#00FF66;
 $lightGray:rgba(0, 0, 0, .3);
+$inputbackground:#9999996f;
+$sideNavHover:#ECECEC;
+$borderColor:1px solid rgba(0, 0, 0, 0.228);
+$boxShadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+$greyLabel:#B5B5B5;
+$Boldgreylabel: #757575;
 
 // srceen sizes
 $sm:500px;
@@ -39,5 +47,6 @@ $header-padding:10vw;
 $divider: calc(4 / 3);
 $xd-width:1920;
 $xd-height:1080;
+$m-width:1080px;
 $width-of-container: calc(85px / $divider);
 $menu-height:54px;

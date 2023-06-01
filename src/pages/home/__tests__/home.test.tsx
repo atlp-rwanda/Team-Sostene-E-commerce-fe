@@ -3,11 +3,14 @@ import Home from '../home';
 import { Provider } from 'react-redux';
 import store from '../../../redux/store';
 import counterReducer, { increment, addValue } from '../../../redux/slices/counterSlice';
+import { BrowserRouter } from 'react-router-dom';
 
 const Mod = () => {
   return (
     <Provider store={store}>
-      <Home />
+      <BrowserRouter>
+        <Home />
+      </BrowserRouter>
     </Provider>
   );
 };
@@ -44,5 +47,20 @@ describe('Home Component', () => {
     const btnElement = screen.getByRole('button', { name: 'INCREMENT COUNTER' });
     fireEvent.click(btnElement);
     expect(Ele.textContent).toBe('Counter state 1');
+  });
+  test('updates input value on change', () => {
+    const { getByTestId, getByText } = render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <Home />
+        </BrowserRouter>
+      </Provider>
+    );
+
+    const input = getByTestId('Input');
+    fireEvent.change(input, { target: { value: 'Test input' } });
+
+    const inputValue = getByText('Click Here to go TFA');
+    expect(inputValue).toBeInTheDocument();
   });
 });

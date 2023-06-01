@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo from '../../../public/svgs/Vector.svg';
 import { logout } from '../../helpers/auth';
 import { useAppSelector } from '../../redux/hooks';
+import Icon from '../notification/Icon';
 
 const Navigation = () => {
   const divRef = useRef<HTMLDivElement | null>(null);
@@ -159,7 +160,7 @@ const Navigation = () => {
             <input type="text" placeholder="What are you looking for?" className={styles.search} />
             <FontAwesomeIcon icon="magnifying-glass" className={styles.searchIcon} />
           </div>
-          <FontAwesomeIcon icon="heart" className={`${styles.light} ${styles.heart}`} />
+          <Icon />
           <FontAwesomeIcon icon="cart-shopping" className={`${styles.light} ${styles.cart}`} />
           {value && (
             <FontAwesomeIcon

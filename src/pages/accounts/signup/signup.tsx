@@ -89,7 +89,7 @@ function Signup() {
       <h1>Create an account</h1>
       <h3>Enter your details below</h3>
       <form onSubmit={handleSubmit} data-testid="signup">
-        <div ref={validate} style={{ color: 'red', marginLeft: '10%' }}></div>
+        <div ref={validate} className={styles.error}></div>
 
         <Input
           name={'username'}

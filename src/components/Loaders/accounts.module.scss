@@ -1,0 +1,28 @@
+@import '../../../styles/variables.scss';
+
+.loading {
+    margin-top: 200px;
+    position: absolute;
+    left: 50%;
+    transition: .3s;
+    color: $yellow;
+    i {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: $mdb) {
+    .loading {
+       width: 50%;
+    }
+}
+@media screen and (max-width: $md) {
+    .loading {
+        width: 70%;
+     }
+}
+@media screen and (max-width: $sm) {
+    .loading {
+        width: 90%;
+    }
+}

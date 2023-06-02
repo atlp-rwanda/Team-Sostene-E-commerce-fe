@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 export const useTwoFactor = () => {
   const location = useLocation();
   const data = location.state;
-  return data.email;
+  return data?.email;
 };
 
 export const useVerifyEmail = () => {

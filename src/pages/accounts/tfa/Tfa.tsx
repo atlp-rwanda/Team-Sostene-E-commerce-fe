@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { tfa_text } from '../../../constants';
 import { useTwoFactor, useVerifyEmail } from './hooks';
 import './style.scss';
-import { ButtonLoader } from '../../../components/Loaders';
+import { ButtonLoader } from '../../../components/Loaders/Loaders';
 
 function ContainerText(props: { tfa_text: string; email: string }) {
   const { email, tfa_text } = props;

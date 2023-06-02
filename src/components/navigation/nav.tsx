@@ -4,6 +4,7 @@ import styles from './nav.module.scss';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import logo from '../../../public/svgs/Vector.svg';
 
 const Navigation = () => {
   const divRef = useRef<HTMLDivElement | null>(null);
@@ -43,7 +44,7 @@ const Navigation = () => {
         <div className={styles.right_nav} data-testid="right-nav">
           <nav>
             <ul>
-              <Link to="#" className={styles.Link}>
+              <Link to="/" className={styles.Link}>
                 <li>
                   <FontAwesomeIcon icon="home" className={`${styles.settings}`} />
                   &nbsp;&nbsp;Home
@@ -127,14 +128,14 @@ const Navigation = () => {
           />
         </i>
         <div className={styles.vectors}>
-          <img className={styles.logo__icon} src="../../../public/svgs/Vector.svg" />
+          <img className={styles.logo__icon} src={logo} />
           <strong>
             SHOP<span>SPREE</span>
           </strong>
         </div>
         <nav>
           <ul>
-            <Link to="#" className={styles.Link}>
+            <Link to="/" className={styles.Link}>
               <li>Home</li>{' '}
             </Link>
             <Link to="#" className={styles.Link}>

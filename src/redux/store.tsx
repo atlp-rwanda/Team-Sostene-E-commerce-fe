@@ -13,12 +13,14 @@ import {
 import storage from 'redux-persist/es/storage';
 import tokenReducer from './slices/tokenSlice';
 import tfaReducer from '../pages/accounts/tfa/redux/tfaSlice';
+import signupSlice from './slices/signup';
 
 const rootReducer = combineReducers({
   count: counterReducer,
   twoFactor: tfaReducer,
   token: tokenReducer,
   // add your new reducer created
+  signup: signupSlice,
 });
 
 const persistConfig = {

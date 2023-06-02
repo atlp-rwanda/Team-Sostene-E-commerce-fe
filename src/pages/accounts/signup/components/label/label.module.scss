@@ -1,0 +1,27 @@
+// Define variables
+$small-font-size: 12px;
+$medium-font-size: 15px;
+$large-font-size: 18px;
+$primary-color: #FF8C42;
+$secondary-color: black;
+
+// Define styles using variables
+.size--small {
+  font-size: $small-font-size;
+}
+
+.size--medium {
+  font-size: $medium-font-size;
+}
+
+.size--large {
+  font-size: $large-font-size;
+}
+
+.color--primary {
+  color: $primary-color;
+}
+
+.color--secondary {
+  color: $secondary-color;
+}

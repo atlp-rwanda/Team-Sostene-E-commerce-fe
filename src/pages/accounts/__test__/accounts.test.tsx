@@ -12,4 +12,14 @@ describe('Render Accounts Component', () => {
     const isRendered = getByTestId('accounts');
     expect(isRendered).toBeInTheDocument();
   });
+
+  test('Render signup', () => {
+    const { getByTestId } = render(
+      <MemoryRouter initialEntries={['/signup']}>
+        <Accounts />
+      </MemoryRouter>
+    );
+    const isRendered = getByTestId('accounts');
+    expect(isRendered).toBeInTheDocument();
+  });
 });

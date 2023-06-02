@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import { AccountsLoader } from '../../components/Loaders/Loaders';
 
 const Tfa = lazy(() => import('./tfa/Tfa'));
-
 const Signup = lazy(() => import('./signup/signup'));
 
 export default function Accounts() {

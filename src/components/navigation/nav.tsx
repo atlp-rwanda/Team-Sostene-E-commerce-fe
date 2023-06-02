@@ -56,7 +56,7 @@ const Navigation = () => {
                   &nbsp;&nbsp;Contact
                 </li>
               </Link>
-              <Link to="#" className={styles.Link}>
+              <Link to="/about_us" className={styles.Link}>
                 <li>
                   <FontAwesomeIcon icon="circle-question" className={`${styles.settings}`} />
                   &nbsp;&nbsp;About
@@ -141,7 +141,7 @@ const Navigation = () => {
             <Link to="#" className={styles.Link}>
               <li>Contact</li>
             </Link>
-            <Link to="#" className={styles.Link}>
+            <Link to="/about_us" className={styles.Link}>
               <li>About</li>
             </Link>
             <Link to="/accounts/signup" className={styles.Link}>

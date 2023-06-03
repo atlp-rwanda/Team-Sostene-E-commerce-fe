@@ -1,6 +1,8 @@
+import accountsStyles from './accounts.module.scss';
+
 export const AccountsLoader = () => {
   return (
-    <div data-testid="accounts-loader" className="loader">
+    <div className={accountsStyles.loading} data-testid="accounts-loader">
       <i className="fa fa-circle-o-notch fa-spin" aria-hidden="true"></i>
     </div>
   );

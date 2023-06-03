@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { AccountsLoader, ButtonLoader } from '../Loaders';
+import { AccountsLoader, ButtonLoader } from '../Loaders/Loaders';
 
 describe('Testing Loaders', () => {
   test('Accounts Loader', () => {

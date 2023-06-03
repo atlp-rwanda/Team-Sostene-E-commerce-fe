@@ -1,6 +1,6 @@
 import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { AccountsLoader } from '../../components/Loaders';
+import { AccountsLoader } from '../../components/Loaders/Loaders';
 
 const Tfa = lazy(() => import('./tfa/Tfa'));
 

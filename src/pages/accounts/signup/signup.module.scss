@@ -1,7 +1,10 @@
-$container-width: 600px;
+@import '../../../../styles/variables.scss';
+
+
+$container-width: 40%;
 $container-height: 500px;
-$container-background: #f3f3f3;
-$container-margin-top: 5%;
+$container-background: $white-two;
+$container-margin-top: 50px;
 $container-margin-left: 30%;
 $h1-text-align: center;
 $h1-font-family: 'Inter', sans-serif;
@@ -36,12 +39,13 @@ $fontsize: 15px;
   background: $container-background;
   margin-top: $container-margin-top;
   margin-left: $container-margin-left;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
   font-family: $h1-font-family;
   font-weight: $h1-font-weight;
-  padding-top: $h1-padding-top;
   text-align: $h1-text-align;
   font-size: $h1-font-size;
 }
@@ -56,7 +60,6 @@ h3 {
 h2 {
   font-family: $h2-font-family;
   font-size: $h2-font-size;
-  margin-left: $h2-margin-left;
   font-weight: $h2-font-weight;
   color: $h2-color;
   margin-top: $h2-margin-top;
@@ -77,36 +80,35 @@ button {
   margin-left: $button-margin-left;
   color: $color;
   font-size: $fontsize;
+  cursor: pointer;
+}
+.error {
+  width: 100%;
+  text-align: center;
+  color: $red;
 }
 
 // Media queries
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: $mdb) {
   .container {
-    width: 90vw;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-  h2 {
-    margin-left: 1.2rem;
+    width: 50%;
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: $md) {
   .container {
-    width: 70vw;
-    margin: 0 auto;
+    width: 70%;
+    margin: 50px auto;
   }
 }
 
-@media only screen and (max-height: 620px) {
+@media only screen and (max-width: $sm) {
   .container {
-    width: 90vw;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    width: 90%;
   }
   h2 {
-    font-size: 6px;
-    margin: auto;
+    font-size: 15px;
+    margin: 30px 0;
   }
 }
 

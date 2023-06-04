@@ -1,0 +1,115 @@
+@import '../../../../../styles/variables.scss';
+@import '../../../../../styles/mixins.scss';
+
+.slider{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -20px;
+    height: 350px;
+    .items{
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      min-height: 600px;
+      padding-bottom: 56.25%;
+    }
+    .item{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity .6s ease-in-out;
+      &.current{
+        opacity: 1;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        -webkit-mask-image: -webkit-gradient(linear, left 50%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+        mask-image: linear-gradient(0deg, rgba(235, 235, 235, 0) 80%, rgba(255, 255, 255, 0.325) 20%, rgb(227, 227, 227) 80%);
+      }
+      .d {
+        .text {
+            z-index: 4;
+            color: $white;
+            background: $white;
+            left: 0;
+        }
+      }
+}
+    
+    .buttons{
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        display:flex;
+        justify-content:space-between;
+        align-items:start;
+    }
+    .button{
+      position:absolute;
+      top: 0;
+      z-index: 3;
+      width:32px;
+      height:32px;
+      border:none;
+      outline:none;
+      padding:0;
+      padding-top: 400px;
+      background:transparent center no-repeat;
+      cursor:pointer;
+      opacity:.4;
+      &.prev{
+        background-image: url(https://codeisle.info/blog/wp-content/uploads/2018/12/ico_next_b32.png);
+      }
+      &.next{
+        background-image:url(https://codeisle.info/blog/wp-content/uploads/2018/12/ico_next_b32-1.png);
+      }
+    }
+    .left {
+        left: 0;
+    }
+    .right {
+        right: 0;
+    }
+    
+    .dots{
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .dot{
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: none;
+      outline: none;
+      padding: 0;
+      background: $yellow;
+      cursor: pointer;
+      opacity: .5;
+      transition: opacity .4s ease-in-out;
+      &:nth-child(n+2){
+        margin-left: 5px;
+      }
+      &.current{
+        opacity: 1;
+      }
+    }
+}
+
+@media (max-width: $sm)  {
+    .slider .items .item {
+        height: auto;
+    }
+}

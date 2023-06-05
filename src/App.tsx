@@ -7,6 +7,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import Navigation from './components/navigation/nav';
 import Accounts from './pages/accounts/Accounts';
+import GoogleLoginSuccess from './pages/google/successLogin';
 
 function App() {
   library.add(fab, fas);
@@ -17,8 +18,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/accounts/*" element={<Accounts />}></Route>
+          <Route
+            path={`${import.meta.env.VITE_BACKEND_URL}/auth/google/success`}
+            element={<GoogleLoginSuccess />}
+          ></Route>
         </Routes>
       </Provider>
+
+      <div></div>
     </div>
   );
 }

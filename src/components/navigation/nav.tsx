@@ -8,6 +8,7 @@ import { logout } from '../../helpers/auth';
 import { useAppSelector } from '../../redux/hooks';
 import Icon from '../notification/Icon';
 import NotificationPane from '../notification/notificationPane';
+import { CartIcon } from '../cart/Cart';
 
 const logo = '/svgs/Vector.svg';
 
@@ -201,7 +202,7 @@ const Navigation = () => {
             <input type="text" placeholder="What are you looking for?" className={styles.search} />
             <FontAwesomeIcon icon="magnifying-glass" className={styles.searchIcon} />
           </div>
-          <FontAwesomeIcon icon="cart-shopping" className={`${styles.light} ${styles.cart} px-2`} />
+          <CartIcon />
           {value && <Icon onClick={handleNotifications} />}
 
           <FontAwesomeIcon

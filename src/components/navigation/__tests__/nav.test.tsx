@@ -6,18 +6,13 @@ import { BrowserRouter } from 'react-router-dom';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { Provider } from 'react-redux';
-import { configureStore } from '@reduxjs/toolkit';
-
-const Demostore = configureStore({
-  reducer: function (state = { token: { value: 'initialTokenValue' } }) {
-    return state;
-  },
-});
+import store from '../../../redux/store';
+import { setToken } from '../../../redux/slices/tokenSlice';
 
 const MockNav = () => {
   library.add(fab, fas);
   return (
-    <Provider store={Demostore}>
+    <Provider store={store}>
       <BrowserRouter>
         <Navigation />
       </BrowserRouter>
@@ -32,12 +27,14 @@ describe('tetsing the nav', function () {
     localStorage.removeItem('authenticationMethod');
   });
   it('should test navigation component', function () {
+    store.dispatch(setToken('initialTokenValue'));
     render(<MockNav />);
     const Ele = screen.getByPlaceholderText(/What are you looking for?/i);
     expect(Ele).toBeInTheDocument();
   });
 
   it('testing the user icon', function () {
+    store.dispatch(setToken('initialTokenValue'));
     render(<MockNav />);
     const Ele = screen.getByLabelText('user-icon');
     fireEvent.click(Ele);
@@ -45,6 +42,7 @@ describe('tetsing the nav', function () {
     expect(settingElement).toBeInTheDocument();
   });
   it('testing the home icon', function () {
+    store.dispatch(setToken('initialTokenValue'));
     render(<MockNav />);
     const icon = screen.getByLabelText('home-icon');
     fireEvent.click(icon);
@@ -79,6 +77,7 @@ describe('tetsing the nav', function () {
   });
 
   it('testing the bars icon', function () {
+    store.dispatch(setToken('initialTokenValue'));
     render(<MockNav />);
     const icon = screen.getByLabelText('bars-icon');
     fireEvent.click(icon);
@@ -88,6 +87,7 @@ describe('tetsing the nav', function () {
   });
 
   it('testing interaction of home and user icons', function () {
+    store.dispatch(setToken('initialTokenValue'));
     render(<MockNav />);
     const userIcon = screen.getByLabelText('user-icon');
     const homeIcon = screen.getByLabelText('home-icon');
@@ -97,6 +97,7 @@ describe('tetsing the nav', function () {
     expect(settingElement).toBeVisible();
   });
   it('testing interaction of home and user icons', function () {
+    store.dispatch(setToken('initialTokenValue'));
     render(<MockNav />);
     const userIcon = screen.getByLabelText('user-icon');
     const homeIcon = screen.getByLabelText('home-icon');

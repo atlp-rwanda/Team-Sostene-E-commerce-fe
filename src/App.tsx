@@ -13,6 +13,7 @@ import routes from './utils/routes';
 import Navigation from './components/navigation/nav';
 import { isLoggedIn } from './helpers/auth';
 import '../styles/index.css';
+import Changepassword from './pages/accounts/editAccount/changepass';
 
 function App() {
   library.add(fab, fas);
@@ -28,6 +29,7 @@ function App() {
           ></Route>
           <Route path="/about_us" element={<About_us />}></Route>
           <Route path="/accounts/*" element={isLoggedIn() ? <Home /> : <Accounts />}></Route>
+          <Route path="/edit/password" element={isLoggedIn() ? <Changepassword /> : <Home />} />
           <Route path={routes.sellerListItems} element={<Seller />}></Route>
         </Routes>
       </Provider>

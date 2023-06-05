@@ -21,4 +21,5 @@ export async function logInWithGoogle(email: string) {
     headers: { 'Content-Type': 'application/json' },
   });
   store.dispatch(setToken(res.data.token));
+  localStorage.setItem('authenticationMethod', 'google');
 }

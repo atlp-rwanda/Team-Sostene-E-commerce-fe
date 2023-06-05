@@ -29,6 +29,7 @@ export const signup = createAsyncThunk('users/signup', async (data: SignupData) 
       }, 5000);
     }
     store.dispatch(setToken(response.data.token));
+    localStorage.setItem('authenticationMethod', 'app');
     return response.data.token;
   } catch (err: any) {
     const error = err.response.data;

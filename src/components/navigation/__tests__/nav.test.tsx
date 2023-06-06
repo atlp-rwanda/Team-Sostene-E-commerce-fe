@@ -53,6 +53,31 @@ describe('tetsing the nav', function () {
     expect(settingElement).toBeVisible();
   });
 
+  it('testing the notification icon', function () {
+    render(<MockNav />);
+    const icon = screen.getByLabelText('notification-icon');
+    fireEvent.click(icon);
+    expect(icon).toBeInTheDocument();
+  });
+
+  it('testing the notification icon when home icon was active', function () {
+    render(<MockNav />);
+    const icon = screen.getByLabelText('home-icon');
+    fireEvent.click(icon);
+    const icon1 = screen.getByLabelText('notification-icon');
+    fireEvent.click(icon1);
+    expect(icon1).toBeInTheDocument();
+  });
+
+  it('testing the notification icon when user icon was active', function () {
+    render(<MockNav />);
+    const icon = screen.getByLabelText('user-icon');
+    fireEvent.click(icon);
+    const icon1 = screen.getByLabelText('notification-icon');
+    fireEvent.click(icon1);
+    expect(icon1).toBeInTheDocument();
+  });
+
   it('testing the bars icon', function () {
     render(<MockNav />);
     const icon = screen.getByLabelText('bars-icon');

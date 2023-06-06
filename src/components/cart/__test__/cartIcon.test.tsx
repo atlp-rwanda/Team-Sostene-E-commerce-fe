@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import Cart, { CartIcon, CartItem } from '../Cart';
 import store from '../../../redux/store';
 import { CART } from '../redux/cartDataSlice';
+import { BrowserRouter } from 'react-router-dom';
 
 const cart: CART = {
   products: [
@@ -20,12 +21,20 @@ const cart: CART = {
 
 describe('Cart', () => {
   test('renders the cart box', () => {
-    render(<Cart loading={false} error="" cart={cart} />);
+    render(
+      <BrowserRouter>
+        <Cart loading={false} error="" cart={cart} />
+      </BrowserRouter>
+    );
     const cartHeader = screen.getByText('Cart');
     expect(cartHeader).toBeInTheDocument();
   });
   test('renders the cart box with error', () => {
-    render(<Cart loading={false} error="error" cart={cart} />);
+    render(
+      <BrowserRouter>
+        <Cart loading={false} error="error" cart={cart} />
+      </BrowserRouter>
+    );
     const cartHeader = screen.getByText('Cart');
     expect(cartHeader).toBeInTheDocument();
   });
@@ -35,7 +44,9 @@ describe('CartIcon', () => {
   test('renders the cart icon with the correct number of products', () => {
     render(
       <Provider store={store}>
-        <CartIcon />
+        <BrowserRouter>
+          <CartIcon />
+        </BrowserRouter>
       </Provider>
     );
     const cartIcon = screen.getByTestId('cart-icon');
@@ -45,7 +56,9 @@ describe('CartIcon', () => {
   test('toggles the cart view when clicked', () => {
     render(
       <Provider store={store}>
-        <CartIcon />
+        <BrowserRouter>
+          <CartIcon />
+        </BrowserRouter>
       </Provider>
     );
 

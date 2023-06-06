@@ -50,7 +50,7 @@ $fontsize: 15px;
     margin-top: 50px;
     border-radius: 3px;
     border: 1px solid #00000018;
-    transition: .3s;
+    transition: 0.3s;
     :global {
       .btn_wrapper {
         display: flex !important;
@@ -61,7 +61,6 @@ $fontsize: 15px;
       }
     }
   }
-
 }
 
 h1 {
@@ -101,7 +100,7 @@ a {
   font-size: $fontsize;
   cursor: $button-cursor;
   width: $button-width;
-  margin-left:$button-margin-left ;
+  margin-left: $button-margin-left;
 }
 .error {
   width: 100%;
@@ -111,24 +110,30 @@ a {
 
 // Media queries
 @media only screen and (max-width: $mdb) {
-  .container {
-    width: 50%;
+  .account__container {
+    .signup__container {
+      width: 50%;
+    }
   }
 }
 
 @media only screen and (max-width: $md) {
-  .container {
-    width: 70%;
-    margin: 50px auto;
+  .account__container {
+    .signup__container {
+      width: 70%;
+      margin: 50px auto;
+    }
   }
 }
 
 @media only screen and (max-width: $sm) {
-  .container {
-    width: 90%;
-  }
-  h2 {
-    font-size: 15px;
-    margin: 30px 0;
+  .account__container {
+    .signup__container {
+      width: 90%;
+    }
+    h2 {
+      font-size: 15px;
+      margin: 30px 0;
+    }
   }
 }

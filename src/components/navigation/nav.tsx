@@ -112,7 +112,7 @@ const Navigation = () => {
                   &nbsp;&nbsp;Manage My Account
                 </li>
               </Link>
-              <Link to="#" className={styles.Link}>
+              <Link to="/cart" className={styles.Link}>
                 <li className={styles.cart}>
                   <FontAwesomeIcon icon="cart-shopping" className={`${styles.light}`} />
                   &nbsp;&nbsp;My Cart
@@ -202,7 +202,7 @@ const Navigation = () => {
             <input type="text" placeholder="What are you looking for?" className={styles.search} />
             <FontAwesomeIcon icon="magnifying-glass" className={styles.searchIcon} />
           </div>
-          <CartIcon />
+          {value && <CartIcon />}
           {value && <Icon onClick={handleNotifications} />}
 
           <FontAwesomeIcon

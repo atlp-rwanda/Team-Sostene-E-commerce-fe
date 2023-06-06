@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useGetCartData } from './hooks';
 import { CART } from './redux/cartDataSlice';
 import imageReplacement from '../../assets/ImageReplacement.png';
+import { Link } from 'react-router-dom';
 
 function CartBox(props: { cart: CART; loading: boolean; error: string }) {
   const { loading, error, cart } = props;
@@ -11,9 +12,9 @@ function CartBox(props: { cart: CART; loading: boolean; error: string }) {
     <div className="w-64 bg-white absolute top-12 right-10">
       <div className="p-2 bg-orange flex flex-row justify-between items-center">
         <p className="font-semibold">Cart</p>
-        <a href="" className={styles.link}>
+        <Link to="/cart" className={styles.link}>
           Go To Cart
-        </a>
+        </Link>
       </div>
       <div className={styles.cart__container}>
         {error != '' ? <p>{error}</p> : ''}

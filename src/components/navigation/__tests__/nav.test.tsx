@@ -9,17 +9,17 @@ import { configureStore } from '@reduxjs/toolkit';
 
 const Demostore = configureStore({
   reducer: function (state = { token: { value: 'initialTokenValue' } }) {
-    return state
-  }
+    return state;
+  },
 });
 
 const MockNav = () => {
   library.add(fab, fas);
   return (
     <Provider store={Demostore}>
-    <BrowserRouter>
-      <Navigation />
-    </BrowserRouter>
+      <BrowserRouter>
+        <Navigation />
+      </BrowserRouter>
     </Provider>
   );
 };

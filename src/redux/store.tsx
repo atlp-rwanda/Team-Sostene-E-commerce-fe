@@ -1,5 +1,4 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import counterReducer from './slices/counterSlice';
 import authReducer from '../pages/accounts/login/redux/loginSlice';
 import tokenReducer from '../redux/slices/tokenSlice';
 import {
@@ -17,7 +16,6 @@ import tfaReducer from '../pages/accounts/tfa/redux/tfaSlice';
 import signupSlice from './slices/signup';
 
 const rootReducer = combineReducers({
-  count: counterReducer,
   twoFactor: tfaReducer,
   auth: authReducer,
   token: tokenReducer,

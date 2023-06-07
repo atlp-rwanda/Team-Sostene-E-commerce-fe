@@ -9,6 +9,7 @@ import Navigation from './components/navigation/nav';
 import Accounts from './pages/accounts/Accounts';
 import GoogleLoginSuccess from './pages/google/successLogin';
 import About_us from './pages/about/about_us';
+import { isLoggedIn } from './helpers/auth';
 
 function App() {
   library.add(fab, fas);
@@ -24,6 +25,7 @@ function App() {
             element={<GoogleLoginSuccess />}
           ></Route>
           <Route path="/about_us" element={<About_us />}></Route>
+          <Route path="/accounts/*" element={isLoggedIn() ? <Home /> : <Accounts />}></Route>
         </Routes>
       </Provider>
 

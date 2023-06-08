@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import Input from './components/input/input';
-import styles from './signup.module.scss';
+import './signup.scss';
 import { SignupData, signup } from '../../../redux/slices/signup';
 import { useAppDispatch } from '../../../redux/hooks';
 import loader from '../../../assets/spinner.svg';
@@ -87,11 +87,11 @@ function Signup() {
   };
 
   return (
-    <div className={styles.container}>
+    <div className="signup__container">
       <h1>Create an account</h1>
       <h3>Enter your details below</h3>
       <form onSubmit={handleSubmit} data-testid="signup">
-        <div ref={validate} className={styles.error}></div>
+        <div ref={validate} className="error"></div>
 
         <Input
           name={'username'}
@@ -139,6 +139,7 @@ function Signup() {
             )}
           </button>
         </div>
+
         <h2>
           Already have an account? <Link to={routes.login}>Login</Link>
         </h2>

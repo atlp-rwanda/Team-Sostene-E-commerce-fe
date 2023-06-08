@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { tfa_text } from '../../../constants';
+import { tfa_text } from '../../../utils/constants';
 import { useTwoFactor, useVerifyEmail } from './hooks';
 import './style.scss';
 import { ButtonLoader } from '../../../components/Loaders/Loaders';
@@ -29,7 +29,7 @@ export default function Tfa() {
     }
   };
   return (
-    <div className="container__box_tfa">
+    <div className="container__box_tfa" data-testid="tfa">
       <ContainerText email={email} tfa_text={tfa_text} />
       <div className="container__box__input">
         <div className="form">

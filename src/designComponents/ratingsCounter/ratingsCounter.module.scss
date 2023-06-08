@@ -1,0 +1,30 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+.ratingsCounter {
+  :global {
+    width: 100%;
+    background-color: transparent;
+    margin: 0;
+    padding: 3px 0;
+    .ratings {
+      width: 100%;
+      display: flex;
+      gap: 10px;
+      .ratingBox {
+        display: flex;
+        gap: 3px;
+        .startImage {
+          cursor: pointer;
+          @include transition;
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+      .ratingNumber {
+        @include h5;
+        font-family: $interBold;
+      }
+    }
+  }
+}

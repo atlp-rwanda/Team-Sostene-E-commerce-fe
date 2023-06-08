@@ -3,16 +3,16 @@
     "browser": true,
     "es2021": true,
     "node": true,
-    "jest": true,
-    "vitest-globals/env": true
+    "jest": true
   },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-    "plugin:vitest-globals/recommended"
+    "prettier",
+    "plugin:react/jsx-runtime",
+    "plugin:prettier/recommended"
   ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
@@ -38,7 +38,7 @@
         "next": "import"
       }
     ],
-    "linebreak-style": ["error", "unix"],
+    "linebreak-style": ["off"],
     "semi": ["error", "always"],
     "no-console": "error",
     "prettier/prettier": ["error", { "singleQuote": true, "endOfLine": "auto" }],

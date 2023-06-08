@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import GoogleBtn from '../../../components/googleLogin/button';
+import routes from '../../../utils/routes';
 
 function Login() {
   const { handleLogin, isLoggedIn } = useLogin();
@@ -30,36 +31,29 @@ function Login() {
     toast.error(isLoggedIn.error);
   }
   return (
-    <>
-      <div className="container">
-        <form ref={formRef} className="form-body" data-testid="Login">
-          <div>
-            <h1>LOGIN</h1>
-          </div>
-          <div>
-            <input
-              name="email"
-              className="input-field"
-              type="email"
-              placeholder="Enter your email"
-            />
-          </div>
-          <div>
-            <input name="password" className="input-field" type="password" placeholder="Password" />
-          </div>
-          <div id="btn-section">
-            <button onClick={handleSubmit}>{isLoggedIn.loading ? 'Loading' : 'Login'}</button>
-            <GoogleBtn width="300" />
-            <h3 className="signup-tag">
-              Does not have an account? <Link to="/accounts/signup">Signup</Link>
-            </h3>
-            <Link to="#">Forget Password</Link>
-          </div>
-        </form>
-        <div></div>
-        <ToastContainer />
-      </div>
-    </>
+    <div className="container">
+      <form ref={formRef} className="form-body" data-testid="Login">
+        <div>
+          <h1>LOGIN</h1>
+        </div>
+        <div>
+          <input name="email" className="input-field" type="email" placeholder="Enter your email" />
+        </div>
+        <div>
+          <input name="password" className="input-field" type="password" placeholder="Password" />
+        </div>
+        <div id="btn-section">
+          <button onClick={handleSubmit}>{isLoggedIn.loading ? 'Loading' : 'Login'}</button>
+          <GoogleBtn width="300" />
+          <h3 className="signup-tag">
+            Does not have an account? <Link to={routes.signup}>Signup</Link>
+          </h3>
+          <Link to="#">Forget Password</Link>
+        </div>
+      </form>
+      <div></div>
+      <ToastContainer />
+    </div>
   );
 }
 

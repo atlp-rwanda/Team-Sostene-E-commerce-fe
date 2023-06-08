@@ -1,0 +1,9 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.seller {
+  :global {
+    @include pageSettings;
+    gap: 30px;
+  }
+}

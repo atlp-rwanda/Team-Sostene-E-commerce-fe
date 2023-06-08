@@ -65,5 +65,5 @@ const usertfaVerify = createSlice({
     });
   },
 });
-
-export default usertfaVerify.reducer;
+const usertfaVerifyReducers = usertfaVerify.reducer;
+export default usertfaVerifyReducers;

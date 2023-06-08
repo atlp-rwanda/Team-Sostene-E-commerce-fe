@@ -1,0 +1,7 @@
+./src/redux
+**/*.js
+*.js
+**/*.css
+*.css
+**/*.scss
+*.scss

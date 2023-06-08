@@ -1,4 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
+import { it, describe, expect } from 'vitest';
 import Navigation from '../nav';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { BrowserRouter } from 'react-router-dom';

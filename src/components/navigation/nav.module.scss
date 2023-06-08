@@ -10,6 +10,7 @@
   font-size: 14px;
   color: $black;
   box-sizing: border-box;
+  margin-bottom: 1rem;
 } //global body styles
 
 .navbar *{
@@ -106,13 +107,14 @@ a {
 }
 .nav {
   z-index: 10;
-  position: absolute;
-  top: 48px;
+  position: fixed;
+  top: 80px;
   overflow-y: auto;
   width: 248px;
-  height: calc(100% - 48px);
+  height: calc(100% - 80px);
   background-color: $white;
   box-shadow:$boxShadow;
+ 
   &__label {
     font-weight: 300;
     display: block;

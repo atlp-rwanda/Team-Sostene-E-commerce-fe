@@ -1,6 +1,5 @@
 @import '../../../../styles/variables.scss';
 
-
 $container-width: 40%;
 $container-height: 500px;
 $container-background: $white-two;
@@ -37,10 +36,18 @@ $fontsize: 15px;
   width: $container-width;
   height: $container-height;
   background: $container-background;
-  margin-top: $container-margin-top;
-  margin-left: $container-margin-left;
+  margin: auto;
   display: flex;
   flex-direction: column;
+  :global {
+    .btn_wrapper {
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+  }
 }
 
 h1 {
@@ -71,16 +78,16 @@ a {
   text-decoration: $text-decoration;
 }
 
-button {
+button,
+.btnSignup {
   background: $button-background;
   padding: $button-padding;
-  width: $button-width;
   border: $button-border;
   border-radius: $button-border-radius;
-  margin-left: $button-margin-left;
   color: $color;
   font-size: $fontsize;
   cursor: pointer;
+  width: 95%;
 }
 .error {
   width: 100%;
@@ -111,4 +118,3 @@ button {
     margin: 30px 0;
   }
 }
-

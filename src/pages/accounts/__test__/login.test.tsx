@@ -8,6 +8,20 @@ import * as loginHooks from '../login/hooks';
 import store from '../../../redux/store';
 import { toast } from 'react-toastify';
 import { isValidEmail } from '../login/hooks';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+
+const MockElement = () => {
+  library.add(fab, fas);
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <Login />
+      </BrowserRouter>
+    </Provider>
+  );
+};
 
 describe('Testing Rendering of Login page', () => {
   test('Should render Login', () => {
@@ -27,13 +41,7 @@ describe('Testing Rendering of Login page', () => {
     };
 
     vi.spyOn(loginHooks, 'useLogin').mockImplementationOnce(useLoginMock);
-    const { getByTestId, getByText } = render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <Login />
-        </BrowserRouter>
-      </Provider>
-    );
+    const { getByTestId, getByText } = render(<MockElement />);
     const emailInput = document.querySelector('input[type="email"]');
     const passwordInput = document.querySelector('input[type="password"]');
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -62,13 +70,7 @@ describe('Testing Rendering of Login page', () => {
     };
 
     vi.spyOn(loginHooks, 'useLogin').mockImplementationOnce(useLoginMock);
-    const { getByTestId, getByText } = render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <Login />
-        </BrowserRouter>
-      </Provider>
-    );
+    const { getByTestId, getByText } = render(<MockElement />);
     const emailInput = document.querySelector('input[type="email"]');
     const passwordInput = document.querySelector('input[type="password"]');
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -97,13 +99,7 @@ describe('Testing Rendering of Login page', () => {
       };
     });
     // Rerender the Login component with the updated useLoginMock
-    render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <Login />
-        </BrowserRouter>
-      </Provider>
-    );
+    render(<MockElement />);
 
     // Test for isLoggedIn.token not being empty
     expect(window.location.href.endsWith('/')).toBe(true);
@@ -125,13 +121,7 @@ describe('Testing Rendering of Login page', () => {
     };
     vi.spyOn(loginHooks, 'useLogin').mockImplementationOnce(useLoginMock);
     const errorSpy = vi.spyOn(toast, 'error');
-    const { getByText } = render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <Login />
-        </BrowserRouter>
-      </Provider>
-    );
+    const { getByText } = render(<MockElement />);
     const emailInput = document.querySelector('input[type="email"]');
     const passwordInput = document.querySelector('input[type="password"]');
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -160,13 +150,7 @@ describe('Testing Rendering of Login page', () => {
 
     vi.spyOn(loginHooks, 'useLogin').mockImplementationOnce(useLoginMock);
     const errorSpy = vi.spyOn(toast, 'error');
-    const { getByText } = render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <Login />
-        </BrowserRouter>
-      </Provider>
-    );
+    const { getByText } = render(<MockElement />);
     const emailInput = document.querySelector('input[type="email"]');
     const passwordInput = document.querySelector('input[type="password"]');
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -197,13 +181,7 @@ describe('Testing Rendering of Login page', () => {
     };
 
     vi.spyOn(loginHooks, 'useLogin').mockImplementationOnce(useLoginMock);
-    const { getByTestId } = render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <Login />
-        </BrowserRouter>
-      </Provider>
-    );
+    const { getByTestId } = render(<MockElement />);
     expect(getByTestId('Login')).toBeInTheDocument();
   });
   test('Should Give an error when there is no login occured', () => {
@@ -222,13 +200,7 @@ describe('Testing Rendering of Login page', () => {
       };
     };
     vi.spyOn(loginHooks, 'useLogin').mockImplementationOnce(useLoginMock);
-    const { getByTestId } = render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <Login />
-        </BrowserRouter>
-      </Provider>
-    );
+    const { getByTestId } = render(<MockElement />);
     expect(getByTestId('Login')).toBeInTheDocument();
   });
 });
@@ -236,6 +208,7 @@ describe('Testing Rendering of Login page', () => {
 describe('Testing Login hooks', () => {
   test('Testing UseLogin', () => {
     const TestComponent = () => {
+      library.add(fab, fas);
       const { handleLogin, isLoggedIn } = loginHooks.useLogin();
 
       const handleFormSubmit = (e: { preventDefault: () => void }) => {

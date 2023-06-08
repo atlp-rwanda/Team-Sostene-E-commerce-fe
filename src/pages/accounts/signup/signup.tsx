@@ -10,6 +10,7 @@ import loader from '../../../assets/spinner.svg';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
+import routes from '../../../utils/routes';
 
 function Signup() {
   const dispatch = useAppDispatch();
@@ -123,8 +124,14 @@ function Signup() {
           type={'password'}
         />
 
-        <div>
-          <button data-testid="signup-form" type="submit" disabled={loading} onClick={handleSubmit}>
+        <div className="btn_wrapper">
+          <button
+            className="btnSignup"
+            data-testid="signup-form"
+            type="submit"
+            disabled={loading}
+            onClick={handleSubmit}
+          >
             {loading ? (
               <img src={loader} style={{ height: '25px' }} alt="loader" />
             ) : (
@@ -133,7 +140,7 @@ function Signup() {
           </button>
         </div>
         <h2>
-          Already have an account? <Link to="/accounts/Login">Login</Link>
+          Already have an account? <Link to={routes.login}>Login</Link>
         </h2>
       </form>
       <div>

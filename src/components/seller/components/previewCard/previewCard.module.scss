@@ -1,0 +1,128 @@
+@import '../../../../../styles/variables.scss';
+@import '../../../../../styles/mixins.scss';
+.previewCard {
+  :global {
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    min-height: 40vh;
+    margin: 0;
+    padding: 0;
+    .contentPreview {
+      margin: 0;
+      @include scroll-bar;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 20px;
+      position: relative;
+      min-height: 40vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-bottom: 10px;
+      @include mq($xlg) {
+        gap: 15px;
+      }
+      .actionBts {
+        position: absolute;
+        width: 217px;
+        height: 40px;
+        background-color: $lightGray;
+        top: -2px;
+        left: 1.5rem;
+        border-radius: 0 0 10px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 101;
+        @include mq($xlg) {
+          width: 180px;
+          height: 38px;
+        }
+        @include mq($lg) {
+          width: 170px;
+          height: 35px;
+        }
+        @include mq($md) {
+          width: 140px;
+        }
+        @include mq($xls) {
+          width: 100px;
+          height: 30px;
+        }
+        .icon {
+          height: 100%;
+          aspect-ratio: 1/1;
+          width: auto;
+          cursor: pointer;
+          @include transition;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+        .iconEdit {
+          border-radius: 0 0 0 10px;
+          background-color: $green;
+        }
+        .iconDelete {
+          border-radius: 0 0 10px 0;
+        }
+      }
+
+      .carouselBox {
+        width: 100%;
+        background-color: $white;
+        margin: 0;
+        padding: 0;
+        height: 50vh;
+        @include mq($xlg) {
+          height: 50vh;
+        }
+      }
+      .simpleDetails {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 0 1.6rem;
+        .h5 {
+          font-family: $interBold;
+          @include h5;
+          margin-right: 5px;
+        }
+        .h6 {
+          font-family: $interRegular;
+          @include h6;
+        }
+        .pricing {
+          display: flex;
+          flex-direction: column;
+          grid-area: 5px;
+        }
+        .h3 {
+          font-family: $interBold;
+          @include h3;
+        }
+      }
+      .details {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0 1.6rem;
+        .detailHead {
+          font-family: $interBold;
+          @include h5;
+        }
+        .details{
+          font-family: $interRegular;
+          @include h6;
+        }
+      }
+    }
+  }
+}

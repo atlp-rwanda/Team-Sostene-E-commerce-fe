@@ -4,7 +4,7 @@ import Tfa from '../tfa/Tfa';
 import { Provider } from 'react-redux';
 import store from '../../../redux/store';
 import { BrowserRouter } from 'react-router-dom';
-import { vi } from 'vitest';
+import { vi, describe, it, test, expect } from 'vitest';
 import * as tfaHooks from '../tfa/hooks';
 import { TFA_InitialState } from '../tfa/redux/tfaSlice';
 import { useVerifyEmail } from '../tfa/hooks';

@@ -198,3 +198,170 @@
 }
 $transparent-bg: #f0f0f0;
 $white-two: #f1f1f1;
+
+@mixin pageSettings{
+  padding: 50px;
+  max-width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background-color: $white;
+  display:  flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  @include mq($xlg){
+    padding: 30px;
+  }
+  @include mq($lg){
+    padding: 25px;
+  }
+  @include mq($md){
+    padding: 20px;
+  }
+  @include mq($xls){
+    padding: 15px;
+  }
+  
+}
+
+//  all page font-sizes
+
+@mixin body{
+  font-family: $interRegular;
+  font-size: pxToEm(14);
+  @include mq($xlg){
+    font-size: pxToEm(13);
+  }
+  @include mq($lg){
+    font-size: pxToEm(12);
+  }
+  @include mq($xls){
+    font-size: pxToEm(12);
+  }
+  @include mq($xxsh){
+    font-size: 10px;
+  }
+  
+}
+
+@mixin h6{
+  font-family: $interRegular;
+  font-size: pxToEm(16);
+  @include mq($xlg){
+    font-size: pxToEm(15);
+  }
+  @include mq($lg){
+    font-size: pxToEm(14);
+  }
+  @include mq($md){
+    font-size: pxToEm(13);
+  }
+  @include mq($xls){
+    font-size: pxToEm(12);
+  }
+  @include mq($xxsh){
+    font-size: pxToEm(11);
+  }
+
+}
+@mixin h5{
+  font-size: pxToEm(18);
+  font-family: $interSemiBold;
+  @include mq($xlg){
+    font-size: pxToEm(17);
+  }
+  @include mq($lg){
+    font-size: pxToEm(16);
+  }
+  @include mq($md){
+    font-size: pxToEm(15);
+  }
+  @include mq($xls){
+    font-size: pxToEm(14);
+  }
+  @include mq($xxsh){
+    font-size: pxToEm(13);
+  }
+  
+}
+@mixin h4{
+  font-size: pxToEm(20);
+  font-family: $interSemiBold;
+  @include mq($xlg){
+    font-size: pxToEm(18);
+  }
+  @include mq($lg){
+    font-size: pxToEm(17);
+  }
+  @include mq($md){
+    font-size: pxToEm(16);
+  }
+  @include mq($xls){
+    font-size: pxToEm(15);
+  }
+  @include mq($xxsh){
+    font-size: pxToEm(14);
+  }
+  
+}
+@mixin h3{
+  font-size: pxToEm(25);
+  font-family: $interSemiBold;
+  @include mq($xlg){
+    font-size: pxToEm(23);
+  }
+  @include mq($lg){
+    font-size: pxToEm(20);
+  }
+  @include mq($md){
+    font-size: pxToEm(18);
+  }
+  @include mq($xls){
+    font-size: pxToEm(16);
+  }
+  @include mq($xxsh){
+    font-size: pxToEm(15);
+  }
+  
+}
+@mixin h2{
+  font-size: pxToEm(30);
+  font-family: $interBold;
+  @include mq($xlg){
+    font-size: pxToEm(27);
+  }
+  @include mq($lg){
+    font-size: pxToEm(25);
+  }
+  @include mq($md){
+    font-size: pxToEm(22);
+  }
+  @include mq($xls){
+    font-size: pxToEm(20);
+  }
+  @include mq($xxsh){
+    font-size: pxToEm(17);
+  }
+  
+}
+@mixin h1{
+  font-size: pxToEm(35);
+  font-family: $interBold;
+  @include mq($xlg){
+    font-size: pxToEm(31);
+  }
+  @include mq($lg){
+    font-size: pxToEm(28);
+  }
+  @include mq($md){
+    font-size: pxToEm(25);
+  }
+  @include mq($xls){
+    font-size: pxToEm(23);
+  }
+  @include mq($xxsh){
+    font-size: pxToEm(19);
+  }
+  
+}

@@ -4,10 +4,11 @@ import styles from './nav.module.scss';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import logo from '../../../public/svgs/Vector.svg';
 import { logout } from '../../helpers/auth';
 import { useAppSelector } from '../../redux/hooks';
 import Icon from '../notification/Icon';
+
+const logo = '/svgs/Vector.svg';
 
 const Navigation = () => {
   const divRef = useRef<HTMLDivElement | null>(null);

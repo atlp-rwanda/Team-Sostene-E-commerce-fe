@@ -1,0 +1,72 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.popUpMaker {
+  :global {
+    @include pageSettings;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    background-color: $darkGray;
+    .content {
+      width: 60%;
+      max-width: 60%;
+      position: relative;
+      display: flex;
+      gap: 0;
+      flex-direction: column;
+      background-color: $white;
+      padding: 0;
+      margin: 0;
+      @include mq($lg) {
+        width: 70%;
+        max-width: 70%;
+      }
+      @include mq($xls) {
+        width: 80%;
+        max-width: 80%;
+      }
+      @include mq($xxsh) {
+        width: 85%;
+        max-width: 85%;
+      }
+      @include mq($xms) {
+        width: 90%;
+        max-width: 90%;
+      }
+      .closeBtn {
+        width: 30px;
+        aspect-ratio: 1/1;
+        height: auto;
+        position: absolute;
+        top: -2rem;
+        right: -2rem;
+        height: 2rem;
+        width: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $white;
+        border: none;
+        cursor: pointer;
+        z-index: 102;
+        @include transition;
+        &:hover {
+          transform: scale(1.2);
+          background-color: darken($color: $lightBlue, $amount: 0);
+        }
+        .icon {
+          width: 80%;
+          height: 80%;
+        }
+      }
+    }
+  }
+}

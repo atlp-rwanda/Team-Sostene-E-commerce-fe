@@ -1,6 +1,5 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import authReducer from '../pages/accounts/login/redux/loginSlice';
-import tokenReducer from '../redux/slices/tokenSlice';
 import {
   FLUSH,
   PAUSE,
@@ -12,15 +11,17 @@ import {
   persistStore,
 } from 'redux-persist';
 import storage from 'redux-persist/es/storage';
-import tfaReducer from '../pages/accounts/tfa/redux/tfaSlice';
+import tokenReducer from './slices/tokenSlice';
 import signupSlice from './slices/signup';
+import usertfaVerifyReducers from '../pages/accounts/tfa/redux/tfaSlice';
+import filterCollectionProductsReducer from '../components/seller/components/sellerItems/sellerItemsFilters.slice';
 
 const rootReducer = combineReducers({
-  twoFactor: tfaReducer,
   auth: authReducer,
+  twoFactor: usertfaVerifyReducers,
   token: tokenReducer,
-  // add your new reducer created
   signup: signupSlice,
+  filterCollectionProducts: filterCollectionProductsReducer,
 });
 
 const persistConfig = {

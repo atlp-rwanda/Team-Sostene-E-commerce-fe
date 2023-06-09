@@ -1,10 +1,9 @@
 @import '../../../../styles/variables.scss';
 
-$container-width: 40%;
-$container-height: 500px;
-$container-background: $white-two;
-$container-margin-top: 50px;
-$container-margin-left: 30%;
+$signup__container-width: 40%;
+$signup__container-height: 500px;
+$signup__container-background: $white-two;
+$signup__container-margin-top: 50px;
 $h1-text-align: center;
 $h1-font-family: 'Inter', sans-serif;
 $h1-font-weight: bolder;
@@ -23,20 +22,21 @@ $h2-color: #656566;
 $h2-margin-top: 10%;
 $a-color: #656566;
 $text-decoration: underline;
-$button-background: #ff8c42;
+$button-background: $yellow;
 $button-margin-left: 10%;
 $button-padding: 15px;
 $button-width: 78%;
 $button-border: none;
 $button-border-radius: 5px;
+$button-cursor: pointer;
 $color: #fff;
 $fontsize: 15px;
 
-.container {
-  width: $container-width;
-  height: $container-height;
-  background: $container-background;
-  margin: auto;
+.signup__container {
+  width: $signup__container-width;
+  height: $signup__container-height;
+  background: $signup__container-background;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   :global {
@@ -86,8 +86,9 @@ button,
   border-radius: $button-border-radius;
   color: $color;
   font-size: $fontsize;
-  cursor: pointer;
-  width: 95%;
+  cursor: $button-cursor;
+  width: $button-width;
+  margin-left:$button-margin-left ;
 }
 .error {
   width: 100%;

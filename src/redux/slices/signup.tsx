@@ -32,7 +32,7 @@ export const signup = createAsyncThunk('users/signup', async (data: SignupData) 
     return response.data.token;
   } catch (err: any) {
     const error = err.response.data;
-    toast.error('Signup failed: ' + error.message);
+    toast.error(error.message || error.error);
     throw error;
   }
 });

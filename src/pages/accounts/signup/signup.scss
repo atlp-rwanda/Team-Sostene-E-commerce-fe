@@ -32,22 +32,36 @@ $button-cursor: pointer;
 $color: #fff;
 $fontsize: 15px;
 
-.signup__container {
-  width: $signup__container-width;
-  height: $signup__container-height;
-  background: $signup__container-background;
-  margin-top: 20px;
+.account__container {
   display: flex;
   flex-direction: column;
-  :global {
-    .btn_wrapper {
-      display: flex !important;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: $interRegular;
+  height: 80vh;
+  .signup__container {
+    width: 40%;
+    background: $white-two;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    padding-bottom: 30px;
+    margin-top: 50px;
+    border-radius: 3px;
+    border: 1px solid #00000018;
+    transition: .3s;
+    :global {
+      .btn_wrapper {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
     }
   }
+
 }
 
 h1 {
@@ -78,7 +92,6 @@ a {
   text-decoration: $text-decoration;
 }
 
-button,
 .btnSignup {
   background: $button-background;
   padding: $button-padding;

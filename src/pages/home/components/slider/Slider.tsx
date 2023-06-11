@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import './slideshow.scss';
 
 interface SliderProps {
   items: {
@@ -35,12 +34,26 @@ function Slider(props: SliderProps) {
     );
   };
   return (
-    <div className="slider">
-      <ul className="items">
+    <div className="slider relative">
+      <ul className="items relative overflow-hidden w-full pb-[56.25%]">
         {items.map((item, index) => (
-          <a href={item.link} key={item.image} className="d">
-            <li className={`item ${index === currentIndex ? 'current' : ''}`}>
-              <img src={item.image} alt={item.alt} />
+          <a href={item.link} key={item.image} className="">
+            <li
+              className={`item absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-600 ${
+                index === currentIndex ? 'opacity-100' : ''
+              }`}
+            >
+              <img
+                src={item.image}
+                alt={item.alt}
+                className="w-full h-full object-cover"
+                style={{
+                  WebkitMaskImage:
+                    '-webkit-gradient(linear,left 50%,left bottom,from(rgba(0,0,0,1)),to(rgba(0,0,0,0)))',
+                  maskImage:
+                    'linear-gradient(0deg,rgba(235,235,235,0) 80%,rgba(255,255,255,0.325) 20%,rgb(227,227,227) 80%)',
+                }}
+              />
             </li>
           </a>
         ))}
@@ -49,27 +62,31 @@ function Slider(props: SliderProps) {
         type="button"
         id="prev"
         onClick={() => handleButtonClick(true)}
-        className="button prev left"
+        className=" m-0 left z-10 h-32 tablet:h-64 top-10 w-24 text-white text-lg bg-translucent absolute right-0"
         data-testid="prev-button"
-      ></button>
+      >
+        <i className="fa fa-angle-right" aria-hidden="true"></i>
+      </button>
       <button
         type="button"
         id="next"
         onClick={() => handleButtonClick(false)}
-        className="button next right"
+        className=" m-0 z-10 h-32 tablet:h-64 top-10 w-24 bg-translucent text-white text-lg absolute left-0"
         data-testid="next-button"
-      ></button>
-      <div className="dots">
-        <div className="dots">
-          {items.map((_, index) => (
-            <button
-              key={index}
-              className={`dot ${index === currentIndex ? 'current' : ''}`}
-              onClick={() => handleDotClick(index)}
-              data-testid="dot-button"
-            ></button>
-          ))}
-        </div>
+      >
+        <i className="fa fa-angle-left" aria-hidden="true"></i>
+      </button>
+      <div className=" absolute bottom-48 left-0 w-full flex justify-center mt-2">
+        {items.map((_, index) => (
+          <button
+            key={index}
+            className={` block w-3 z-10 bg-orange h-3 m-3 rounded-full border-none outline-none p-0 bg-yellow opacity-50 transition-opacity duration-400 ${
+              index === currentIndex ? 'opacity-100' : ''
+            }`}
+            onClick={() => handleDotClick(index)}
+            data-testid="dot-button"
+          ></button>
+        ))}
       </div>
     </div>
   );

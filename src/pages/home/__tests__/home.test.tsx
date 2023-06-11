@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { screen, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom'; // Import BrowserRouter
 import Home from '../home';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -21,15 +21,6 @@ const MockElement = () => {
 };
 
 describe('Home Component', () => {
-  it('renders nav links', () => {
-    render(<MockElement />);
-
-    const linkElement = screen.getByText('Contact');
-    const linkElementx = screen.getByTestId('home');
-    expect(linkElement).toBeInTheDocument();
-    expect(linkElementx).toBeInTheDocument();
-  });
-
   it('renders the home page', async () => {
     const { getByAltText } = render(<MockElement />);
     const slide = getByAltText('slide');

@@ -10,7 +10,6 @@ import loader from '../../../assets/spinner.svg';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
-import routes from '../../../utils/routes';
 
 function Signup() {
   const dispatch = useAppDispatch();
@@ -141,7 +140,7 @@ function Signup() {
         </div>
 
         <h2>
-          Already have an account? <Link to={routes.login}>Login</Link>
+          Already have an account? <Link to="/accounts/login">Login</Link>
         </h2>
       </form>
       <div>

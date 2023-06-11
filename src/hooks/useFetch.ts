@@ -1,7 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import routes from '../utils/routes';
 
 interface FetchState<T> {
   data: T | null;
@@ -18,7 +18,7 @@ const useFetch = <T>(url: string): FetchState<T> => {
     try {
       const response = await axios.get(url);
       if (response.status === 401) {
-        navigate(routes.login);
+        navigate('/accounts/login');
       }
       setData(response?.data);
       setLoading(false);

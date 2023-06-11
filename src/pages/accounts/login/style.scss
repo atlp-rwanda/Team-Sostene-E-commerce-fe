@@ -2,20 +2,18 @@
 @import '../../../../styles/mixins.scss';
 
 .account__container {
-    @include pageSettings;
     color: var(--black);
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
-    font-size: small;
     font-family: $interRegular;
 
     .container {
         width: 40%;
         background: $white-two;
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
         align-items: center;
         flex-direction: column;
         padding: 10px;
@@ -72,17 +70,7 @@
     margin-top: 20px;
     padding: 5px;
 }
-.signup-tag{
- color: $black;
- font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-weight: 100;
-opacity: 0.4;
-}
-.forget-tag{
-color: $black;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-weight: 200; 
-}
+
 .form-body a{
     color: $black;
     text-decoration: underline;

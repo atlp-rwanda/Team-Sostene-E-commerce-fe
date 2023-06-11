@@ -1,20 +1,16 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
 .home {
-  :global {
-    color: $black;
-    @include pageSettings;
-    gap: 30px;
-    .homeSlides{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      width: 100%;
-      padding: 0;
-      margin: 0;
-      border: 12px;
-      max-height: 40vh;
-    }
+  width: 100%;
+  .homeSlides{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 12px;
+    max-height: 40vh;
   }
 }

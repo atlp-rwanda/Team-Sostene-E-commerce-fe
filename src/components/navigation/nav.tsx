@@ -179,57 +179,56 @@ const Navigation = () => {
           />
         </div>
       </div>
-
       <nav className={`${styles.nav} ${styles.hidden}`} data-testid="overview-nav" ref={divRef}>
-        <div className={`${styles.nav__item} ${styles.overview}`}>
-          <i className="fa fa-home" aria-hidden="true"></i>
-          <FontAwesomeIcon icon="house" className={styles.nav__toggle} />
+        <div className={styles.nav__wrap}>
+          <div className={`${styles.nav__item} ${styles.overview}`}>
+            <FontAwesomeIcon icon="house" className={styles.nav__toggle} />
+            <span>Overview</span>
+          </div>
+          <label className={styles.nav__label}>COMPUTER & ELECTRONICS</label>
+          <div className={styles.nav__item}>
+            <FontAwesomeIcon icon="mobile" className={styles.nav__toggle} />
+            <span>Mobile Phones & Tablets</span>
+          </div>
+          <div className={styles.nav__item}>
+            <FontAwesomeIcon icon="desktop" />
+            <span>Computer & Laptops</span>
+          </div>
+          <div className={styles.nav__item}>
+            <FontAwesomeIcon icon="podcast" />
+            <span>Audio & video</span>
+          </div>
+          <div className={styles.nav__item}>
+            <FontAwesomeIcon icon="gamepad" />
+            <span>Gaming</span>
+          </div>
 
-          <span>Overview</span>
-        </div>
-        <label className={styles.nav__label}>COMPUTER & ELECTRONICS</label>
-        <div className={styles.nav__item}>
-          <FontAwesomeIcon icon="mobile" className={styles.nav__toggle} />
-          <span>Mobile Phones & Tablets</span>
-        </div>
-        <div className={styles.nav__item}>
-          <FontAwesomeIcon icon="desktop" />
-          <span>Computer & Laptops</span>
-        </div>
-        <div className={styles.nav__item}>
-          <FontAwesomeIcon icon="podcast" />
-          <span>Audio & video</span>
-        </div>
-        <div className={styles.nav__item}>
-          <FontAwesomeIcon icon="gamepad" />
-          <span>Gaming</span>
-        </div>
-
-        <label className={styles.nav__label}>Fashion</label>
-        <div className={styles.nav__item}>
-          <FontAwesomeIcon icon="person" />
-          <span>Men's Fashion</span>
-        </div>
-        <div className={styles.nav__item}>
-          <FontAwesomeIcon icon="person-dress" />
-          <span>Female's Fashion</span>
-        </div>
-        <div className={styles.nav__item}>
-          <FontAwesomeIcon icon="ring" />
-          <span>Jewelry & Watches</span>
-        </div>
-        <div className={styles.nav__item}>
-          <FontAwesomeIcon icon="baby-carriage" />
-          <span>Accessories</span>
-        </div>
-        <label className={styles.nav__label}>Sports & Outdoors</label>
-        <div className={styles.nav__item}>
-          <FontAwesomeIcon icon="baseball-bat-ball" />
-          <span>Sports Equipment</span>
-        </div>
-        <div className={styles.nav__item}>
-          <FontAwesomeIcon icon="dumbbell" />
-          <span>Fitness & Exercise</span>
+          <label className={styles.nav__label}>Fashion</label>
+          <div className={styles.nav__item}>
+            <FontAwesomeIcon icon="person" />
+            <span>Men's Fashion</span>
+          </div>
+          <div className={styles.nav__item}>
+            <FontAwesomeIcon icon="person-dress" />
+            <span>Female's Fashion</span>
+          </div>
+          <div className={styles.nav__item}>
+            <FontAwesomeIcon icon="ring" />
+            <span>Jewelry & Watches</span>
+          </div>
+          <div className={styles.nav__item}>
+            <FontAwesomeIcon icon="baby-carriage" />
+            <span>Accessories</span>
+          </div>
+          <label className={styles.nav__label}>Sports & Outdoors</label>
+          <div className={styles.nav__item}>
+            <FontAwesomeIcon icon="baseball-bat-ball" />
+            <span>Sports Equipment</span>
+          </div>
+          <div className={styles.nav__item}>
+            <FontAwesomeIcon icon="dumbbell" />
+            <span>Fitness & Exercise</span>
+          </div>
         </div>
       </nav>
     </div>

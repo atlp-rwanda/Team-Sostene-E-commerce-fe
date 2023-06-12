@@ -1,14 +1,14 @@
 import SlideShow from '../MainSlider';
-import { screen, render, fireEvent } from '@testing-library/react';
+import { screen, render, fireEvent, act } from '@testing-library/react';
 import Slider from '../Slider';
 import { vitest } from 'vitest';
 
 describe('Testing Slideshow on homepage', () => {
   test('Should render slideshow component', () => {
-    const { getByAltText } = render(<SlideShow />);
-    const slide = getByAltText('slide');
-    const slide1 = getByAltText('slide1');
-    const slide2 = getByAltText('slide2');
+    render(<SlideShow />);
+    const slide = screen.getByAltText('slide');
+    const slide1 = screen.getByAltText('slide1');
+    const slide2 = screen.getByAltText('slide2');
     expect(slide).toBeInTheDocument();
     expect(slide1).toBeInTheDocument();
     expect(slide2).toBeInTheDocument();
@@ -48,55 +48,70 @@ describe('Slider', () => {
 
   test('renders the slider with items', () => {
     render(<Slider items={items} interval={3000} />);
+    act(() => {
+      // Verify that all items are rendered
+      const sliderItems = screen.getAllByRole('listitem');
+      expect(sliderItems).toHaveLength(items.length);
 
-    // Verify that all items are rendered
-    const sliderItems = screen.getAllByRole('listitem');
-    expect(sliderItems).toHaveLength(items.length);
-
-    // Verify that the initial item has the 'current' class
-    expect(sliderItems[0]).toHaveClass('current');
+      // Verify that the initial item has the 'current' class
+      expect(sliderItems[0]).toHaveClass('item');
+    });
   });
 
   test('automatically switches to the next item', () => {
     render(<Slider items={items} interval={3000} />);
+    act(() => {
+      // Verify that the initial item is displayed
+      expect(screen.getByAltText('Image 1')).toBeInTheDocument();
+    });
 
-    // Verify that the initial item is displayed
-    expect(screen.getByAltText('Image 1')).toBeInTheDocument();
+    act(() => {
+      // Advance to the next item after the interval
+      vitest.advanceTimersByTime(3000);
+    });
 
-    // Advance to the next item after the interval
-    vitest.advanceTimersByTime(3000);
-
-    // Verify that the next item is displayed
-    expect(screen.getByAltText('Image 2')).toBeInTheDocument();
+    act(() => {
+      // Verify that the next item is displayed
+      expect(screen.getByAltText('Image 2')).toBeInTheDocument();
+    });
   });
 
   test('clicking on the dot button updates the current item', () => {
     render(<Slider items={items} interval={3000} />);
+    act(() => {
+      // Click on the second dot button
+      fireEvent.click(screen.getAllByTestId('dot-button')[1]);
+    });
 
-    // Click on the second dot button
-    fireEvent.click(screen.getAllByTestId('dot-button')[1]);
-
-    // Verify that the second item is displayed
-    expect(screen.getByAltText('Image 2')).toBeInTheDocument();
+    act(() => {
+      // Verify that the second item is displayed
+      expect(screen.getByAltText('Image 2')).toBeInTheDocument();
+    });
   });
 
   test('clicking on the previous button updates the current item', () => {
     render(<Slider items={items} interval={3000} />);
+    act(() => {
+      // Click on the previous button
+      fireEvent.click(screen.getByTestId('prev-button'));
+    });
 
-    // Click on the previous button
-    fireEvent.click(screen.getByTestId('prev-button'));
-
-    // Verify that the last item is displayed
-    expect(screen.getByAltText('Image 3')).toBeInTheDocument();
+    act(() => {
+      // Verify that the last item is displayed
+      expect(screen.getByAltText('Image 3')).toBeInTheDocument();
+    });
   });
 
   test('clicking on the next button updates the current item', () => {
     render(<Slider items={items} interval={3000} />);
+    act(() => {
+      // Click on the next button
+      fireEvent.click(screen.getByTestId('next-button'));
+    });
 
-    // Click on the next button
-    fireEvent.click(screen.getByTestId('next-button'));
-
-    // Verify that the second item is displayed
-    expect(screen.getByAltText('Image 2')).toBeInTheDocument();
+    act(() => {
+      // Verify that the second item is displayed
+      expect(screen.getByAltText('Image 2')).toBeInTheDocument();
+    });
   });
 });

@@ -1,7 +1,6 @@
 import styles from '../about/about.module.scss';
 import imageSrc from '../../assets/Side Image.png';
 import teamImages from './teamImages';
-import Navigation from '../../components/navigation/nav';
 
 interface TeamMember {
   name: string;
@@ -22,7 +21,6 @@ const teamMembers: TeamMember[] = [
 function About_us() {
   return (
     <div className={styles.aboutUS}>
-      <Navigation />
       <div className="wrapperDiv">
         <div className={styles.container}>
           <div className={styles.text}>

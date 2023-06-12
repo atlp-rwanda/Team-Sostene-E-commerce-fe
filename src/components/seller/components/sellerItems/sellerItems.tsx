@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { ChangeEvent, useEffect, useState } from 'react';
 import styles from './sellerItems.module.scss';
 import CardItem from '../cardItem/cardItem';

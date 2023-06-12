@@ -5,7 +5,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import GoogleBtn from '../../../components/googleLogin/button';
-import routes from '../../../utils/routes';
 
 function Login() {
   const { handleLogin, isLoggedIn } = useLogin();
@@ -46,9 +45,9 @@ function Login() {
           <button onClick={handleSubmit}>{isLoggedIn.loading ? 'Loading' : 'Login'}</button>
           <GoogleBtn width="300" />
           <h3 className="signup-tag">
-            Does not have an account? <Link to={routes.signup}>Signup</Link>
+            Does not have an account? <Link to="/accounts/signup">Signup</Link>
           </h3>
-          <Link to="#">Forget Password</Link>
+          <Link to="#">Forgot Password?</Link>
         </div>
       </form>
       <div></div>

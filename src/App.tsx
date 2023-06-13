@@ -22,6 +22,8 @@ import ViewCart from './pages/viewCart/Cart';
 import ProductPage from './pages/product/Product';
 import Dashboard from './pages/dashboard/Dashboard';
 import { SellerComponent } from './components/roles/Protected';
+import Payment from './pages/payment/payment ';
+import PaymentConfirmation from './pages/payment/confirmation';
 
 function App() {
   library.add(fab, fas);
@@ -53,6 +55,11 @@ function App() {
               </SellerComponent>
             }
           />
+          <Route path="/payment" element={isLoggedIn() ? <Payment /> : <Home />}></Route>
+          <Route
+            path="/checkout/redirect"
+            element={isLoggedIn() ? <PaymentConfirmation /> : <Home />}
+          ></Route>
         </Routes>
         <Footer />
       </Provider>

@@ -137,6 +137,12 @@ const Navigation = () => {
                   </li>
                 </Link>
               )}
+              <Link to="/manage_users" className={styles.Link}>
+                <li>
+                  <i className="fa fa-users" aria-hidden="true"></i>
+                  &nbsp;&nbsp;Manage Users
+                </li>
+              </Link>
               <Link to="/" onClick={() => logout()} className={styles.Link}>
                 <li>
                   <FontAwesomeIcon icon="arrow-right-from-bracket" className={`${styles.logout}`} />

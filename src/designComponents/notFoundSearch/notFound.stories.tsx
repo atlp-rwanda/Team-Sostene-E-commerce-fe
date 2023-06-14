@@ -8,4 +8,4 @@ export default {
   component: NotFoundSearch,
 };
 
-export const Default = () => <NotFoundSearch reset={reset} />;
+export const Default = () => <NotFoundSearch btnText="Reset" reset={reset} />;

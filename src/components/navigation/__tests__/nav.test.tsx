@@ -25,6 +25,12 @@ const MockNav = () => {
   );
 };
 describe('tetsing the nav', function () {
+  beforeAll(() => {
+    localStorage.setItem('authenticationMethod', 'app');
+  });
+  afterAll(() => {
+    localStorage.removeItem('authenticationMethod');
+  });
   it('should test navigation component', function () {
     render(<MockNav />);
     const Ele = screen.getByPlaceholderText(/What are you looking for?/i);

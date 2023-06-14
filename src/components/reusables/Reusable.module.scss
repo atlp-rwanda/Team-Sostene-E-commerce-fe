@@ -1,0 +1,120 @@
+$small-width: 10%;
+$medium-width: 50%;
+$large-width: 80%;
+$default-width: 10%;
+$full-width: 100%;
+$primary-color: #ff8c42;
+$btn-font-family: 'Poppins', sans-serif;
+$btn-font-weight: bold;
+$demo-color: green;
+
+// Define styles using variables
+.size--small {
+  width: $small-width;
+  border: none;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.size--medium {
+  width: $medium-width;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+.size--large {
+  padding: 15px;
+  width: $large-width;
+  border: none;
+  border-radius: 5px;
+}
+
+.size--default {
+  width: $default-width;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.size--full {
+  width: $full-width;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.color--primary {
+  background: $primary-color;
+}
+
+.color--green {
+  background: $demo-color;
+}
+
+.btn {
+  cursor: pointer;
+  color: #fff;
+  font-family: $btn-font-family;
+  font-weight: $btn-font-weight;
+  font-size: 16px;
+}
+
+.inputBox {
+  position: relative;
+  width: 100%;
+  input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    background: transparent;
+  }
+  label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #000;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+  input:focus ~ label,
+  input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #bdb8b8;
+    font-size: 12px;
+  }
+}
+
+.errors {
+  width: 100%;
+  padding: 0;
+  margin-top: -30px;
+  margin-bottom: 20px;
+
+  .errorMessage {
+    width: 100%;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    color: hsla(0, 100%, 50%, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    p {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      text-align: start;
+    }
+  }
+}

@@ -29,6 +29,7 @@ export const login = createAsyncThunk('user/login', async (data: USER) => {
     .post(`${import.meta.env.VITE_BACKEND_URL}users/login`, data)
     .then((response) => {
       store.dispatch(setToken(response.data.token));
+      localStorage.setItem('authenticationMethod', 'app');
       return response.data.message;
     })
     .catch((error) => {

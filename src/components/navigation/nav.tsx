@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useRef, RefObject } from 'react';
+import { useRef, RefObject, useEffect } from 'react';
 import styles from './nav.module.scss';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -16,9 +16,16 @@ const Navigation = () => {
   const closeRef: RefObject<SVGSVGElement> = useRef<SVGSVGElement>(null);
 
   const [isProfileIcon, setisProfileIcon] = useState(false);
+  const [isNormalAccount, setIsNormalAccount] = useState(false);
+
   const [isHomeIcon, setisHomeIcon] = useState(false);
   const { value } = useAppSelector((state) => state.token);
 
+  useEffect(() => {
+    // Check the authentication method from session/local storage
+    const authenticationMethod = localStorage.getItem('authenticationMethod');
+    setIsNormalAccount(authenticationMethod === 'app');
+  }, []);
   const toggleVisibility = () => {
     const divElement = divRef.current;
     const barElement = barRef.current;
@@ -104,6 +111,14 @@ const Navigation = () => {
                   &nbsp;&nbsp;Wishlist
                 </li>
               </Link>
+              {isNormalAccount && (
+                <Link to="/edit/password" className={styles.Link}>
+                  <li>
+                    <FontAwesomeIcon icon="lock" className={`${styles.settings}`} />
+                    &nbsp;&nbsp;Change Password
+                  </li>
+                </Link>
+              )}
               <Link to="/" onClick={() => logout()} className={styles.Link}>
                 <li>
                   <FontAwesomeIcon icon="arrow-right-from-bracket" className={`${styles.logout}`} />

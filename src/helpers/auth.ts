@@ -3,6 +3,7 @@ import store from '../redux/store';
 
 export function logout() {
   store.dispatch(clearToken());
+  localStorage.removeItem('authenticationMethod');
   window.location.href = '/';
 }
 

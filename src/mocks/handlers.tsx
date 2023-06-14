@@ -11,4 +11,25 @@ export const handlers = [
       })
     );
   }),
+
+  rest.patch(`${import.meta.env.VITE_BACKEND_URL}users/change-password`, async (req, res, ctx) => {
+    const data = await req.json();
+    if (data.oldPassword == 'Qwert@12345' && data.newPassword == 'Pass@12345') {
+      return res(
+        ctx.status(200),
+        ctx.json({
+          code: 200,
+          message: 'Password updated successfully',
+        })
+      );
+    } else {
+      return res(
+        ctx.status(401),
+        ctx.json({
+          code: 401,
+          message: 'Incorrect password',
+        })
+      );
+    }
+  }),
 ];

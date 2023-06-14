@@ -1,0 +1,11 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+.page404 {
+  :global {
+    
+    padding: 50px;
+    @include pageSettings;
+    justify-content: center;
+    align-items: center;
+  }
+}

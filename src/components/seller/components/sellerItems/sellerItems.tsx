@@ -138,7 +138,9 @@ export default function SellerItems() {
         {errorRefetch && <div className="error">{errorRefetch?.message}</div>}
         {initialData && (
           <div className="listItemsBox" data-testid="box_cardList">
-            {sellerItems.length === 0 && <NotFoundSearch reset={handleResetSearch} />}
+            {sellerItems.length === 0 && (
+              <NotFoundSearch btnText="Reset" component={true} reset={handleResetSearch} />
+            )}
             {sellerItems &&
               sellerItems.length > 0 &&
               sellerItems.map((data) => {

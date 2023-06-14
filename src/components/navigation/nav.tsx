@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { logout } from '../../helpers/auth';
 import { useAppSelector } from '../../redux/hooks';
 import Icon from '../notification/Icon';
+import NotificationPane from '../notification/notificationPane';
 
 const logo = '/svgs/Vector.svg';
 
@@ -20,6 +21,7 @@ const Navigation = () => {
 
   const [isHomeIcon, setisHomeIcon] = useState(false);
   const { value } = useAppSelector((state) => state.token);
+  const [isNotificationIcon, setisNotificationIcon] = useState(false);
 
   useEffect(() => {
     // Check the authentication method from session/local storage
@@ -41,13 +43,29 @@ const Navigation = () => {
     if (isHomeIcon) {
       setisHomeIcon(!isHomeIcon);
     }
+    if (isNotificationIcon) {
+      setisNotificationIcon(!isNotificationIcon);
+    }
     setisProfileIcon(!isProfileIcon);
   };
   const handleHome = () => {
     if (isProfileIcon) {
       setisProfileIcon(!isProfileIcon);
     }
+    if (isNotificationIcon) {
+      setisNotificationIcon(!isNotificationIcon);
+    }
     setisHomeIcon(!isHomeIcon);
+  };
+
+  const handleNotifications = () => {
+    if (isProfileIcon) {
+      setisProfileIcon(!isProfileIcon);
+    }
+    if (isHomeIcon) {
+      setisHomeIcon(!isHomeIcon);
+    }
+    setisNotificationIcon(!isNotificationIcon);
   };
 
   return (
@@ -129,6 +147,7 @@ const Navigation = () => {
           </nav>
         </div>
       )}
+      {isNotificationIcon && <NotificationPane />}
       <div className={styles.top__bar}>
         <i>
           <FontAwesomeIcon
@@ -176,16 +195,15 @@ const Navigation = () => {
             <input type="text" placeholder="What are you looking for?" className={styles.search} />
             <FontAwesomeIcon icon="magnifying-glass" className={styles.searchIcon} />
           </div>
-          <Icon />
-          <FontAwesomeIcon icon="cart-shopping" className={`${styles.light} ${styles.cart}`} />
-          {value && (
-            <FontAwesomeIcon
-              icon="user"
-              className={`${styles.light} ${styles.user}`}
-              onClick={handleProfile}
-              aria-label="user-icon"
-            />
-          )}
+          <FontAwesomeIcon icon="cart-shopping" className={`${styles.light} ${styles.cart} px-2`} />
+          {value && <Icon onClick={handleNotifications} />}
+
+          <FontAwesomeIcon
+            icon="user"
+            className={`${styles.light} ${styles.user} px-2`}
+            onClick={handleProfile}
+            aria-label="user-icon"
+          />
           <FontAwesomeIcon
             icon="house"
             className={`${styles.light} ${styles.house}`}

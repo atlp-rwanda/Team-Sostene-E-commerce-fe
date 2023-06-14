@@ -2,11 +2,9 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
 
-
 .navbar {
   width: 100%;
   font-family: $interRegular;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 14px;
   color: $black;
   box-sizing: border-box;
@@ -17,34 +15,33 @@
   top: 0;
 } //global body styles
 
-.navbar *{
-  
+.navbar * {
   box-sizing: inherit;
-}//global box-sizing
+} //global box-sizing
 
 ::-webkit-scrollbar {
   display: none;
-  }
-  i{
-    font-size: 18px;
-    cursor: pointer;
-  }
+}
+i {
+  font-size: 18px;
+  cursor: pointer;
+}
 
-.Link{
+.Link {
   color: $black;
   text-decoration: none;
-} 
- 
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
 } //global link styles
-.vectors{
-  display:flex;
+.vectors {
+  display: flex;
   align-items: center;
 }
-.right_nav{
-  nav{
+.right_nav {
+  nav {
     display: none;
   }
 }
@@ -63,43 +60,42 @@ a {
   .logo__icon {
     width: 10%;
   }
-  .logo__text { 
+  .logo__text {
     height: 18px;
   }
-  nav{
-      ul{
-         list-style: none;
-      }
+  nav {
+    ul {
+      list-style: none;
+    }
 
-      li{
-          display: inline-block;
-          padding: 10px 40px;
-          font-size: 14px;
-          cursor: pointer;
-          &:hover{
-            background-color: $yellow;
-          }
-          @include transition
+    li {
+      display: inline-block;
+      padding: 10px 40px;
+      font-size: 14px;
+      cursor: pointer;
+      &:hover {
+        background-color: $yellow;
       }
+      @include transition;
+    }
   }
-  .closeIcon{
+  .closeIcon {
     font-size: 25px;
   }
-  .bars{
-      display: none;
+  .bars {
+    display: none;
   }
-  input{
-      padding: 8px 25px;
-      border-radius: 5px;
-      border: none;
-      outline: none;
-      background-color:$inputbackground;
+  input {
+    padding: 8px 25px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: $inputbackground;
   }
-  .house{
+  .house {
     display: none;
   }
   .light{
-    padding: 0 10px;
     cursor: pointer;
   }
 }
@@ -121,12 +117,11 @@ a {
   overflow: scroll;
   background-color: $white;
   box-shadow:$boxShadow;
- 
   &__label {
     font-weight: 300;
     display: block;
     text-transform: uppercase;
-    letter-spacing: .05em;
+    letter-spacing: 0.05em;
     font-size: 12px;
     color: $greyLabel;
     padding: 15px 24px;
@@ -140,7 +135,7 @@ a {
     display: flex;
     align-items: center;
     &.overview {
-      color: #0288D1;
+      color: #0288d1;
       border-bottom: $borderColor;
       background-color: $sideNavHover;
       height: 54px;
@@ -148,7 +143,7 @@ a {
     }
     &:hover {
       background-color: $sideNavHover;
-      cursor:pointer;
+      cursor: pointer;
     }
     i {
       display: flex;
@@ -156,13 +151,13 @@ a {
       width: 15px;
       margin-right: 20px;
     }
-  } 
+  }
 
-  .nav__item{
-    span{
+  .nav__item {
+    span {
       padding-left: 10px;
     }
-}
+  }
 }
 
 .all{
@@ -193,12 +188,11 @@ a {
 }
 
 @mixin subNav($right:8px){
-padding: 5px;
 background-color: $white;
 color: $black;
 position: fixed;
-top: 47px;
-right: 0;
+top: 55px;
+right: $right;
 width: 30%;
 display: grid;
 align-items: start;
@@ -216,21 +210,23 @@ nav{
       font-family: $interMedium;
       font-size: 14px;
       cursor: pointer;
-      &:hover{
+      &:hover {
         background-color: $yellow;
       }
+    }
   }
 }
-}
 
-.right_nav,.profile{
-@include subNav();
-.logout{
-transform: rotate(180deg);
-}
-.cart,.upperHeart{
-display: none;
-}
+.right_nav,
+.profile {
+  @include subNav();
+  .logout {
+    transform: rotate(180deg);
+  }
+  .cart,
+  .upperHeart {
+    display: none;
+  }
 }
 
 @include mq($lgd){  // 1200px
@@ -239,40 +235,41 @@ display: none;
     li{
       padding: 15px;
       }
-}
-}
-}
-@include mq($m-width){ //1090px
-  .top__bar{
-    .all{
-        align-items: center;
-        gap: 15px;
-        
     }
   }
 }
-@include mq($lgh){  // 850px
-  .top__bar{
-    nav{
-    display: none;
+@include mq($m-width) {
+  //1090px
+  .top__bar {
+    .all {
+      align-items: center;
+      gap: 15px;
+    }
+  }
 }
+@include mq($lgh) {
+  // 850px
+  .top__bar {
+    nav {
+      display: none;
+    }
 
 input{
     width: 40vw;
    }
 
-    .house{
+    .house {
       display: block;
     }
-}
-.right_nav{
-  nav{
-    display:block
+  }
+  .right_nav {
+    nav {
+      display: block;
+    }
   }
 }
-}
-@include mq($xls){
-  .top__bar{
+@include mq($xls) {
+  .top__bar {
     strong {
       display: none;
   }
@@ -281,42 +278,45 @@ input{
   }
   }
 }
-@include mq($sm){
-  .right_nav,.profile{
-    nav{
-      ul{
-        li{
+@include mq($sm) {
+  .right_nav,
+  .profile {
+    nav {
+      ul {
+        li {
           padding: 1vh 10px;
           font-size: 3vw;
         }
-        .cart,.upperHeart{
+        .cart,
+        .upperHeart {
           display: block;
         }
       }
     }
-
   }
-    .top__bar{
-        justify-content: space-between;
-        min-width: 300px;
-        .all{
-            gap: 4vw;
+  .top__bar {
+    justify-content: space-between;
+    min-width: 300px;
+    .all {
+      gap: 4vw;
 
-          .searchIcon{
-            font-size: 4vw;
-          }
-        }
-    }
-    .cart,.heart{
-        display: none;
-    }
-    .user,.house{
+      .searchIcon {
         font-size: 4vw;
+      }
     }
+  }
+  .cart,
+  .heart {
+    display: none;
+  }
+  .user,
+  .house {
+    font-size: 4vw;
+  }
 }
-@include mq($lgh){
-  .right_nav,.profile{
+@include mq($lgh) {
+  .right_nav,
+  .profile {
     min-width: 50%;
-  } 
+  }
 }
-

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Icon from '../Icon';
+import NoticationPane from '../notificationPane';
 import * as NotificationsHooks from '../hooks';
 import { vi } from 'vitest';
 
@@ -33,8 +33,8 @@ describe('Testing', () => {
       };
     };
     vi.spyOn(NotificationsHooks, 'useNotifications').mockImplementation(data);
-    render(<Icon onClick={vi.fn()} />);
-    const isRendered = screen.getByTestId('notification-bell');
+    render(<NoticationPane />);
+    const isRendered = screen.getByTestId('notifications-pane');
     expect(isRendered).toBeInTheDocument();
   });
 });

@@ -1,38 +1,43 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react';
-import io from 'socket.io-client';
-import store from '../../redux/store';
-import { toast } from 'react-toastify';
+import initializeSocket from './sockets';
 
-function extended(socket: any) {
-  socket.emit('join');
-  socket.on('joined', (data: any) => {
-    socket.emit('all-notifications', data);
-  });
-}
+type NOTIFICATIONS = {
+  id: string;
+  notificationId: string;
+  title: string;
+  message: string;
+  read: boolean;
+  level: string;
+  date: string;
+};
 
 export const useNotifications = () => {
+  const [notifications, setNotifications] = useState<NOTIFICATIONS[]>([]);
   const [count, setCount] = useState(0);
+
   useEffect(() => {
-    const token = store.getState().token.value;
-    const socket = io(`${import.meta.env.VITE_BACKEND_URL}`, {
-      query: { authToken: token },
-      path: '/socket.io/socket.io.js',
-      transports: ['websocket'],
-      secure: true,
+    const socket = initializeSocket();
+    socket.emit('join');
+    socket.on('joined', (data) => {
+      socket.emit('all-notifications', data);
     });
-    extended(socket);
-    socket.on('my-notifications', (nots) => {
-      setCount(nots.filter((item: { read: boolean }) => item.read === false).length);
-    });
-    socket.on('notification', (not) => {
+    socket.on('notification', (not: NOTIFICATIONS) => {
       setCount((prev) => prev + 1);
-      toast.info(not.title);
+      setNotifications((prev) => {
+        prev[prev.length] = not;
+        prev.reverse();
+        return prev;
+      });
+    });
+    socket.on('my-notifications', (nots: NOTIFICATIONS[]) => {
+      const m = nots.filter((item: { read: boolean }) => item.read === false);
+      setCount(m.length);
+      setNotifications(() => nots.reverse());
     });
     return () => {
       socket.disconnect();
     };
-  }, [count]);
+  }, []);
 
-  return { count };
+  return { count, notifications };
 };

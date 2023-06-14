@@ -1,0 +1,211 @@
+.app {
+  width: 100%;
+  color: #000000;
+}
+
+#root {
+  width: 100%;
+}
+
+.notFoundSearch :global {
+  background-color: transparent;
+  width: 100%;
+  min-height: 100%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.notFoundSearch :global .container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 50%;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-items: center;
+}
+@media screen and (max-width: 1600px) {
+  .notFoundSearch :global .container {
+    gap: 15px;
+    width: 80%;
+  }
+}
+.notFoundSearch :global .container .imageLogo {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0;
+}
+.notFoundSearch :global .container .imageLogo .logo {
+  margin: 0;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  aspect-ratio: 2/1;
+  height: auto;
+}
+@media screen and (max-width: 780px) {
+  .notFoundSearch :global .container .imageLogo .logo {
+    aspect-ratio: 1.5/1;
+  }
+}
+@media screen and (max-width: 375px) {
+  .notFoundSearch :global .container .imageLogo .logo {
+    aspect-ratio: 1/1;
+  }
+}
+.notFoundSearch :global .container .title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5625em;
+  font-family: "Inter-SemiBold.ttf";
+  font-weight: 600;
+  font-family: "Inter-Bold.ttf";
+  font-family: "poppins", sans-serif;
+}
+@media screen and (max-width: 1600px) {
+  .notFoundSearch :global .container .title {
+    font-size: 1.4375em;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .notFoundSearch :global .container .title {
+    font-size: 1.25em;
+  }
+}
+@media screen and (max-width: 780px) {
+  .notFoundSearch :global .container .title {
+    font-size: 1.125em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .notFoundSearch :global .container .title {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 425px) {
+  .notFoundSearch :global .container .title {
+    font-size: 0.9375em;
+  }
+}
+.notFoundSearch :global .container .subTitle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter-Regular.ttf";
+  font-size: 1em;
+  font-family: "Inter-Bold.ttf";
+  font-family: "poppins", sans-serif;
+}
+@media screen and (max-width: 1600px) {
+  .notFoundSearch :global .container .subTitle {
+    font-size: 0.9375em;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .notFoundSearch :global .container .subTitle {
+    font-size: 0.875em;
+  }
+}
+@media screen and (max-width: 780px) {
+  .notFoundSearch :global .container .subTitle {
+    font-size: 0.8125em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .notFoundSearch :global .container .subTitle {
+    font-size: 0.75em;
+  }
+}
+@media screen and (max-width: 425px) {
+  .notFoundSearch :global .container .subTitle {
+    font-size: 0.6875em;
+  }
+}
+.notFoundSearch :global .container .btn {
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  padding: 0 30px;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Inter-Regular.ttf";
+  font-size: 1em;
+  background-color: #54BAED;
+  color: #ffffff;
+  transition: all 0.5s ease-in-out;
+  border: none;
+  font-family: "Inter-Bold.ttf";
+  font-family: "poppins", sans-serif;
+}
+@media screen and (max-width: 1600px) {
+  .notFoundSearch :global .container .btn {
+    font-size: 0.9375em;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .notFoundSearch :global .container .btn {
+    font-size: 0.875em;
+  }
+}
+@media screen and (max-width: 780px) {
+  .notFoundSearch :global .container .btn {
+    font-size: 0.8125em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .notFoundSearch :global .container .btn {
+    font-size: 0.75em;
+  }
+}
+@media screen and (max-width: 425px) {
+  .notFoundSearch :global .container .btn {
+    font-size: 0.6875em;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .notFoundSearch :global .container .btn {
+    padding: 0 25px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .notFoundSearch :global .container .btn {
+    padding: 0 20px;
+  }
+}
+.notFoundSearch :global .container .btn:hover {
+  background-color: #46b4ec;
+}
+.notFoundSearch :global .component {
+  width: 40%;
+}
+@media screen and (max-width: 1600px) {
+  .notFoundSearch :global .component {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .notFoundSearch :global .component {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .notFoundSearch :global .component {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .notFoundSearch :global .component {
+    width: 80%;
+  }
+}/*# sourceMappingURL=notFoundSearch.module.css.map */

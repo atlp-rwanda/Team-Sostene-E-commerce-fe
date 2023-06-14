@@ -16,6 +16,8 @@ import {
 } from '../roles/Protected';
 import SearchBar from '../searchBar/SearchBar';
 
+const value = true;
+
 const logo = '/svgs/Vector.svg';
 
 const Navigation = () => {
@@ -99,12 +101,15 @@ const Navigation = () => {
                   &nbsp;&nbsp;My Cart
                 </li>
               </Link>
-              <Link to="#" className={styles.Link}>
-                <li>
-                  <FontAwesomeIcon icon="bag-shopping" className={`${styles.order}`} />
-                  &nbsp;&nbsp;My Orders
-                </li>
-              </Link>
+
+              {value && (
+                <Link to="/orders/trackOrders" className={styles.Link}>
+                  <li>
+                    <FontAwesomeIcon icon="bag-shopping" className={`${styles.order}`} />
+                    &nbsp;&nbsp;My Orders
+                  </li>
+                </Link>
+              )}
               <Link to="#" className={styles.Link}>
                 <li className={styles.upperHeart}>
                   <FontAwesomeIcon icon="heart" className={`${styles.light}`} />

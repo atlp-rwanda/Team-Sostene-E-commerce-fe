@@ -1,0 +1,172 @@
+.contactBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  gap: 10%;
+  margin: 0% 10%;
+}
+
+.container_contacts {
+  width: 50%;
+  float: right;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+}
+.container_contacts h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: left;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+.container_contacts p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.container_contacts form {
+  margin-top: 20px;
+}
+.container_contacts form div {
+  margin-bottom: 15px;
+}
+.container_contacts form div label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.container_contacts form div input,
+.container_contacts form div textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.container_contacts form div textarea {
+  height: 120px;
+}
+.container_contacts form button[type=submit] {
+  padding: 10px 20px;
+  background-color: #ffad33;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .contactBox {
+    flex-direction: column;
+  }
+  .contactBox .container_contacts {
+    width: 100%;
+    float: none;
+    margin-bottom: 10%;
+  }
+  .contactBox .container_contacts h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .contactBox .container_contacts p {
+    font-size: 12px;
+  }
+  .contactBox .container_contacts form {
+    margin-top: 15px;
+  }
+  .contactBox .container_contacts form div {
+    margin-bottom: 10px;
+  }
+  .contactBox .container_contacts form div label {
+    font-size: 14px;
+  }
+  .contactBox .container_contacts form div input,
+  .contactBox .container_contacts form div textarea {
+    padding: 6px;
+  }
+  .contactBox .container_contacts form button[type=submit] {
+    font-size: 14px;
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .contactBox {
+    margin: 15% 10%;
+  }
+  .contactBox .container_contacts {
+    width: 100%;
+    margin-top: 10%;
+  }
+  .contactBox .container_contacts h2 {
+    font-size: 24px;
+  }
+  .contactBox .container_contacts p {
+    font-size: 12px;
+  }
+  .contactBox .container_contacts form {
+    margin-top: 10px;
+  }
+  .contactBox .container_contacts form div {
+    margin-bottom: 10px;
+  }
+  .contactBox .container_contacts form div label {
+    font-size: 12px;
+  }
+  .contactBox .container_contacts form div input,
+  .contactBox .container_contacts form div textarea {
+    padding: 6px;
+  }
+  .contactBox .container_contacts form button[type=submit] {
+    font-size: 14px;
+    width: 100%;
+  }
+}
+.location {
+  margin-top: 10%;
+  width: 50%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+}
+.location .info-side h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.location .info-side p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.location .down-side {
+  margin-top: 25%;
+}
+.location .down-side h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.location .down-side p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .location {
+    flex-direction: column;
+  }
+}
+@media (max-width: 576px) {
+  .location {
+    margin-top: 10%;
+  }
+  .location .down-side {
+    margin-top: 30%;
+  }
+  .location .down-side h1 {
+    font-size: 24px;
+  }
+  .location .down-side p {
+    font-size: 12px;
+  }
+}/*# sourceMappingURL=contact.css.map */

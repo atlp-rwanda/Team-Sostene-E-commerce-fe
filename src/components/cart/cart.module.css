@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700");
+.app {
+  width: 100%;
+  color: #000000;
+}
+
+#root {
+  width: 100%;
+}
+
+.container {
+  position: absolute;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  width: 100%;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 150px;
+  align-items: flex-start;
+}
+
+.icon svg {
+  width: 20px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.num__icon {
+  background: #FFAD33;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 13px;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  margin-left: 10px;
+  top: 5px;
+}
+
+.cart {
+  width: 35%;
+  position: absolute;
+  background: #ffffff;
+  right: 40px;
+  top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.1215686275);
+}
+
+.head {
+  width: 100%;
+  background: #FFAD33;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  padding: 0 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.link {
+  padding: 5px;
+  background: #ffffff;
+  border-radius: 2px;
+  color: #FFAD33;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  background: #FFAD33;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.cart__container {
+  padding: 0 5px;
+}
+
+.cart__scroll {
+  max-height: 300px;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
+.item {
+  margin: 5px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  border: 1px solid rgba(0, 0, 0, 0.2823529412);
+}
+
+.item__des {
+  padding: 5px;
+  width: 100%;
+  height: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item__num {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.item__name {
+  width: 100%;
+  color: #FFAD33;
+}
+
+.item__price {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.item__qty {
+  background: #FFAD33;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.item__image img {
+  height: 80px;
+  width: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.1215686275);
+}/*# sourceMappingURL=cart.module.css.map */

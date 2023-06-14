@@ -1,0 +1,61 @@
+.app {
+  width: 100%;
+  color: #000000;
+}
+
+#root {
+  width: 100%;
+}
+
+.ratingsCounter :global {
+  width: 100%;
+  background-color: transparent;
+  margin: 0;
+  padding: 3px 0;
+}
+.ratingsCounter :global .ratings {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+.ratingsCounter :global .ratings .ratingBox {
+  display: flex;
+  gap: 3px;
+}
+.ratingsCounter :global .ratings .ratingBox .startImage {
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.ratingsCounter :global .ratings .ratingBox .startImage:hover {
+  transform: scale(1.2);
+}
+.ratingsCounter :global .ratings .ratingNumber {
+  font-size: 1.125em;
+  font-family: "Inter-SemiBold.ttf";
+  font-family: "Inter-Bold.ttf";
+}
+@media screen and (max-width: 1600px) {
+  .ratingsCounter :global .ratings .ratingNumber {
+    font-size: 1.0625em;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .ratingsCounter :global .ratings .ratingNumber {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 780px) {
+  .ratingsCounter :global .ratings .ratingNumber {
+    font-size: 0.9375em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .ratingsCounter :global .ratings .ratingNumber {
+    font-size: 0.875em;
+  }
+}
+@media screen and (max-width: 425px) {
+  .ratingsCounter :global .ratings .ratingNumber {
+    font-size: 0.8125em;
+  }
+}/*# sourceMappingURL=ratingsCounter.module.css.map */

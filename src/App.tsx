@@ -27,6 +27,7 @@ import PaymentConfirmation from './pages/payment/confirmation';
 import Browse from './pages/browse/Browse';
 import Search from './pages/search/Search';
 import { ToastContainer } from 'react-toastify';
+import Orders from './pages/orders/Orders';
 
 function App() {
   library.add(fab, fas);
@@ -75,6 +76,7 @@ function App() {
           ></Route>
           <Route path="/browse/*" element={<Browse />} />
           <Route path="/search/:query" element={<Search />}></Route>
+          <Route path="/orders/*" element={<Orders />}></Route>
         </Routes>
         <Footer />
         <ToastContainer />

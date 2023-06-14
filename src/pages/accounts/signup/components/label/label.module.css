@@ -1,0 +1,19 @@
+.size--small {
+  font-size: 12px;
+}
+
+.size--medium {
+  font-size: 15px;
+}
+
+.size--large {
+  font-size: 18px;
+}
+
+.color--primary {
+  color: #FF8C42;
+}
+
+.color--secondary {
+  color: black;
+}/*# sourceMappingURL=label.module.css.map */

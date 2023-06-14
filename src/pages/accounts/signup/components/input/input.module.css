@@ -1,0 +1,24 @@
+.widthLong {
+  width: 100%;
+  background: none;
+  padding: 15px;
+  display: inline-block;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #c9c9cd;
+  display: block;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.border-sharp {
+  border-radius: 0px;
+}
+
+.border--round {
+  border-radius: 5px;
+}
+
+.all:focus {
+  outline: none;
+}/*# sourceMappingURL=input.module.css.map */

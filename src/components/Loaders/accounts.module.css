@@ -1,0 +1,26 @@
+.loading {
+  margin-top: 200px;
+  position: absolute;
+  left: 50%;
+  transition: 0.3s;
+  color: #FFAD33;
+}
+.loading i {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 991px) {
+  .loading {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 780px) {
+  .loading {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .loading {
+    width: 90%;
+  }
+}/*# sourceMappingURL=accounts.module.css.map */

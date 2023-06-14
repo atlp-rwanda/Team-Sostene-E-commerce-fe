@@ -1,0 +1,81 @@
+@import "./fonts.css";
+.app {
+  width: 100%;
+  color: #000000;
+}
+
+#root {
+  width: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100vw;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-family: "Inter-Regular.ttf";
+}
+body::-webkit-scrollbar {
+  width: 7px;
+}
+@media screen and (max-width: 600px) {
+  body::-webkit-scrollbar {
+    display: none;
+  }
+}
+body::-webkit-scrollbar-track {
+  background: rgba(3, 3, 3, 0.5);
+}
+@media screen and (max-width: 600px) {
+  body::-webkit-scrollbar-track {
+    display: none;
+  }
+}
+body::-webkit-scrollbar-thumb {
+  background: #db5600;
+  border-radius: 100px;
+  cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  body::-webkit-scrollbar-thumb {
+    display: none;
+  }
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: #ff7c29;
+}
+body::-webkit-scrollbar-thumb:hover::-webkit-scrollbar-track {
+  border: 0.5px solid #FF8C42;
+}
+@media screen and (max-width: 600px) {
+  body::-webkit-scrollbar-thumb:hover {
+    display: none;
+  }
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+  font-family: "Inter-Regular.ttf";
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+a:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}/*# sourceMappingURL=globals.css.map */

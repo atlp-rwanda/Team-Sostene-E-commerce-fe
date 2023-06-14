@@ -19,6 +19,7 @@ import Changepassword from './pages/accounts/editAccount/changepass';
 import Contact from './pages/contact/contact';
 import Footer from './pages/Footer/Footer';
 import ViewCart from './pages/viewCart/Cart';
+import ProductPage from './pages/product/Product';
 
 function App() {
   library.add(fab, fas);
@@ -35,6 +36,7 @@ function App() {
             element={<GoogleLoginSuccess />}
           ></Route>
           <Route path="/about_us" element={<About_us />}></Route>
+          <Route path="/product/:id" element={<ProductPage />}></Route>
           <Route path="/accounts/*" element={isLoggedIn() ? <Home /> : <Accounts />}></Route>
           <Route path="/edit/password" element={isLoggedIn() ? <Changepassword /> : <Home />} />
           <Route path={routes.sellerListItems} element={<Seller />}></Route>

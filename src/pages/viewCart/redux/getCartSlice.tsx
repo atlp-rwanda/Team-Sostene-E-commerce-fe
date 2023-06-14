@@ -27,7 +27,11 @@ export const getCart = createAsyncThunk('cart/getCart', async (data: { token: st
 const buyerViewCart = createSlice({
   name: 'getCart',
   initialState,
-  reducers: {},
+  reducers: {
+    setCart: (state, action: PayloadAction<GET_CART_State>) => {
+      state.data = action.payload.data;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getCart.pending, (state) => {
       state.loading = true;
@@ -46,3 +50,4 @@ const buyerViewCart = createSlice({
 });
 
 export default buyerViewCart.reducer;
+export const { setCart } = buyerViewCart.actions;

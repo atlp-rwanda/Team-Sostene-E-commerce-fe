@@ -84,7 +84,7 @@ describe('CartTable', () => {
         }),
         expect.objectContaining({
           headers: {
-            Authorization: 'Bearer undefined',
+            Authorization: 'Bearer null',
           },
         })
       );
@@ -110,7 +110,7 @@ describe('CartTable', () => {
         expect.stringContaining(`${BACKEND_URL}/cart/1`),
         expect.objectContaining({
           headers: {
-            Authorization: 'Bearer undefined',
+            Authorization: 'Bearer null',
           },
         })
       );

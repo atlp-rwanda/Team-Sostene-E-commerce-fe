@@ -2,7 +2,8 @@
 import { useEffect, useState } from 'react';
 import '../viewCart/cart.scss';
 import { BACKEND_URL } from '../../utils/constants';
-import { useAppSelector, useGetCart } from './redux/hooks';
+import { useGetCart } from './redux/hooks';
+import { useAppSelector } from '../../redux/hooks';
 import { Link } from 'react-router-dom';
 import routes from '../../utils/routes';
 import { Cart, CartProduct } from '../../utils/types/product';
@@ -22,6 +23,7 @@ function CartTable() {
   };
   useEffect(() => {
     handleGetCart();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -202,7 +204,9 @@ function CartTable() {
               <div className="details">
                 <h2>SubTotal: ${cartData?.total || ''}</h2>
                 <h2>Total: ${cartData?.total || ''}</h2>
-                <button onClick={() => setEditPermission(false)}>Proceed To Checkout</button>
+                <Link to="/checkout">
+                  <button onClick={() => setEditPermission(false)}>Proceed To Checkout</button>
+                </Link>
               </div>
             </div>
             {editPermission && (

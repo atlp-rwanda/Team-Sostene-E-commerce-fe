@@ -16,6 +16,7 @@ import Page404 from './pages/page404/page404';
 import '../styles/index.css';
 import Changepassword from './pages/accounts/editAccount/changepass';
 import Contact from './pages/contact/contact';
+import Footer from './pages/Footer/Footer';
 
 function App() {
   library.add(fab, fas);
@@ -36,6 +37,7 @@ function App() {
           <Route path="*" element={<Page404 />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
         </Routes>
+        <Footer />
       </Provider>
     </div>
   );

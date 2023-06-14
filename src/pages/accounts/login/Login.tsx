@@ -43,11 +43,13 @@ function Login() {
         </div>
         <div id="btn-section">
           <button onClick={handleSubmit}>{isLoggedIn.loading ? 'Loading' : 'Login'}</button>
+          <Link to="/accounts/reset-password">
+            <p className="forgot-pass-link">Forgot Password</p>
+          </Link>
           <GoogleBtn width="300" />
           <h3 className="signup-tag">
             Does not have an account? <Link to="/accounts/signup">Signup</Link>
           </h3>
-          <Link to="#">Forgot Password?</Link>
         </div>
       </form>
       <div></div>

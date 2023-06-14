@@ -1,0 +1,123 @@
+@import '../../../../styles/variables.scss';
+
+.account__container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  font-family: $interRegular;
+
+  .container__loading {
+    width: 40%;
+    height: 350px;
+    background: $white-two;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #00000018;
+
+    img {
+      width: 30px;
+      animation: pulse 2s infinite;
+    }
+  }
+  .container__box_reset_p {
+    width: 40%;
+    height: 450px;
+    background: $white_two;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 8px;
+    background: $white-two;
+
+    .container__box__text {
+      width: 80%;
+      padding: 20px 0px;
+      text-align: start;
+
+      h2 {
+        padding-bottom: 20px;
+      }
+      .p-success {
+        text-align: center;
+      }
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 150px;
+        padding-bottom: 20px;
+      }
+    }
+
+    form {
+      width: 80%;
+      padding-bottom: 35px;
+    }
+
+    .btn__container {
+      width: 80%;
+      padding-bottom: 35px;
+    }
+
+    #errors-success {
+      width: 100%;
+      padding: 0;
+      margin-top: -30px;
+      margin-bottom: 20px;
+
+      #errors {
+        width: 100%;
+        height: 40px;
+        padding: 0;
+        margin: 0;
+        font-size: 14px;
+        color: hsla(0, 100%, 50%, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
+        p {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          text-align: start;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $md) {
+  .account__container .container__box_reset_p {
+    width: 60%;
+  }
+}
+@media screen and (max-width: $xls) {
+  .account__container .container__box_reset_p {
+    width: 80%;
+    font-size: small;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.95);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.95);
+  }
+}

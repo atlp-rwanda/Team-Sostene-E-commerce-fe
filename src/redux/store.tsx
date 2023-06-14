@@ -15,6 +15,10 @@ import tokenReducer from './slices/tokenSlice';
 import signupSlice from './slices/signup';
 import usertfaVerifyReducers from '../pages/accounts/tfa/redux/tfaSlice';
 import filterCollectionProductsReducer from '../components/seller/components/sellerItems/sellerItemsFilters.slice';
+import {
+  resetPasswordReducer,
+  forgotPasswordReducer,
+} from '../pages/accounts/resetPassword/redux/resetPasswordSlice';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -22,6 +26,8 @@ const rootReducer = combineReducers({
   token: tokenReducer,
   signup: signupSlice,
   filterCollectionProducts: filterCollectionProductsReducer,
+  resetPassword: resetPasswordReducer,
+  forgotPassword: forgotPasswordReducer,
 });
 
 const persistConfig = {

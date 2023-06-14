@@ -15,6 +15,7 @@ import { isLoggedIn } from './helpers/auth';
 import Page404 from './pages/page404/page404';
 import '../styles/index.css';
 import Changepassword from './pages/accounts/editAccount/changepass';
+import Contact from './pages/contact/contact';
 
 function App() {
   library.add(fab, fas);
@@ -33,6 +34,7 @@ function App() {
           <Route path="/edit/password" element={isLoggedIn() ? <Changepassword /> : <Home />} />
           <Route path={routes.sellerListItems} element={<Seller />}></Route>
           <Route path="*" element={<Page404 />}></Route>
+          <Route path="/contact" element={<Contact />}></Route>
         </Routes>
       </Provider>
     </div>

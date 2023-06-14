@@ -80,7 +80,7 @@ const Navigation = () => {
                   &nbsp;&nbsp;Home
                 </li>
               </Link>
-              <Link to="#" className={styles.Link}>
+              <Link to="/contact" className={styles.Link}>
                 <li>
                   <FontAwesomeIcon icon="address-book" className={`${styles.settings}`} />
                   &nbsp;&nbsp;Contact
@@ -176,7 +176,7 @@ const Navigation = () => {
             <Link to="/" className={styles.Link}>
               <li>Home</li>{' '}
             </Link>
-            <Link to="#" className={styles.Link}>
+            <Link to="/contact" className={styles.Link}>
               <li>Contact</li>
             </Link>
             <Link to="/about_us" className={styles.Link}>

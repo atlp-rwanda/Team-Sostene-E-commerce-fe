@@ -22,8 +22,8 @@ const MockElement = () => {
 
 describe('Home Component', () => {
   it('renders the home page', async () => {
-    const { getByAltText } = render(<MockElement />);
-    const slide = getByAltText('slide');
-    expect(slide).toBeInTheDocument();
+    const { getByTestId } = render(<MockElement />);
+    const homeComponent = getByTestId('home');
+    expect(homeComponent).toBeInTheDocument();
   });
 });

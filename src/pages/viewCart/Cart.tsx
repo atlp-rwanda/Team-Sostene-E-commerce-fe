@@ -19,7 +19,7 @@ function CartTable() {
   ) : (
     <div>
       <div className="tableContainer">
-        <table>
+        <table className="cart-table">
           <thead>
             <tr>
               <th>IMAGE</th>

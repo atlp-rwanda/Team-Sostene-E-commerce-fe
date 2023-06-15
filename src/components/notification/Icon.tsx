@@ -1,15 +1,13 @@
 import styles from './icon.module.scss';
 import { useNotifications } from './hooks';
-import { ToastContainer } from 'react-toastify';
 import NotificationPane from './notificationPane';
 import { useState } from 'react';
 
-export default function Icon(props: { onClick: () => void }) {
+export default function Icon() {
   const { count } = useNotifications();
-  const [view, setView] = useState(false);
+  const [viewNotification, setviewNotification] = useState(false);
   const handleView = () => {
-    props.onClick();
-    setView((prev: boolean) => !prev);
+    setviewNotification((prev: boolean) => !prev);
   };
   return (
     <div data-testid="notification-bell" className="p-2">
@@ -21,14 +19,24 @@ export default function Icon(props: { onClick: () => void }) {
           aria-label="notification-icon"
         ></i>
         {count ? (
-          <p className=" bg-orange rounded-full top-0 absolute ml-3 mt-2 w-4 h-4 flex items-center justify-center text-xs">
+          <div className=" bg-orange rounded-full top-0 absolute ml-3 mt-2 w-4 h-4 flex items-center justify-center text-xs">
             {count}
-          </p>
+          </div>
         ) : (
           ''
         )}
-        <ToastContainer />
-        {view ? <NotificationPane /> : null}
+
+        {viewNotification ? (
+          <>
+            <NotificationPane />
+            <div
+              className=" z-[-1] w-screen h-screen absolute left-0 top-0 bottom-0 mt-12"
+              onClick={() => setviewNotification(false)}
+            ></div>
+          </>
+        ) : (
+          ''
+        )}
       </div>
     </div>
   );

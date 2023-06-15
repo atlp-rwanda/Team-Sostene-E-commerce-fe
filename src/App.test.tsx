@@ -17,7 +17,7 @@ describe('App Component', () => {
       )
     );
 
-    const linkElement = screen.getByText('Contact');
+    const linkElement = screen.getByText('Login');
     expect(linkElement).toBeInTheDocument();
   });
 });

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,900');
 @import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
 
@@ -13,11 +13,12 @@
   z-index: 30;
   padding: 0;
   top: 0;
-} //global body styles
+} 
 
 .navbar * {
   box-sizing: inherit;
-} //global box-sizing
+  text-decoration: none;
+} 
 
 ::-webkit-scrollbar {
   display: none;
@@ -59,9 +60,11 @@ a {
 
   .logo__icon {
     width: 10%;
+    padding-left: 5%;
   }
   .logo__text {
     height: 18px;
+    font-weight: 900;
   }
   nav {
     ul {
@@ -95,7 +98,7 @@ a {
   .house {
     display: none;
   }
-  .light{
+  .light {
     cursor: pointer;
   }
 }
@@ -116,7 +119,7 @@ a {
   bottom: 0;
   overflow: scroll;
   background-color: $white;
-  box-shadow:$boxShadow;
+  box-shadow: $boxShadow;
   &__label {
     font-weight: 300;
     display: block;
@@ -160,12 +163,17 @@ a {
   }
 }
 
-.all{
+.all {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 75%;
   .searchContainer {
     position: relative;
+    width: 80%;
+    input {
+      width: 100%;
+    }
     .searchIcon {
       position: absolute;
       cursor: pointer;
@@ -185,25 +193,26 @@ a {
 .top__bar strong {
   font-size: 25px;
   font-family: $logoText;
+  font-weight: 900;
 }
 
-@mixin subNav($right:8px){
-background-color: $white;
-color: $black;
-position: fixed;
-top: 55px;
-right: $right;
-width: 30%;
-display: grid;
-align-items: start;
-z-index: 9999;
-border: $borderColor;
-nav{
-  ul{
-     list-style: none;
-     padding-left: 10px;
-  }
-  li{
+@mixin subNav($right: 8px) {
+  background-color: $white;
+  color: $black;
+  position: fixed;
+  top: 55px;
+  right: $right;
+  width: 30%;
+  display: grid;
+  align-items: start;
+  z-index: 9999;
+  border: $borderColor;
+  nav {
+    ul {
+      list-style: none;
+      padding-left: 10px;
+    }
+    li {
       padding: 10px 10px;
       margin-right: 10px;
       transition: all 0.4s ease 0s;
@@ -229,11 +238,12 @@ nav{
   }
 }
 
-@include mq($lgd){  // 1200px
-  .top__bar{
-    nav{
-    li{
-      padding: 15px;
+@include mq($lgd) {
+  // 1200px
+  .top__bar {
+    nav {
+      li {
+        padding: 15px;
       }
     }
   }
@@ -254,9 +264,9 @@ nav{
       display: none;
     }
 
-input{
-    width: 40vw;
-   }
+    input {
+      width: 40vw;
+    }
 
     .house {
       display: block;
@@ -272,10 +282,10 @@ input{
   .top__bar {
     strong {
       display: none;
-  }
-  .logo__icon{
-    display: none;
-  }
+    }
+    .logo__icon {
+      display: none;
+    }
   }
 }
 @include mq($sm) {
@@ -299,6 +309,7 @@ input{
     min-width: 300px;
     .all {
       gap: 4vw;
+      width: 88%;
 
       .searchIcon {
         font-size: 4vw;

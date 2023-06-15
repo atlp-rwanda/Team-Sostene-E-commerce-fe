@@ -33,7 +33,7 @@ describe('Testing', () => {
       };
     };
     vi.spyOn(NotificationsHooks, 'useNotifications').mockImplementation(data);
-    render(<Icon onClick={vi.fn()} />);
+    render(<Icon />);
     const isRendered = screen.getByTestId('notification-bell');
     expect(isRendered).toBeInTheDocument();
   });

@@ -1,7 +1,7 @@
 import styles from './ratingsCounter.module.scss';
 
-const starIcon = './svgs/star.svg';
-const starIconRated = './svgs/starRated.svg';
+const starIcon = '/svgs/star.svg';
+const starIconRated = '/svgs/starRated.svg';
 
 interface rating {
   rating: number;

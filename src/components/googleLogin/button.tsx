@@ -1,7 +1,7 @@
 import React from 'react';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import { decodeToken, logInWithGoogle } from './hooks/hooks';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 interface GoogleBtnProps {
@@ -24,7 +24,6 @@ const GoogleBtn: React.FC<GoogleBtnProps> = ({ width }) => {
   return (
     <GoogleOAuthProvider clientId="395839531143-fr3bqraq8qb4th9t6h3ctnnje00piafc.apps.googleusercontent.com">
       <Btn googleSuccess={googleSuccess} googleFailure={googleFailure} width={width} />
-      <ToastContainer />
     </GoogleOAuthProvider>
   );
 };

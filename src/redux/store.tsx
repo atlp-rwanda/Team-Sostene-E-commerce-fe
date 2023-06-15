@@ -20,6 +20,9 @@ import {
   forgotPasswordReducer,
 } from '../pages/accounts/resetPassword/redux/resetPasswordSlice';
 import { getUserReducer, setRoleReducer } from '../pages/role/redux/assignRolesSlice';
+import addToCartReducer from '../components/cart/redux/addToCartSlice';
+import cartDataReducer from '../components/cart/redux/cartDataSlice';
+import fetchTopProductsReducer from '../components/Product/redux/getTopProductsSlice';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -31,12 +34,15 @@ const rootReducer = combineReducers({
   forgotPassword: forgotPasswordReducer,
   getUsers: getUserReducer,
   setRole: setRoleReducer,
+  addToCart: addToCartReducer,
+  cartData: cartDataReducer,
+  topProducts: fetchTopProductsReducer,
 });
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['token'], // Add the state key you want to persist
+  whitelist: ['token'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -20,7 +20,7 @@ const teamMembers: TeamMember[] = [
 
 function About_us() {
   return (
-    <div className={styles.aboutUS}>
+    <div data-testid="about-page" className={styles.aboutUS}>
       <div className="wrapperDiv">
         <div className={styles.container}>
           <div className={styles.text}>

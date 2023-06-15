@@ -1,6 +1,8 @@
 @import '../../../../styles/variables.scss';
 @import '../../../../styles/mixins.scss';
 
+$h1-font-family: 'Inter', sans-serif;
+
 .account__container {
   color: var(--black);
   display: flex;
@@ -40,6 +42,7 @@
   height: 3rem;
   background-color: $white-two;
   font-size: 16px;
+  font-family: $interRegular;
   border: 0;
   border-bottom: 1px solid black;
   outline: none;
@@ -56,6 +59,8 @@
   border-radius: 4px;
   cursor: pointer;
   margin: 0;
+  font-family: $interRegular;
+  
 }
 .form-body a {
   margin-top: 20px;
@@ -94,12 +99,13 @@
   width: 100%;
   height: 3rem;
   background-color: $white-two;
-  font-size: 16px;
+  font-size: 18px;
   border: 0;
   border-bottom: 1px solid black;
   outline: none;
   border: none;
   border-bottom: 1px solid $lightGray;
+  font-family: $interRegular;
 }
 .form-body button {
   width: 100%;
@@ -138,6 +144,7 @@
   text-decoration: underline;
   font-size: 16px;
   margin: 0;
+  font-family: $interRegular;
 }
 
 #btn-section {

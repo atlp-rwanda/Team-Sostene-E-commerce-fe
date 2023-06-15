@@ -23,6 +23,7 @@ import { getUserReducer, setRoleReducer } from '../pages/role/redux/assignRolesS
 import addToCartReducer from '../components/cart/redux/addToCartSlice';
 import cartDataReducer from '../components/cart/redux/cartDataSlice';
 import fetchTopProductsReducer from '../components/Product/redux/getTopProductsSlice';
+import getCartSlice from '../pages/viewCart/redux/getCartSlice';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -37,6 +38,7 @@ const rootReducer = combineReducers({
   addToCart: addToCartReducer,
   cartData: cartDataReducer,
   topProducts: fetchTopProductsReducer,
+  getCart: getCartSlice,
 });
 
 const persistConfig = {

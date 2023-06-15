@@ -18,6 +18,7 @@ import '../styles/index.css';
 import Changepassword from './pages/accounts/editAccount/changepass';
 import Contact from './pages/contact/contact';
 import Footer from './pages/Footer/Footer';
+import ViewCart from './pages/viewCart/Cart';
 
 function App() {
   library.add(fab, fas);
@@ -27,6 +28,8 @@ function App() {
         <Navigation />
         <Routes>
           <Route path="/" element={<Home />}></Route>
+          <Route path="/accounts/*" element={<Accounts />}></Route>
+          <Route path="/cart" element={<ViewCart />}></Route>
           <Route
             path={`${import.meta.env.VITE_BACKEND_URL}/auth/google/success`}
             element={<GoogleLoginSuccess />}

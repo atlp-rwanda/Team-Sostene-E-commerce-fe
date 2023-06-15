@@ -9,6 +9,8 @@ export default {
       white: '#fff',
       black: '#000',
       gray: '#808080',
+      fade: '#0000000a',
+      red: '#ff0000db',
     },
     screens: {
       tablet: '640px',

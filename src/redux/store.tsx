@@ -19,6 +19,7 @@ import {
   resetPasswordReducer,
   forgotPasswordReducer,
 } from '../pages/accounts/resetPassword/redux/resetPasswordSlice';
+import { getUserReducer, setRoleReducer } from '../pages/role/redux/assignRolesSlice';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -28,6 +29,8 @@ const rootReducer = combineReducers({
   filterCollectionProducts: filterCollectionProductsReducer,
   resetPassword: resetPasswordReducer,
   forgotPassword: forgotPasswordReducer,
+  getUsers: getUserReducer,
+  setRole: setRoleReducer,
 });
 
 const persistConfig = {

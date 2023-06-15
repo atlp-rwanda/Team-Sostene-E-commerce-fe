@@ -13,6 +13,7 @@ import routes from './utils/routes';
 import Navigation from './components/navigation/nav';
 import { isLoggedIn } from './helpers/auth';
 import Page404 from './pages/page404/page404';
+import AssignRole from './pages/role/AssignRole';
 import '../styles/index.css';
 import Changepassword from './pages/accounts/editAccount/changepass';
 import Contact from './pages/contact/contact';
@@ -36,6 +37,7 @@ function App() {
           <Route path={routes.sellerListItems} element={<Seller />}></Route>
           <Route path="*" element={<Page404 />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/manage_users" element={<AssignRole />} />
         </Routes>
         <Footer />
       </Provider>

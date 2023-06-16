@@ -26,7 +26,7 @@ function rejectWithValue(error: string) {
 
 export const tfaVerify = createAsyncThunk('user/authenticate', async (data: USER) => {
   return axios
-    .post(`${import.meta.env.VITE_BACKEND_URL}/users/verify/${data.email}`, {
+    .post(`${import.meta.env.VITE_BACKEND_URL}users/verify/${data.email}`, {
       email: data.email,
       verificationCode: data.code,
     })

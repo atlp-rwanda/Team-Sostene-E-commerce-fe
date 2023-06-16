@@ -9,6 +9,7 @@ import { useAppSelector } from '../../redux/hooks';
 import Icon from '../notification/Icon';
 import NotificationPane from '../notification/notificationPane';
 import { CartIcon } from '../cart/Cart';
+import { AdminComponent, ProtectedComponent } from '../roles/Protected';
 
 const logo = '/svgs/Vector.svg';
 
@@ -106,13 +107,21 @@ const Navigation = () => {
         <div className={styles.profile}>
           <nav>
             <ul>
-              <Link to="#" className={styles.Link}>
+              <Link to="" className={styles.Link}>
                 <li>
                   <FontAwesomeIcon icon="gear" className={`${styles.settings}`} />
                   &nbsp;&nbsp;Manage My Account
                 </li>
               </Link>
-              <Link to="/cart" className={styles.Link}>
+              <AdminComponent>
+                <Link to="/manage_users" className={styles.Link}>
+                  <li>
+                    <i className="fa fa-users" aria-hidden="true"></i>
+                    &nbsp;&nbsp;Manage Users
+                  </li>
+                </Link>
+              </AdminComponent>
+              <Link to="#" className={styles.Link}>
                 <li className={styles.cart}>
                   <FontAwesomeIcon icon="cart-shopping" className={`${styles.light}`} />
                   &nbsp;&nbsp;My Cart
@@ -138,12 +147,6 @@ const Navigation = () => {
                   </li>
                 </Link>
               )}
-              <Link to="/manage_users" className={styles.Link}>
-                <li>
-                  <i className="fa fa-users" aria-hidden="true"></i>
-                  &nbsp;&nbsp;Manage Users
-                </li>
-              </Link>
               <Link to="/" onClick={() => logout()} className={styles.Link}>
                 <li>
                   <FontAwesomeIcon icon="arrow-right-from-bracket" className={`${styles.logout}`} />
@@ -202,15 +205,17 @@ const Navigation = () => {
             <input type="text" placeholder="What are you looking for?" className={styles.search} />
             <FontAwesomeIcon icon="magnifying-glass" className={styles.searchIcon} />
           </div>
-          {value && <CartIcon />}
-          {value && <Icon onClick={handleNotifications} />}
+          <ProtectedComponent>
+            <CartIcon />
+            {value && <Icon onClick={handleNotifications} />}
 
-          <FontAwesomeIcon
-            icon="user"
-            className={`${styles.light} ${styles.user} px-2`}
-            onClick={handleProfile}
-            aria-label="user-icon"
-          />
+            <FontAwesomeIcon
+              icon="user"
+              className={`${styles.light} ${styles.user} px-2`}
+              onClick={handleProfile}
+              aria-label="user-icon"
+            />
+          </ProtectedComponent>
           <FontAwesomeIcon
             icon="house"
             className={`${styles.light} ${styles.house}`}

@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAddToCart } from '../cart/hooks';
+import { ProtectedComponent } from '../roles/Protected';
 
 interface CardData {
   image: string;
@@ -24,9 +25,20 @@ export default function ProductCard({ image, name, id, price }: CardData) {
       <div className="flex flex-row items-center justify-between w-full px-2">
         <Rating id={id} />
         <div>
-          <button onClick={() => handleAddToCart(id)} className="p-2 rounded-sm bg-orange text-xs">
-            Add to cart
-          </button>
+          <ProtectedComponent
+            replace={
+              <Link to="/accounts/login" className="p-2 rounded-sm bg-orange text-xs">
+                Add to cart
+              </Link>
+            }
+          >
+            <button
+              onClick={() => handleAddToCart(id)}
+              className="p-2 rounded-sm bg-orange text-xs"
+            >
+              Add to cart
+            </button>
+          </ProtectedComponent>
         </div>
       </div>
     </div>

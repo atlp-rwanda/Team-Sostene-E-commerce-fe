@@ -35,7 +35,7 @@ describe('Testing tfaVerify', () => {
     await store.dispatch(tfaVerify(data));
 
     expect(postSpy).toBeCalledWith(
-      `${import.meta.env.VITE_BACKEND_URL}/users/verify/${data.email}`,
+      `${import.meta.env.VITE_BACKEND_URL}users/verify/${data.email}`,
       {
         email: data.email,
         verificationCode: data.code,
@@ -70,7 +70,7 @@ describe('Testing tfaVerify', () => {
     await store.dispatch(tfaVerify(data));
 
     expect(postSpy).toBeCalledWith(
-      `${import.meta.env.VITE_BACKEND_URL}/users/verify/${data.email}`,
+      `${import.meta.env.VITE_BACKEND_URL}users/verify/${data.email}`,
       {
         email: data.email,
         verificationCode: data.code,
@@ -105,7 +105,7 @@ describe('Testing tfaVerify', () => {
     await store.dispatch(tfaVerify(data));
 
     expect(postSpy).toBeCalledWith(
-      `${import.meta.env.VITE_BACKEND_URL}/users/verify/${data.email}`,
+      `${import.meta.env.VITE_BACKEND_URL}users/verify/${data.email}`,
       {
         email: data.email,
         verificationCode: data.code,
@@ -140,7 +140,7 @@ describe('Testing tfaVerify', () => {
     await store.dispatch(tfaVerify(data));
 
     expect(postSpy).toBeCalledWith(
-      `${import.meta.env.VITE_BACKEND_URL}/users/verify/${data.email}`,
+      `${import.meta.env.VITE_BACKEND_URL}users/verify/${data.email}`,
       {
         email: data.email,
         verificationCode: data.code,
@@ -164,7 +164,7 @@ describe('Testing tfaVerify slice', () => {
     await store.dispatch(tfaVerify(data));
 
     expect(postSpy).toBeCalledWith(
-      `${import.meta.env.VITE_BACKEND_URL}/users/verify/${data.email}`,
+      `${import.meta.env.VITE_BACKEND_URL}users/verify/${data.email}`,
       {
         email: data.email,
         verificationCode: data.code,
@@ -192,7 +192,7 @@ describe('Testing tfaVerify slice', () => {
     await store.dispatch(tfaVerify(data));
 
     expect(postSpy).toBeCalledWith(
-      `${import.meta.env.VITE_BACKEND_URL}/users/verify/${data.email}`,
+      `${import.meta.env.VITE_BACKEND_URL}users/verify/${data.email}`,
       {
         email: data.email,
         verificationCode: data.code,
@@ -218,7 +218,7 @@ describe('Testing tfaVerify slice', () => {
     await store.dispatch(tfaVerify(data));
 
     expect(postSpy).toBeCalledWith(
-      `${import.meta.env.VITE_BACKEND_URL}/users/verify/${data.email}`,
+      `${import.meta.env.VITE_BACKEND_URL}users/verify/${data.email}`,
       {
         email: data.email,
         verificationCode: data.code,

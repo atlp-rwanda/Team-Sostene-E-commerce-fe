@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import store from '../redux/store';
 
 interface FetchState<T> {
   data: T | null;
@@ -16,7 +17,12 @@ const useFetch = <T>(url: string): FetchState<T> => {
 
   const fetchData = async (): Promise<void> => {
     try {
-      const response = await axios.get(url);
+      const response = await axios.get(url, {
+        headers: {
+          'Content-Type': 'application/json',
+          authorization: `Bearer ${store.getState().token.value}`,
+        },
+      });
       if (response.status === 401) {
         navigate('/accounts/login');
       }

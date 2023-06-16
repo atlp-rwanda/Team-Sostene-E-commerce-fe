@@ -62,7 +62,9 @@ export default function RatingsCounter(props: rating) {
               })}
             </div>
           )}
-          <div className="ratingNumber">({rating})</div>
+          <div className="ratingNumber" data-testid="rateNumber">
+            ({rating})
+          </div>
         </div>
       )}
     </div>

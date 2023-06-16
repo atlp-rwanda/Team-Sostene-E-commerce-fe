@@ -30,6 +30,8 @@ import fetchTopProductsReducer from '../components/Product/redux/getTopProductsS
 import getCartSlice from '../pages/viewCart/redux/getCartSlice';
 import productReducer from '../pages/product/redux/productSlice';
 import searchReducer from '../pages/search/redux/searchSlice';
+import productSlice from './slices/productSlice';
+// import tfaReducer from '../pages/accounts/tfa/redux/tfaSlice';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -48,6 +50,8 @@ const rootReducer = combineReducers({
   product: productReducer,
   disableAccount: disableAccountReducer,
   search: searchReducer,
+  products: productSlice,
+  // add your new reducer created
 });
 
 const persistConfig = {

@@ -1,8 +1,8 @@
 import { render, screen, waitFor, fireEvent, act } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import SellerItems from './sellerItems';
+import SellerItems from '../sellerItems';
 import { Provider } from 'react-redux';
-import store from '../../../../redux/store';
+import store from '../../../../../redux/store';
 import '@testing-library/jest-dom/extend-expect';
 import { it, describe, vi, beforeEach, expect } from 'vitest';
 import MockAdapter from 'axios-mock-adapter';
@@ -11,6 +11,15 @@ import axios from 'axios';
 vi.mock('axios');
 
 const mockAdapter = new MockAdapter(axios);
+const Mockcontainer = () => {
+  return (
+    <MemoryRouter>
+      <Provider store={store}>
+        <SellerItems />
+      </Provider>
+    </MemoryRouter>
+  );
+};
 
 describe('SellerItems', () => {
   beforeEach(() => {
@@ -18,13 +27,7 @@ describe('SellerItems', () => {
     store.dispatch = mockDispatch;
   });
   it('displays the title headings and the input elements', async () => {
-    render(
-      <MemoryRouter>
-        <Provider store={store}>
-          <SellerItems />
-        </Provider>
-      </MemoryRouter>
-    );
+    render(<Mockcontainer />);
     expect(screen.getAllByTestId('loading').length).toBeGreaterThan(0);
     await waitFor(() => {
       const searchInput = screen.getByPlaceholderText('Search Item');
@@ -33,15 +36,7 @@ describe('SellerItems', () => {
     });
   });
   it('renders card items', async () => {
-    await act(async () =>
-      render(
-        <MemoryRouter>
-          <Provider store={store}>
-            <SellerItems />
-          </Provider>
-        </MemoryRouter>
-      )
-    );
+    await act(async () => render(<Mockcontainer />));
     const pageElement = screen.getByRole('changePage');
     const searchElement = screen.getByRole('getSearchTest');
     fireEvent.change(searchElement, { target: { value: 'test' } });
@@ -104,15 +99,7 @@ describe('render Seller items components with data successfully', () => {
   it('loads the data on mounts', async () => {
     const url = `https://team-sostene-e-commerce-bn-production-f4c1.up.railway.app/products/all?page=1&limit=10`;
     mockAdapter.onGet(url).reply(200, data);
-    await act(async () =>
-      render(
-        <MemoryRouter>
-          <Provider store={store}>
-            <SellerItems />
-          </Provider>
-        </MemoryRouter>
-      )
-    );
+    await act(async () => render(<Mockcontainer />));
     waitFor(() => {
       expect(screen.getByText('Happy homes')).toBeInTheDocument();
       expect(screen.getByText('Attractors')).toBeInTheDocument();
@@ -124,15 +111,7 @@ describe('render Seller items components with data successfully', () => {
     const url = `https://team-sostene-e-commerce-bn-production-f4c1.up.railway.app/products/all?page=1&limit=10`;
     mockAdapter.onGet(url).reply(200, data);
 
-    await act(async () =>
-      render(
-        <MemoryRouter>
-          <Provider store={store}>
-            <SellerItems />
-          </Provider>
-        </MemoryRouter>
-      )
-    );
+    await act(async () => render(<Mockcontainer />));
     const searchElement = screen.getByRole('getSearchTest');
     fireEvent.change(searchElement, { target: { value: 'Attractors' } });
 

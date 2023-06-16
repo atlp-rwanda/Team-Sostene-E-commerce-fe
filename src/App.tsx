@@ -26,6 +26,7 @@ import Payment from './pages/payment/payment ';
 import PaymentConfirmation from './pages/payment/confirmation';
 import Browse from './pages/browse/Browse';
 import Search from './pages/search/Search';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   library.add(fab, fas);
@@ -45,7 +46,17 @@ function App() {
           <Route path="/product/:id" element={<ProductPage />}></Route>
           <Route path="/accounts/*" element={isLoggedIn() ? <Home /> : <Accounts />}></Route>
           <Route path="/edit/password" element={isLoggedIn() ? <Changepassword /> : <Home />} />
-          <Route path={routes.sellerListItems} element={<Seller />}></Route>
+          <Route
+            path={routes.sellerListItems}
+            element={
+              <SellerComponent replace={<Home />}>
+                {' '}
+                <Seller />{' '}
+              </SellerComponent>
+            }
+          >
+            {' '}
+          </Route>
           <Route path="*" element={<Page404 />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/manage_users" element={<AssignRole />} />
@@ -66,6 +77,7 @@ function App() {
           <Route path="/search/:query" element={<Search />}></Route>
         </Routes>
         <Footer />
+        <ToastContainer />
       </Provider>
     </div>
   );

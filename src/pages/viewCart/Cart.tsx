@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import '../viewCart/cart.scss';
 import { BACKEND_URL } from '../../utils/constants';

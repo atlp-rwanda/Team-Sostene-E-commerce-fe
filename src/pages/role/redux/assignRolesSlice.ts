@@ -125,5 +125,55 @@ export const setRolesSlice = createSlice({
   },
 });
 
+export const disableAccountSlice = createSlice({
+  name: 'disableAccount',
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(disableAccount.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(disableAccount.fulfilled, (state) => {
+      state.loading = false;
+    });
+    builder.addCase(disableAccount.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.error.message || 'Unknown Error';
+    });
+  },
+});
+
+export const disableAccount = createAsyncThunk(
+  'users/disable',
+  async ({ id, token }: { id: string; token: string }) => {
+    return axios
+      .patch(
+        `${import.meta.env.VITE_BACKEND_URL}users/disable/${id}`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then((response) => {
+        return response.data;
+      })
+      .catch((error) => {
+        switch (error.response.status) {
+          case 500:
+            return rejectWithValue('Internal Error.');
+          case 400:
+            return rejectWithValue('Please Login.');
+          case 401:
+            return rejectWithValue('Unauthorized.');
+          default:
+            return rejectWithValue(error.response.data.error);
+        }
+      });
+  }
+);
+
 export const getUserReducer = getUsersSlice.reducer;
 export const setRoleReducer = setRolesSlice.reducer;
+export const disableAccountReducer = disableAccountSlice.reducer;

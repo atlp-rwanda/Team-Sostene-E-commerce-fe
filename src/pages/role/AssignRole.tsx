@@ -3,7 +3,7 @@ import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { useRef, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import { useFetchUsers } from './hooks';
-import { setRole } from './redux/assignRolesSlice';
+import { setRole, disableAccount } from './redux/assignRolesSlice';
 
 interface USER {
   id: string;
@@ -79,6 +79,9 @@ export default function AssignRole() {
                 <th scope="col" className="px-6 py-3">
                   Change Role
                 </th>
+                <th scope="col" className="px-6 py-3">
+                  Disable Account
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -91,6 +94,7 @@ export default function AssignRole() {
                     status={user.status}
                     id={user.id}
                     username={user.username}
+                    // onDisableAccount={() => handleDisableAccount(user.id)}
                   />
                 ))}
             </tbody>
@@ -115,7 +119,7 @@ export function UserRow({ email, username, role, status, id }: USER) {
       <td className="px-6 py-4  md:py-2 sm-py-2 ">
         <span
           className={`p-1 rounded-sm  ${
-            status === 'ACTIVE' ? 'text-black bg-green' : 'text-white bg-red'
+            status === 'ACTIVE' ? 'text-black bg-green' : 'text-black bg-red'
           }`}
         >
           {status}
@@ -124,6 +128,9 @@ export function UserRow({ email, username, role, status, id }: USER) {
       <td className="px-6 py-4 md:py-2 sm-py-2 ">{role}</td>
       <td className="px-6 py-4  md:py-2 sm-py-2 whitespace-nowrap">
         <RoleButtons id={id} />
+      </td>
+      <td className="px-6 py-4  md:py-2 sm-py-2 ">
+        <DisableButtons id={id} status={status} />
       </td>
     </tr>
   );
@@ -167,6 +174,40 @@ export function RoleButtons({ id }: { id: string }) {
       </select>
       <button data-testid="role-btn" onClick={handleSubmit} className="p-1 px-2 bg-translucent">
         <i className="fa fa-check" aria-hidden="true"></i> Save
+      </button>
+    </div>
+  );
+}
+
+export function DisableButtons({ id, status }: { id: string; status: string }) {
+  const token = useAppSelector((state) => state.token.value) || '';
+  const isDisabled = useAppSelector((state) => state.disableAccount);
+  const dispatch = useAppDispatch();
+  const handleSubmit = async () => {
+    const data: { id: string; token: string } = {
+      id,
+      token,
+    };
+
+    const response = await dispatch(disableAccount(data));
+    if (response.meta.requestStatus === 'fulfilled') {
+      window.location.reload();
+    } else if (response.meta.requestStatus === 'rejected') {
+      if (isDisabled.error !== '') {
+        toast.error(isDisabled.error);
+      }
+    }
+  };
+
+  return (
+    <div className="font-medium text-orange space-x-2">
+      <button
+        data-testid="role-btn"
+        onClick={handleSubmit}
+        className="p-1 px-2 bg-translucent"
+        disabled={status === 'INACTIVE'}
+      >
+        <i className="fa-solid fa-xmark"></i>Disable Account
       </button>
     </div>
   );

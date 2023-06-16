@@ -11,6 +11,7 @@ export default {
       gray: '#808080',
       fade: '#0000000a',
       red: '#ff0000db',
+      green:'#66FF66',
     },
     screens: {
       tablet: '640px',

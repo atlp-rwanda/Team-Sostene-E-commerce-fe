@@ -24,6 +24,8 @@ import Dashboard from './pages/dashboard/Dashboard';
 import { SellerComponent } from './components/roles/Protected';
 import Payment from './pages/payment/payment ';
 import PaymentConfirmation from './pages/payment/confirmation';
+import Browse from './pages/browse/Browse';
+import Search from './pages/search/Search';
 
 function App() {
   library.add(fab, fas);
@@ -60,6 +62,8 @@ function App() {
             path="/checkout/redirect"
             element={isLoggedIn() ? <PaymentConfirmation /> : <Home />}
           ></Route>
+          <Route path="/browse/*" element={<Browse />} />
+          <Route path="/search/:query" element={<Search />}></Route>
         </Routes>
         <Footer />
       </Provider>

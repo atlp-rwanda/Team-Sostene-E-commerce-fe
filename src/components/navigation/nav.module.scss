@@ -88,13 +88,6 @@ a {
   .bars {
     display: none;
   }
-  input {
-    padding: 8px 25px;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    background-color: $inputbackground;
-  }
   .house {
     display: none;
   }
@@ -102,7 +95,12 @@ a {
     cursor: pointer;
   }
 }
-
+::-webkit-search-cancel-button{
+  position:relative;
+  right:25px;
+  cursor: pointer;
+  bottom: 5px;    
+}
 .m__logo {
   display: none;
 }
@@ -264,9 +262,6 @@ a {
       display: none;
     }
 
-    input {
-      width: 40vw;
-    }
 
     .house {
       display: block;

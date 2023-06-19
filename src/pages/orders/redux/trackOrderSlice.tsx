@@ -42,7 +42,7 @@ const fetchbuyerTrackOrder = createSlice({
     });
     builder.addCase(getOrder.rejected, (state, action) => {
       state.loading = false;
-      state.error = action.error.message || 'Unknown Error';
+      state.error = action?.error?.message ?? 'Unknown Error';
     });
   },
 });

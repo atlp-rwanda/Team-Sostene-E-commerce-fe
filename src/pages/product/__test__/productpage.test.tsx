@@ -4,8 +4,9 @@ import store from '../../../redux/store';
 import ProductPage from '../Product';
 import { vi } from 'vitest';
 import axios from 'axios';
-import { Product } from '../redux/productSlice';
+import productReducer, { Product, getProduct } from '../redux/productSlice';
 import { BrowserRouter } from 'react-router-dom';
+import { configureStore } from '@reduxjs/toolkit';
 
 describe('Testing Product Page', () => {
   test('Render Main', () => {
@@ -107,5 +108,75 @@ describe('Testing Product Page', () => {
       </BrowserRouter>
     );
     expect(getByTestId('product-page')).toBeInTheDocument();
+  });
+  it('review should fail with status 500', async () => {
+    const store = configureStore({
+      reducer: productReducer,
+    });
+    const postSpy = vi.spyOn(axios, 'get').mockResolvedValueOnce({
+      response: {
+        status: 500,
+        data: {
+          message: 'Internal Error.',
+        },
+      },
+    });
+    const id = '66d5250c-158d-11ee-be56-0242ac120002';
+    await store.dispatch(getProduct(id));
+    expect(postSpy).toBeCalledWith(`${import.meta.env.VITE_BACKEND_URL}products/${id}`);
+  });
+  it('should dispatch product action correctly', async () => {
+    const store = configureStore({
+      reducer: productReducer,
+    });
+    const postSpy = vi.spyOn(axios, 'get').mockResolvedValueOnce({
+      response: {
+        status: 500,
+        data: {
+          message: 'Internal Error.',
+        },
+      },
+    });
+    const id = '66d5250c-158d-11ee-be56-0242ac120002';
+    await store.dispatch(getProduct(id));
+    expect(postSpy).toBeCalledWith(`${import.meta.env.VITE_BACKEND_URL}products/${id}`);
+  });
+  it('should dispatch product action correctly', async () => {
+    const store = configureStore({
+      reducer: productReducer,
+    });
+    const errorMessage = 'Some error message';
+    const getSpy = vi.spyOn(axios, 'get').mockRejectedValueOnce({
+      response: {
+        status: 404,
+        data: {
+          message: errorMessage,
+        },
+      },
+    });
+    const id = '66d5250c-158d-11ee-be56-0242ac120002';
+    try {
+      await store.dispatch(getProduct(id));
+    } catch (error) {
+      const rejectedValue = store.getState().error;
+      expect(rejectedValue).toEqual(errorMessage);
+    }
+    expect(getSpy).toBeCalledWith(`${import.meta.env.VITE_BACKEND_URL}products/${id}`);
+  });
+  it('review should fail with status 500', async () => {
+    const store = configureStore({
+      reducer: productReducer,
+    });
+    const postSpy = vi.spyOn(axios, 'get').mockResolvedValueOnce({
+      response: {
+        status: 500,
+        data: {
+          message: 'Internal Error.',
+        },
+      },
+    });
+    const id = '66d5250c-158d-11ee-be56-0242ac120002';
+    await store.dispatch(getProduct(id));
+    expect(postSpy).toBeCalledWith(`${import.meta.env.VITE_BACKEND_URL}products/${id}`);
   });
 });

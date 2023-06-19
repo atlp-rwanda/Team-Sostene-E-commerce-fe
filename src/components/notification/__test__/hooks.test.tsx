@@ -2,6 +2,8 @@ import io from 'socket.io-client';
 import { useNotifications } from '../hooks';
 import { Mock, vi } from 'vitest';
 import { act, render, screen } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import store from '../../../redux/store';
 
 vi.mock('socket.io-client');
 
@@ -16,7 +18,11 @@ it('updates notification count when receiving new notifications', async () => {
     const { count } = useNotifications();
     return <p data-testid="test">{count}</p>;
   };
-  render(<TestComponent />);
+  render(
+    <Provider store={store}>
+      <TestComponent />
+    </Provider>
+  );
   const joinedData = { msg: 'Joined Mocking' };
   const newNotification: { read: boolean } = { read: false };
   const notificationMockData = [{ read: false }];
@@ -51,7 +57,11 @@ it('updates notifications when receiving new notifications', async () => {
       </div>
     );
   };
-  render(<TestComponent />);
+  render(
+    <Provider store={store}>
+      <TestComponent />
+    </Provider>
+  );
   const joinedData = { msg: 'Joined Mocking' };
   const newNotification: { read: boolean } = { read: false };
   const notificationMockData = [{ read: false }];

@@ -22,6 +22,15 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+
+    .btn_all button {
+      border: none;
+      outline: none;
+      background: none;
+      color: $black;
+      padding: 10px;
+      cursor: pointer;
+    }
     .text {
       width: 100%;
       text-align: start;
@@ -65,6 +74,14 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+
+      .markOne button {
+        border: none;
+        outline: none;
+        background: none;
+        color: $yellow;
+        cursor: pointer;
+      }
       .date {
         font-size: 10px;
         font-style: italic;
@@ -76,12 +93,12 @@
 }
 
 @media screen and (max-width: $md) {
-    .pane_container { 
+  .pane_container {
     width: 60%;
   }
 }
 @media screen and (max-width: $xls) {
-    .pane_container  {
+  .pane_container {
     width: 80%;
     font-size: small;
   }

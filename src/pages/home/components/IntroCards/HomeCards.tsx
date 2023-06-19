@@ -63,7 +63,7 @@ export function Categories({ query, title }: { query: string; title: string }) {
         </div>
       ) : (
         <div className="w-full grid grid-cols-2 items-center place-content-center">
-          {products.slice(0, 4).map((product: any, index: Key | null | undefined) => (
+          {products?.slice(0, 4).map((product: any, index: Key | null | undefined) => (
             <div key={index} className="w-full p-2">
               <Link to={`/product/${product.id}`}>
                 <img

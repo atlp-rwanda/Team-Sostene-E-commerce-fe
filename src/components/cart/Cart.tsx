@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './cart.module.scss';
 import { useState } from 'react';
-import { useGetCartData } from './hooks';
 import { CART } from './redux/cartDataSlice';
 import imageReplacement from '/images/ImageReplacement.png';
 import { Link } from 'react-router-dom';
+import { useGetCart } from '../../pages/viewCart/redux/hooks';
 
 function CartBox(props: { cart: CART; loading: boolean; error: string }) {
   const { loading, error, cart } = props;
@@ -20,7 +20,7 @@ function CartBox(props: { cart: CART; loading: boolean; error: string }) {
         {error != '' ? <p>{error}</p> : ''}
         {loading ? <p className=" bg-orange my-1 p-1 h-1 rounded animate-pulse"></p> : ''}
         <div className={styles.cart__scroll}>
-          {cart.products.map((item, index) => (
+          {cart?.products.map((item, index) => (
             <CartItem
               key={index}
               name={item.product.name}
@@ -33,7 +33,7 @@ function CartBox(props: { cart: CART; loading: boolean; error: string }) {
       </div>
       <div className="flex flex-row items-center justify-between p-2 bg-orange">
         <div className="">Total Price</div>
-        <div className="text-md font-bold">${cart.total}</div>
+        <div className="text-md font-bold">${cart?.total}</div>
       </div>
     </div>
   );
@@ -60,9 +60,9 @@ export function CartItem(props: { name: string; price: number; quantity: number;
 
 export function CartIcon() {
   const [view, setView] = useState(false);
-  const response = useGetCartData();
-  const { loading, cart, error } = response;
-  const num = cart.products.length;
+  const { result } = useGetCart();
+  const { loading, data, error } = result;
+  const num = data.products.length;
   return (
     <div className="px-2 cursor-pointer">
       <div data-testid="cart-icon" onClick={() => setView((prev) => !prev)}>
@@ -81,7 +81,7 @@ export function CartIcon() {
           onClick={() => setView(false)}
         ></div>
       )}
-      {view ? <CartBox cart={cart} loading={loading} error={error} /> : ''}
+      {view && <CartBox cart={data} loading={loading} error={error} />}
     </div>
   );
 }

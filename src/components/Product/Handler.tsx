@@ -66,7 +66,7 @@ export default function Handler(props: HandlerProps) {
           </div>
           <div className="p-2 w-full flex flex-row justify-start min-w-min">
             {products
-              .slice(0, 10)
+              ?.slice(0, 10)
               .reverse()
               .map((product, index) => (
                 <ProductCard

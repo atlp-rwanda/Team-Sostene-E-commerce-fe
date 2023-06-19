@@ -1,7 +1,7 @@
 function Exclusive() {
   return (
     <div className="w-full pb-3">
-      <div className="text-md py-3">Exclusive</div>
+      <div className="text-md py-3 font-bold">Exclusive</div>
       <p className="text-[18px] py-3">Subscribe</p>
       <input
         type="text"

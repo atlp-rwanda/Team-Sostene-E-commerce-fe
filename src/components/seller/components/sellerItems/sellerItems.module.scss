@@ -135,7 +135,6 @@
         margin: 0;
         flex-grow: 0;
         width: calc(100% / 5 - 20px);
-        aspect-ratio: 1.03/1;
         height: auto;
         @include mq($xlg) {
           width: calc(100% / 5 - 15px);

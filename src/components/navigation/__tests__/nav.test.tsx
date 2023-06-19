@@ -41,30 +41,12 @@ describe('tetsing the nav', function () {
     const settingElement = screen.getByText(/Manage My Account/i);
     expect(settingElement).toBeInTheDocument();
   });
-  it('testing the home icon', function () {
-    store.dispatch(setToken('initialTokenValue'));
-    render(<MockNav />);
-    const icon = screen.getByLabelText('home-icon');
-    fireEvent.click(icon);
-    const settingElement = screen.getByTestId('right-nav');
-    expect(icon).toBeInTheDocument();
-    expect(settingElement).toBeVisible();
-  });
 
   it('testing the notification icon', function () {
     render(<MockNav />);
     const icon = screen.getByLabelText('notification-icon');
     fireEvent.click(icon);
     expect(icon).toBeInTheDocument();
-  });
-
-  it('testing the notification icon when home icon was active', function () {
-    render(<MockNav />);
-    const icon = screen.getByLabelText('home-icon');
-    fireEvent.click(icon);
-    const icon1 = screen.getByLabelText('notification-icon');
-    fireEvent.click(icon1);
-    expect(icon1).toBeInTheDocument();
   });
 
   it('testing the notification icon when user icon was active', function () {
@@ -90,9 +72,7 @@ describe('tetsing the nav', function () {
     store.dispatch(setToken('initialTokenValue'));
     render(<MockNav />);
     const userIcon = screen.getByLabelText('user-icon');
-    const homeIcon = screen.getByLabelText('home-icon');
     fireEvent.click(userIcon);
-    fireEvent.click(homeIcon);
     const settingElement = screen.getByTestId('right-nav');
     expect(settingElement).toBeVisible();
   });
@@ -100,8 +80,6 @@ describe('tetsing the nav', function () {
     store.dispatch(setToken('initialTokenValue'));
     render(<MockNav />);
     const userIcon = screen.getByLabelText('user-icon');
-    const homeIcon = screen.getByLabelText('home-icon');
-    fireEvent.click(homeIcon);
     fireEvent.click(userIcon);
     const settingElement = screen.getByText(/Manage My Account/i);
     expect(settingElement).toBeInTheDocument();

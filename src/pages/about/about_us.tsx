@@ -1,5 +1,5 @@
 import styles from '../about/about.module.scss';
-import imageSrc from '../../assets/Side Image.png';
+import imageSrc from '/images/Side Image.png';
 import teamImages from './teamImages';
 
 interface TeamMember {
@@ -24,7 +24,7 @@ function About_us() {
       <div className="wrapperDiv">
         <div className={styles.container}>
           <div className={styles.text}>
-            <h2>Our Story</h2>
+            <h2 className="font-bold text-2xl">Our Story</h2>
             <p data-testId="paragraph" className="paragraph">
               Welcome to our thriving e-commerce website, where we are dedicated to revolutionizing
               the way you shop online. At ShopSpree, we specialize in providing an exceptional
@@ -46,7 +46,7 @@ function About_us() {
         </div>
 
         <div className={styles.team}>
-          <h3>Team Members</h3>
+          <h3 className="my-10">Team Members</h3>
           <div className={styles.photos}>
             {teamMembers.map((member, index) => (
               <div key={index}>

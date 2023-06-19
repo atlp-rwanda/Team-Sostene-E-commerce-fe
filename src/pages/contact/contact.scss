@@ -1,23 +1,29 @@
 @import '../../../styles/variables.scss';
-.contactBox:after {
-  content: '';
-  display: table;
-  clear: both;
+.contactBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  gap: 10%;
+  margin: 0% 10%;
 }
 .container_contacts {
-  width: 500px;
+  width: 50%;
   float: right;
-  margin-top: 5%;
-  margin-right: 10%;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+
   h2 {
     font-size: 24px;
     margin-bottom: 10px;
-    text-align: center;
+    text-align: left;
+    font-weight: bold;
+    padding-bottom: 15px;
   }
 
   p {
     font-size: 14px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
   }
 
   form {
@@ -53,97 +59,101 @@
       border-radius: 4px;
       cursor: pointer;
       font-size: 16px;
-      margin-left: 60%;
-      width: 200px;
+      width: 100%;
     }
   }
 }
+
 @media (max-width: 768px) {
-  .container {
-    width: 90%;
-    float: none;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 20%;
+  .contactBox {
+    flex-direction: column;
+    .container_contacts {
+      width: 100%;
+      float: none;
+      margin-bottom: 10%;
 
-    h2 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 12px;
-    }
-
-    form {
-      margin-top: 15px;
-
-      div {
+      h2 {
+        font-size: 24px;
         margin-bottom: 10px;
-
-        label {
-          font-size: 14px;
-        }
-
-        input,
-        textarea {
-          padding: 6px;
-        }
       }
 
-      button[type='submit'] {
-        font-size: 14px;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
+      p {
+        font-size: 12px;
+      }
+
+      form {
+        margin-top: 15px;
+
+        div {
+          margin-bottom: 10px;
+
+          label {
+            font-size: 14px;
+          }
+
+          input,
+          textarea {
+            padding: 6px;
+          }
+        }
+
+        button[type='submit'] {
+          font-size: 14px;
+          width: 100%;
+        }
       }
     }
   }
 }
 
 @media (max-width: 576px) {
-  .container {
-    width: 100%;
+  .contactBox {
+    margin: 15% 10%;
+    .container_contacts {
+      width: 100%;
+      margin-top: 10%;
 
-    h2 {
-      font-size: 18px;
-    }
-
-    p {
-      font-size: 12px;
-    }
-
-    form {
-      margin-top: 10px;
-
-      div {
-        margin-bottom: 10px;
-
-        label {
-          font-size: 12px;
-        }
-
-        input,
-        textarea {
-          padding: 6px;
-        }
+      h2 {
+        font-size: 24px;
       }
 
-      button[type='submit'] {
-        font-size: 14px;
-        width: 100%;
+      p {
+        font-size: 12px;
+      }
+
+      form {
+        margin-top: 10px;
+
+        div {
+          margin-bottom: 10px;
+
+          label {
+            font-size: 12px;
+          }
+
+          input,
+          textarea {
+            padding: 6px;
+          }
+        }
+
+        button[type='submit'] {
+          font-size: 14px;
+          width: 100%;
+        }
       }
     }
   }
 }
 
 .location {
-  margin-left: 15%;
   margin-top: 10%;
+  width: 50%;
   float: left;
-  .info-side {
-    padding-right: 20px;
+  display: flex;
+  flex-direction: column;
 
+  .info-side {
     h2 {
       font-size: 24px;
       margin-bottom: 10px;
@@ -157,7 +167,7 @@
   }
 
   .down-side {
-    margin-top: 5%;
+    margin-top: 25%;
     h2 {
       font-size: 24px;
       margin-bottom: 10px;
@@ -173,26 +183,15 @@
 @media (max-width: 768px) {
   .location {
     flex-direction: column;
-
-    .info-side {
-      margin-left: 10%;
-    }
-
-    .down-side {
-      margin-left: 10%;
-    }
-    h4 {
-      margin-left: 10%;
-    }
   }
 }
 
 @media (max-width: 576px) {
   .location {
-    margin-left: 5%;
-    margin-top: 2%;
+    margin-top: 10%;
 
     .down-side {
+      margin-top: 30%;
       h1 {
         font-size: 24px;
       }

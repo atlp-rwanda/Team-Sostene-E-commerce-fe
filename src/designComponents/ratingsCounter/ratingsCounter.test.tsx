@@ -11,7 +11,7 @@ describe('RatingsCounter', () => {
     expect(starImages).toHaveLength(5);
     expect(ratingNumber).toBeInTheDocument();
     const images = getAllByRole('img');
-    expect(images[2]).toHaveAttribute('src', './svgs/starRated.svg');
+    expect(images[2]).toHaveAttribute('src', '/svgs/starRated.svg');
     images.forEach((img) => {
       expect(img).toHaveAttribute('src');
     });
@@ -23,7 +23,7 @@ describe('RatingsCounter', () => {
     expect(starImages).toHaveLength(5);
     expect(ratingNumber).toBeInTheDocument();
     const images = getAllByRole('img');
-    expect(images[4]).toHaveAttribute('src', './svgs/starRated.svg');
+    expect(images[4]).toHaveAttribute('src', '/svgs/starRated.svg');
     images.forEach((img) => {
       expect(img).toHaveAttribute('src');
     });
@@ -36,7 +36,7 @@ describe('RatingsCounter', () => {
     expect(ratingNumber).toBeInTheDocument();
     const images = getAllByRole('img');
     images.forEach((img) => {
-      expect(img).toHaveAttribute('src', './svgs/star.svg');
+      expect(img).toHaveAttribute('src', '/svgs/star.svg');
     });
   });
   it('renders correct number of stars based on rating = 1', () => {
@@ -46,8 +46,8 @@ describe('RatingsCounter', () => {
     expect(starImages).toHaveLength(5);
     expect(ratingNumber).toBeInTheDocument();
     const images = getAllByRole('img');
-    expect(images[0]).toHaveAttribute('src', './svgs/starRated.svg');
-    expect(images[3]).toHaveAttribute('src', './svgs/star.svg');
+    expect(images[0]).toHaveAttribute('src', '/svgs/starRated.svg');
+    expect(images[3]).toHaveAttribute('src', '/svgs/star.svg');
     images.forEach((img) => {
       expect(img).toHaveAttribute('src');
     });
@@ -59,8 +59,8 @@ describe('RatingsCounter', () => {
     expect(starImages).toHaveLength(5);
     expect(ratingNumber).toBeInTheDocument();
     const images = getAllByRole('img');
-    expect(images[0]).toHaveAttribute('src', './svgs/starRated.svg');
-    expect(images[3]).toHaveAttribute('src', './svgs/star.svg');
+    expect(images[0]).toHaveAttribute('src', '/svgs/starRated.svg');
+    expect(images[3]).toHaveAttribute('src', '/svgs/star.svg');
     images.forEach((img) => {
       expect(img).toHaveAttribute('src');
     });
@@ -72,8 +72,8 @@ describe('RatingsCounter', () => {
     expect(starImages).toHaveLength(5);
     expect(ratingNumber).toBeInTheDocument();
     const images = getAllByRole('img');
-    expect(images[1]).toHaveAttribute('src', './svgs/starRated.svg');
-    expect(images[4]).toHaveAttribute('src', './svgs/star.svg');
+    expect(images[1]).toHaveAttribute('src', '/svgs/starRated.svg');
+    expect(images[4]).toHaveAttribute('src', '/svgs/star.svg');
     images.forEach((img) => {
       expect(img).toHaveAttribute('src');
     });

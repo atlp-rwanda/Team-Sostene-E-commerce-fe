@@ -3,14 +3,14 @@ import styles from './cart.module.scss';
 import { useState } from 'react';
 import { useGetCartData } from './hooks';
 import { CART } from './redux/cartDataSlice';
-import imageReplacement from '../../assets/ImageReplacement.png';
+import imageReplacement from '/images/ImageReplacement.png';
 import { Link } from 'react-router-dom';
 
 function CartBox(props: { cart: CART; loading: boolean; error: string }) {
   const { loading, error, cart } = props;
   return (
-    <div className="w-64 bg-white absolute top-12 right-10">
-      <div className="p-2 bg-orange flex flex-row justify-between items-center">
+    <div className="w-64 bg-white absolute top-12 right-10 border-translucent border">
+      <div className="p-2 bg-orange flex flex-row justify-between items-center ">
         <p className="font-semibold">Cart</p>
         <Link to="/cart" className={styles.link}>
           Go To Cart
@@ -75,6 +75,12 @@ export function CartIcon() {
         )}
         <FontAwesomeIcon icon="cart-shopping" />
       </div>
+      {view && (
+        <div
+          className="w-screen h-screen absolute left-0 mt-4"
+          onClick={() => setView(false)}
+        ></div>
+      )}
       {view ? <CartBox cart={cart} loading={loading} error={error} /> : ''}
     </div>
   );

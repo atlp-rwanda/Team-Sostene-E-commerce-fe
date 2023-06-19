@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Contact from './contact';
+import HomeParallax from '../homeParallax';
 import { MemoryRouter } from 'react-router-dom';
 
-const meta: Meta<typeof Contact> = {
-  title: 'Pages/Contact',
-  component: Contact,
+const meta: Meta<typeof HomeParallax> = {
+  title: 'Pages/Home/HomeParallax',
+  component: HomeParallax,
   decorators: [
     (StoryComponent) => (
-      <MemoryRouter initialEntries={['/contact']}>
+      <MemoryRouter initialEntries={['/']}>
         <StoryComponent />
       </MemoryRouter>
     ),
@@ -15,6 +15,6 @@ const meta: Meta<typeof Contact> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Contact>;
+type Story = StoryObj<typeof HomeParallax>;
 
 export const Basic: Story = {};

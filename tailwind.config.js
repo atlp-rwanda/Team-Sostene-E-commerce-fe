@@ -15,6 +15,8 @@ export default {
       phone: '360px',
       laptop: '1024px',
       desktop: '1280px',
+      sm: '0px',
+      md: '649px',
     },
   },
   plugins: [],

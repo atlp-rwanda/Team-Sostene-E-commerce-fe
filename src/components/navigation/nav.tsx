@@ -5,11 +5,10 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { logout } from '../../helpers/auth';
-import { useAppSelector } from '../../redux/hooks';
 import Icon from '../notification/Icon';
 import NotificationPane from '../notification/notificationPane';
 import { CartIcon } from '../cart/Cart';
-import { AdminComponent, ProtectedComponent } from '../roles/Protected';
+import { AdminComponent, ProtectedComponent, ReverseProtectedComponent } from '../roles/Protected';
 
 const logo = '/svgs/Vector.svg';
 
@@ -21,12 +20,10 @@ const Navigation = () => {
   const [isProfileIcon, setisProfileIcon] = useState(false);
   const [isNormalAccount, setIsNormalAccount] = useState(false);
 
-  const [isHomeIcon, setisHomeIcon] = useState(false);
-  const { value } = useAppSelector((state) => state.token);
   const [isNotificationIcon, setisNotificationIcon] = useState(false);
+  const [isCartIcon, setisCartIcon] = useState(false);
 
   useEffect(() => {
-    // Check the authentication method from session/local storage
     const authenticationMethod = localStorage.getItem('authenticationMethod');
     setIsNormalAccount(authenticationMethod === 'app');
   }, []);
@@ -42,69 +39,27 @@ const Navigation = () => {
     }
   };
   const handleProfile = () => {
-    if (isHomeIcon) {
-      setisHomeIcon(!isHomeIcon);
-    }
-    if (isNotificationIcon) {
-      setisNotificationIcon(!isNotificationIcon);
-    }
+    setisCartIcon(false);
+    setisNotificationIcon(false);
     setisProfileIcon(!isProfileIcon);
-  };
-  const handleHome = () => {
-    if (isProfileIcon) {
-      setisProfileIcon(!isProfileIcon);
-    }
-    if (isNotificationIcon) {
-      setisNotificationIcon(!isNotificationIcon);
-    }
-    setisHomeIcon(!isHomeIcon);
   };
 
   const handleNotifications = () => {
-    if (isProfileIcon) {
-      setisProfileIcon(!isProfileIcon);
-    }
-    if (isHomeIcon) {
-      setisHomeIcon(!isHomeIcon);
-    }
+    setisCartIcon(false);
+    setisProfileIcon(false);
     setisNotificationIcon(!isNotificationIcon);
+  };
+
+  const handleCart = () => {
+    setisNotificationIcon(false);
+    setisProfileIcon(false);
+    setisCartIcon(!isCartIcon);
   };
 
   return (
     <div className={styles.navbar}>
-      {isHomeIcon && (
-        <div className={styles.right_nav} data-testid="right-nav">
-          <nav>
-            <ul>
-              <Link to="/" className={styles.Link}>
-                <li>
-                  <FontAwesomeIcon icon="home" className={`${styles.settings}`} />
-                  &nbsp;&nbsp;Home
-                </li>
-              </Link>
-              <Link to="/contact" className={styles.Link}>
-                <li>
-                  <FontAwesomeIcon icon="address-book" className={`${styles.settings}`} />
-                  &nbsp;&nbsp;Contact
-                </li>
-              </Link>
-              <Link to="/about_us" className={styles.Link}>
-                <li>
-                  <FontAwesomeIcon icon="circle-question" className={`${styles.settings}`} />
-                  &nbsp;&nbsp;About
-                </li>
-              </Link>
-              {!value && (
-                <Link to="/accounts/login" className={styles.Link}>
-                  <li>Login</li>
-                </Link>
-              )}
-            </ul>
-          </nav>
-        </div>
-      )}
       {isProfileIcon && (
-        <div className={styles.profile}>
+        <div className={styles.profile} data-testid="right-nav">
           <nav>
             <ul>
               <Link to="" className={styles.Link}>
@@ -175,30 +130,15 @@ const Navigation = () => {
             ref={closeRef}
           />
         </i>
-        <div className={styles.vectors}>
-          <img className={styles.logo__icon} src={logo} />
-          <strong>
-            SHOP<span>SPREE</span>
-          </strong>
-        </div>
-        <nav>
-          <ul>
-            <Link to="/" className={styles.Link}>
-              <li>Home</li>{' '}
-            </Link>
-            <Link to="/contact" className={styles.Link}>
-              <li>Contact</li>
-            </Link>
-            <Link to="/about_us" className={styles.Link}>
-              <li>About</li>
-            </Link>
-            {!value && (
-              <Link to="/accounts/signup" className={styles.Link}>
-                <li>Sign Up</li>
-              </Link>
-            )}
-          </ul>
-        </nav>
+        <Link to="/">
+          <div className={styles.vectors}>
+            <img className={styles.logo__icon} src={logo} />
+            <strong className="text-extrabold">
+              SHOP<span>SPREE</span>
+            </strong>
+          </div>
+        </Link>
+
         <FontAwesomeIcon icon="bars" className={styles.bars} />
         <div className={styles.all}>
           <div className={styles.searchContainer}>
@@ -206,22 +146,30 @@ const Navigation = () => {
             <FontAwesomeIcon icon="magnifying-glass" className={styles.searchIcon} />
           </div>
           <ProtectedComponent>
-            <CartIcon />
-            {value && <Icon onClick={handleNotifications} />}
+            <div className="flex justify-center items-center gap-3 laptop:w-28 laptop:gap-4 tablet:w-28 tablet:gap-4 phone:gap-1 sm:gap-1 sm:w-20">
+              <div className="" onClick={handleCart}>
+                <CartIcon />
+              </div>
 
-            <FontAwesomeIcon
-              icon="user"
-              className={`${styles.light} ${styles.user} px-2`}
-              onClick={handleProfile}
-              aria-label="user-icon"
-            />
+              <div className="" onClick={handleNotifications}>
+                <Icon />
+              </div>
+
+              <FontAwesomeIcon
+                icon="user"
+                className={`${styles.light} ${styles.user} px-2`}
+                onClick={handleProfile}
+                aria-label="user-icon"
+              />
+            </div>
           </ProtectedComponent>
-          <FontAwesomeIcon
-            icon="house"
-            className={`${styles.light} ${styles.house}`}
-            onClick={handleHome}
-            aria-label="home-icon"
-          />
+          <ReverseProtectedComponent>
+            <Link to="accounts/login">
+              <button className="bg-orange text-white text-base px-10 desktop:px-14 laptop:px-12 tablet:px-10 sm:px-5 phone:px-5 py-1.5 rounded-md">
+                Login
+              </button>
+            </Link>
+          </ReverseProtectedComponent>
         </div>
       </div>
       <nav className={`${styles.nav} ${styles.hidden}`} data-testid="overview-nav" ref={divRef}>

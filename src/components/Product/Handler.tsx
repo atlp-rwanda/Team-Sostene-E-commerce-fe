@@ -46,21 +46,21 @@ export default function Handler(props: HandlerProps) {
       <div className="w-full mt-10 text-black flex flex-col p-1">
         <div className="flex justify-between">
           <div className="">
-            <p className="w-full tex10left text-xl font-medium">{title}</p>
+            <p className="w-full text-left text-xl pb-4 pl-8 font-semibold">{title}</p>
           </div>
         </div>
         <div className="flex-1 flex overflow-auto smooth-scroll" ref={containerRef}>
           <div
             onClick={handleScrollToStart}
             data-testid="left"
-            className="left-0 mt-10 absolute z-2 p-1 h-64 flex justify-center items-center cursor-pointer text-gray-300"
+            className="left-0 mt-2 absolute z-2 p-1 h-72 flex justify-center items-center cursor-pointer text-gray-300 bg-translucent"
           >
             <i className="fa fa-arrow-left" aria-hidden="true"></i>
           </div>
           <div
             onClick={handleScrollToEnd}
             data-testid="right"
-            className="right-0 mt-10 absolute z-2 p-1 h-64 flex justify-center items-center cursor-pointer text-gray-300"
+            className="right-0 mt-2 absolute z-2 p-1 h-72 flex justify-center items-center cursor-pointer text-gray-300 bg-translucent"
           >
             <i className="fa fa-arrow-right" aria-hidden="true"></i>
           </div>

@@ -14,11 +14,11 @@ interface CardData {
 export default function ProductCard({ image, name, id, price }: CardData) {
   const { handleAddToCart } = useAddToCart();
   return (
-    <div className="p-2 w-60 mx-5 flex items-center  flex-col">
+    <div className="p-2 w-60 mx-3 flex items-center  flex-col  border-translucent border rounded-md">
       <Link
         to={`/product/${id}`}
         style={{ backgroundImage: `url(${image})` }}
-        className="  h-48 w-full object-cover bg-cover bg-center rounded-md border border-translucent"
+        className="  h-44 w-full object-cover bg-cover bg-center rounded-md border border-translucent"
       ></Link>
       <div className="p-2 text-md text-black text-left w-full">{name}</div>
       <div className="px-2 text-md text-orange font-semibold text-left w-full">${price}</div>

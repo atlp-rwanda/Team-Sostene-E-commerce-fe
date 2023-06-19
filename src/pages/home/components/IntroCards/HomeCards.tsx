@@ -2,13 +2,15 @@
 import axios from 'axios';
 import { Key, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ReverseProtectedComponent } from '../../../../components/roles/Protected';
 
 export default function HomeCards() {
   return (
     <div className="w-full my-5 justify-center flex flex-wrap items-center gap-3">
       <Categories title="Top Picks For You" query="m" />
-      <AnimatedCard />
-      <JoinUsCard />
+      <ReverseProtectedComponent replace={<AnimatedCard />}>
+        <JoinUsCard />
+      </ReverseProtectedComponent>
       <Categories title="Amazing Deals" query="car" />
       <CategoryCard text="Mobile Phones & Tablets" />
       <Categories title="Trending Clothes" query="clothing" />
@@ -47,7 +49,7 @@ export function Categories({ query, title }: { query: string; title: string }) {
   const { products, loading, error } = useFetch(query);
   return (
     <div className="w-80 border bg-white border-translucent">
-      <p className="p-2">{title}</p>
+      <p className="p-2 ">{title}</p>
       {error != '' ? (
         <div className="w-full p-32 flex items-center justify-center text-center">
           <p>{error}</p>

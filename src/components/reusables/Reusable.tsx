@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react';
 import styles from './Reusable.module.scss';
-import loader from '../../assets/spinner.svg';
+import loader from '/svgs/spinner.svg';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: string;

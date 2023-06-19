@@ -6,7 +6,7 @@ import Input from './components/input/input';
 import './signup.scss';
 import { SignupData, signup } from '../../../redux/slices/signup';
 import { useAppDispatch } from '../../../redux/hooks';
-import loader from '../../../assets/spinner.svg';
+import loader from '/svgs/spinner.svg';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';

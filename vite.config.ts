@@ -17,8 +17,8 @@ export default defineConfig({
       statements: 80,
       all: true,
       exclude: [
-        '**/*.storybook',
-        '**/*.stories.{ts,tsx}',
+          '**/*.storybook',
+          '**/*.stories.{ts,tsx}',
         '**/*.slice.{ts,tsx}',
         '**/helpers/*.{ts,tsx}',
         '**/hooks/*.{ts,tsx}',

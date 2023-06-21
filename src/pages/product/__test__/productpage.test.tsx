@@ -137,9 +137,11 @@ describe('Testing Product Page', () => {
         },
       },
     });
-    const id = '66d5250c-158d-11ee-be56-0242ac120002';
+    const id = '66d5250c-158d-11ee-be56-0242ac120002'
     await store.dispatch(getProduct(id));
-    expect(postSpy).toBeCalledWith(`${import.meta.env.VITE_BACKEND_URL}products/${id}`);
+    expect(postSpy).toBeCalledWith(
+      `${import.meta.env.VITE_BACKEND_URL}products/${id}`
+    );
   });
   it('should dispatch product action correctly', async () => {
     const store = configureStore({
@@ -175,8 +177,10 @@ describe('Testing Product Page', () => {
         },
       },
     });
-    const id = '66d5250c-158d-11ee-be56-0242ac120002';
+    const id = '66d5250c-158d-11ee-be56-0242ac120002'
     await store.dispatch(getProduct(id));
-    expect(postSpy).toBeCalledWith(`${import.meta.env.VITE_BACKEND_URL}products/${id}`);
+    expect(postSpy).toBeCalledWith(
+      `${import.meta.env.VITE_BACKEND_URL}products/${id}`
+    );
   });
 });

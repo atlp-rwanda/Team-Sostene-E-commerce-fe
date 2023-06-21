@@ -9,6 +9,7 @@ interface appRoutes {
   addToCart: string;
   chats: string;
   profile: string;
+  reviews: string;
 }
 const routes: appRoutes = {
   home: '/',
@@ -21,6 +22,7 @@ const routes: appRoutes = {
   addToCart: '/addToCart',
   chats: '/chats',
   profile: '/accounts/profile',
+  reviews: '/Reviews',
 };
 
 export default routes;

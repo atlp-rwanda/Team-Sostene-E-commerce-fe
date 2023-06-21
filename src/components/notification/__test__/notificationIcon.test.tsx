@@ -27,9 +27,11 @@ describe('Testing', () => {
           date: '2023-05-03T14:51:02.595Z',
         },
       ];
+      const loading = false;
       return {
         count,
         notifications,
+        loading,
       };
     };
     vi.spyOn(NotificationsHooks, 'useNotifications').mockImplementation(data);

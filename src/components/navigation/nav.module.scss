@@ -196,11 +196,11 @@ a {
   font-weight: 900;
 }
 
-@mixin subNav($right: 8px) {
+@mixin subNav($right: 0) {
   background-color: $white;
   color: $black;
   position: fixed;
-  top: 55px;
+  top: 3rem;
   right: $right;
   width: 30%;
   display: grid;

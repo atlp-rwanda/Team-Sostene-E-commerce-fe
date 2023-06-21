@@ -46,15 +46,7 @@ describe('Testing Handler And Slice', () => {
         updatedAt: '',
         expiredflag: true,
         name: 'test',
-        productImages: [
-          {
-            url: '',
-            id: '',
-            productId: '',
-            createdAt: '',
-            updatedAt: '',
-          },
-        ],
+        productImages: [],
         price: 200,
       },
     ];

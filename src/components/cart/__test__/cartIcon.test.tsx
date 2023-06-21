@@ -9,6 +9,7 @@ const cart: CART = {
   products: [
     {
       product: {
+        id: '12345',
         name: 'test item',
         image: '/image.jpg',
         price: 5000,
@@ -74,12 +75,12 @@ describe('CartItem', () => {
     const quantity = 8;
     const image = './image.jpg';
 
-    render(<CartItem image={image} name={name} price={price} quantity={quantity} />);
+    render(<CartItem id="123" image={image} name={name} price={price} quantity={quantity} />);
 
     const itemName = screen.getByText(name);
     expect(itemName).toBeInTheDocument();
 
-    const itemPrice = screen.getByText(price.toString());
+    const itemPrice = screen.getByText(`$${price.toString()}`);
     expect(itemPrice).toBeInTheDocument();
 
     const itemQuantity = screen.getByText(`x${quantity}`);
@@ -91,7 +92,7 @@ describe('CartItem', () => {
     const quantity = 8;
     const image = '';
 
-    render(<CartItem image={image} name={name} price={price} quantity={quantity} />);
+    render(<CartItem id="12345" image={image} name={name} price={price} quantity={quantity} />);
 
     const itemName = screen.getByText(name);
     expect(itemName).toBeInTheDocument();

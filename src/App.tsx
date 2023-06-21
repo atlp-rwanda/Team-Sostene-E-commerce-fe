@@ -20,6 +20,8 @@ import Contact from './pages/contact/contact';
 import Footer from './pages/Footer/Footer';
 import ViewCart from './pages/viewCart/Cart';
 import ProductPage from './pages/product/Product';
+import Dashboard from './pages/dashboard/Dashboard';
+import { SellerComponent } from './components/roles/Protected';
 
 function App() {
   library.add(fab, fas);
@@ -43,6 +45,14 @@ function App() {
           <Route path="*" element={<Page404 />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/manage_users" element={<AssignRole />} />
+          <Route
+            path="/dashboard/*"
+            element={
+              <SellerComponent replace={<Page404 />}>
+                <Dashboard />
+              </SellerComponent>
+            }
+          />
         </Routes>
         <Footer />
       </Provider>

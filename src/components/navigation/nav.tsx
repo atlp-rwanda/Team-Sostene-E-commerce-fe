@@ -8,7 +8,12 @@ import { logout } from '../../helpers/auth';
 import Icon from '../notification/Icon';
 import NotificationPane from '../notification/notificationPane';
 import { CartIcon } from '../cart/Cart';
-import { AdminComponent, ProtectedComponent, ReverseProtectedComponent } from '../roles/Protected';
+import {
+  AdminComponent,
+  ProtectedComponent,
+  ReverseProtectedComponent,
+  SellerComponent,
+} from '../roles/Protected';
 
 const logo = '/svgs/Vector.svg';
 
@@ -76,6 +81,13 @@ const Navigation = () => {
                   </li>
                 </Link>
               </AdminComponent>
+              <SellerComponent>
+                <Link to="/dashboard" className={styles.Link}>
+                  <li>
+                    <i className="fa fa-tachometer pr-2" aria-hidden="true"></i>Dashboard
+                  </li>
+                </Link>
+              </SellerComponent>
               <Link to="#" className={styles.Link}>
                 <li className={styles.cart}>
                   <FontAwesomeIcon icon="cart-shopping" className={`${styles.light}`} />

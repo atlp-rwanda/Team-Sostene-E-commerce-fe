@@ -1,0 +1,63 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+.loading{
+    margin: 20% 50%;
+}
+.confirm{
+    border: $borderColor;
+    width: 50%;
+    margin: 100px auto;
+    padding-bottom: 10px;
+    font-family:'Poppins', sans-serif;
+    span{
+        font-weight: bold;
+    }
+}
+.upper{
+    text-align: center;
+    border-bottom: 1px dotted rgb(220, 207, 207);
+    padding-bottom: 10px;
+    .success{
+        color: $green;
+        font-weight: bold;
+    }
+    h1{
+        letter-spacing: 1px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+}
+.logo{
+    margin: 40px auto;
+}
+.lower{
+    margin-top: 50px;
+    margin: 30px 50px 40px 50px;
+    font-size: 12px;
+    p{
+        margin-bottom: 10px;
+    }
+    .products{
+        margin-bottom: 10px;
+
+    }
+}
+.buttonWrapper{
+    width: 60%;
+    margin: auto;
+}
+.failed{
+    color: $red;
+    font-weight: bold;
+}
+
+@include mq($xls){
+    .confirm{
+        width: 90%;
+        margin: 100px 20px;
+        overflow: hidden;
+    }
+}

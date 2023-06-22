@@ -38,13 +38,15 @@ interface InputWithLabelProps extends React.InputHTMLAttributes<HTMLInputElement
   textId: string;
   label: string;
   value?: string;
+  placeholder?: string;
   name?: string;
   id?: string;
+  mode?: 'email' | 'numeric' | 'decimal'; // you may add more here
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const InputWithLabel: React.FC<InputWithLabelProps> = (props) => {
-  const { type, label, value, onChange, name, id, textId, ...restProps } = props;
+  const { type, label, value, onChange, name, id, textId, placeholder, ...restProps } = props;
 
   return (
     <div className={`${styles.inputBox}`}>
@@ -55,6 +57,7 @@ export const InputWithLabel: React.FC<InputWithLabelProps> = (props) => {
         value={value}
         data-testid={textId}
         onChange={onChange}
+        placeholder={placeholder}
         {...restProps}
       />
       <label>{label}</label>

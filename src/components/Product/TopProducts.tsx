@@ -2,7 +2,6 @@ import Handler, { useTopProducts } from './Handler';
 
 export default function TopProducts() {
   const products = useTopProducts();
-
   return (
     <div className="pt-5">
       {products.loading ? (

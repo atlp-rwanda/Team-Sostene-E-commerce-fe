@@ -46,7 +46,7 @@ export default function Handler(props: HandlerProps) {
       <div className="w-full mt-10 text-black flex flex-col p-1">
         <div className="flex justify-between">
           <div className="">
-            <p className="w-full text-left text-xl pb-4 pl-8 font-semibold">{title}</p>
+            <p className="w-full text-left text-xl pb-4 pl-8 title">{title}</p>
           </div>
         </div>
         <div className="flex-1 flex overflow-auto smooth-scroll" ref={containerRef}>
@@ -69,13 +69,16 @@ export default function Handler(props: HandlerProps) {
               ?.slice(0, 10)
               .reverse()
               .map((product, index) => (
-                <ProductCard
-                  id={product.id}
-                  key={index}
-                  name={product.name}
-                  image={product.productImages[0].url || 'https://i.ibb.co/LRz8tCM/Shop-Spree.png'}
-                  price={product.price}
-                />
+                <div key={index} className="w-60 mx-3">
+                  <ProductCard
+                    id={product.id}
+                    name={product.name}
+                    image={
+                      product.productImages[0]?.url || 'https://i.ibb.co/LRz8tCM/Shop-Spree.png'
+                    }
+                    price={product.price}
+                  />
+                </div>
               ))}
           </div>
         </div>

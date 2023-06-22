@@ -6,6 +6,7 @@ interface appRoutes {
   signup: string;
   about: string;
   changePass: string;
+  addToCart: string;
 }
 const routes: appRoutes = {
   home: '/',
@@ -15,6 +16,7 @@ const routes: appRoutes = {
   signup: '/accounts/signup',
   about: '/about_us',
   changePass: '/accounts/change/password',
+  addToCart: '/addToCart',
 };
 
 export default routes;

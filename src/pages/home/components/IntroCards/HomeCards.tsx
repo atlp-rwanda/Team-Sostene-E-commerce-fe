@@ -7,13 +7,13 @@ import { ReverseProtectedComponent } from '../../../../components/roles/Protecte
 export default function HomeCards() {
   return (
     <div className="w-full my-5 justify-center flex flex-wrap items-center gap-3">
-      <Categories title="Top Picks For You" query="m" />
+      <Categories title="Top picks for you" query="m" />
       <ReverseProtectedComponent replace={<AnimatedCard />}>
         <JoinUsCard />
       </ReverseProtectedComponent>
-      <Categories title="Amazing Deals" query="car" />
-      <CategoryCard text="Mobile Phones & Tablets" />
-      <Categories title="Trending Clothes" query="clothing" />
+      <Categories title="Amazing deals" query="car" />
+      <CategoryCard text="Mobile phones & Tablets" />
+      <Categories title="Trending clothes" query="clothing" />
     </div>
   );
 }
@@ -122,7 +122,7 @@ export function CategoryCard({ text }: { text: string }) {
         alt="animated"
       />
       <div className="w-full flex flex-col p-2 items-center justify-center">
-        <a className="w-full text-white">See More</a>
+        <a className="w-full text-white">See more</a>
       </div>
     </div>
   );

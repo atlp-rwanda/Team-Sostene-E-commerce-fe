@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,900');
 @import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
+@import "../../../styles/fonts.css";
 
 .navbar {
   width: 100%;
-  font-family: $interRegular;
+  font-family: $popinsRegular;
   font-size: 14px;
   color: $black;
   box-sizing: border-box;
@@ -142,7 +143,7 @@ a {
     display: flex;
     align-items: center;
     &.overview {
-      color: #0288d1;
+      color: $pureBlue;
       border-bottom: $borderColor;
       background-color: $sideNavHover;
       height: 54px;
@@ -229,7 +230,7 @@ a {
       padding: 10px 10px;
       margin-right: 10px;
       transition: all 0.4s ease 0s;
-      font-family: $interMedium;
+      font-family: $popinsMedium;
       font-size: 14px;
       cursor: pointer;
       &:hover {

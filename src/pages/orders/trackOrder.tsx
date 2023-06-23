@@ -1,9 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useGetOrderStatus } from './redux/hooks';
 import { Link, useNavigate } from 'react-router-dom';
+import React from 'react';
 
 function Orders() {
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
   const { handleGetOrderStatus, result } = useGetOrderStatus();
   const navigate = useNavigate();
 
@@ -11,8 +13,11 @@ function Orders() {
     handleGetOrderStatus();
   }, []);
 
-  function singleOrder(id: string) {
-    navigate(`/orders/singleOrder?orderid=${id}`);
+  function singleOrder(id: string, event: React.MouseEvent<HTMLTableRowElement>) {
+    const clickedElement = event.target as HTMLTableRowElement;
+    if (buttonRef.current?.textContent != clickedElement?.textContent) {
+      navigate(`/orders/singleOrder?orderid=${id}`);
+    }
   }
 
   return (
@@ -46,7 +51,7 @@ function Orders() {
             </thead>
             <tbody>
               {result.data.orders.map((item) => (
-                <tr key={item.id} onClick={() => singleOrder(item.id)}>
+                <tr key={item.id} onClick={(event) => singleOrder(item.id, event)}>
                   <td className="px-10 py-5">
                     <img src={item.products[0]?.product.image} className="w-20 h-20 object-cover" />
                   </td>
@@ -55,7 +60,9 @@ function Orders() {
                   <td className="px-6 py-10 flex">
                     {item.status !== 'succeeded' ? (
                       <Link to={`/payment?rid=${item.id}`}>
-                        <button>Pay</button>
+                        <button className="pay_redirect" ref={buttonRef}>
+                          Pay
+                        </button>
                       </Link>
                     ) : (
                       <button>Done</button>

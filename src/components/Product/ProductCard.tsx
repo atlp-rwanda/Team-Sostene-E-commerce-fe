@@ -20,7 +20,7 @@ export default function ProductCard({ image, name, id, price }: CardData) {
         style={{ backgroundImage: `url(${image})` }}
         className="  h-44 w-full object-cover bg-cover bg-center rounded-md border border-translucent"
       ></Link>
-      <div className="p-2 text-md text-black text-left w-full">{name}</div>
+      <div className="p-2 text-md text-black text-left w-full capitalize">{name}</div>
       <div className="px-2 text-md text-orange font-semibold text-left w-full">${price}</div>
       <div className="flex flex-row items-center justify-between w-full px-2">
         <Rating id={id} />

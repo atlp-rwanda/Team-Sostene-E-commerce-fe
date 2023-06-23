@@ -93,7 +93,7 @@
     opacity: 0.2;
   }
   .text_error{
-    color: red;
+    color: $red;
     font-size: 12px;
     margin-bottom: 20px;
   }
@@ -101,7 +101,7 @@
     text-align: center;
     font-size: 12px;
     margin-bottom: 30px;
-    color: red;
+    color:$red;
   }
   @include mq($xls){
     .payment{

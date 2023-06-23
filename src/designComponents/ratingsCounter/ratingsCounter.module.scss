@@ -1,5 +1,7 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
+@import '../../../styles/fonts.css';
+
 .ratingsCounter {
   :global {
     width: 100%;
@@ -23,7 +25,7 @@
       }
       .ratingNumber {
         @include h5;
-        font-family: $interBold;
+        font-family: $popinsBold;
       }
     }
   }

@@ -1,3 +1,5 @@
+@import '../../../../../../styles/variables.scss';
+
 // Define variables
 $small-width: 10%;
 $medium-width: 15%;
@@ -41,8 +43,8 @@ $btn-font-weight: bold;
 
 .btn {
   cursor: pointer;
-  color: #fff;
+  color: $white;
   font-family: $btn-font-family;
   font-weight: $btn-font-weight;
-  background: #FF8C42;
+  background: $primary-color;
 }

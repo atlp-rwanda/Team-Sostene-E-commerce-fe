@@ -1,5 +1,7 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
+@import '../../../styles/fonts.css';
+
 
 .carouselslider {
   :global {
@@ -36,7 +38,7 @@
       bottom: -15px;
       right: 1.6rem !important  ;
       background-color: $btnStatus;
-      font-family: $interRegular !important;
+      font-family: $popinsRegular !important;
       height: 40px !important;
       width: 80px !important;
       display: flex;

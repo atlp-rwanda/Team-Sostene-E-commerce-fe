@@ -1,3 +1,5 @@
+@import '../../../styles//variables.scss';
+
 $small-width: 10%;
 $medium-width: 50%;
 $large-width: 80%;
@@ -51,12 +53,15 @@ $demo-color: green;
   background: $demo-color;
 }
 
-.btn {
-  cursor: pointer;
-  color: #fff;
-  font-family: $btn-font-family;
-  font-weight: $btn-font-weight;
-  font-size: 16px;
+.reusableBtn{
+  .btn {
+    cursor: pointer;
+    color: $white;
+    font-family: $btn-font-family;
+    font-weight: $btn-font-weight;
+    font-size: 16px;
+    background-color: $primary-color;
+  }
 }
 
 .inputBox {
@@ -66,10 +71,10 @@ $demo-color: green;
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
-    color: #000;
+    color: $black ;
     margin-bottom: 30px;
     border: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid $black ;
     outline: none;
     background: transparent;
   }
@@ -79,7 +84,7 @@ $demo-color: green;
     left: 0;
     padding: 10px 0;
     font-size: 16px;
-    color: #000;
+    color: $black;
     pointer-events: none;
     transition: 0.5s;
   }
@@ -87,7 +92,7 @@ $demo-color: green;
   input:valid ~ label {
     top: -20px;
     left: 0;
-    color: #bdb8b8;
+    color: $greyLabel;
     font-size: 12px;
   }
 }
@@ -104,7 +109,7 @@ $demo-color: green;
     padding: 0;
     margin: 0;
     font-size: 12px;
-    color: hsla(0, 100%, 50%, 0.7);
+    color: $transparentRed;
     display: flex;
     justify-content: center;
     align-items: center;

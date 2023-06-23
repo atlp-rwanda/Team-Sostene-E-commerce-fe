@@ -1,3 +1,6 @@
+
+$borderColor:#c9c9cd;
+
 .widthLong {
     width: 100%;
     background: none;
@@ -5,7 +8,7 @@
     display: inline-block;
     border: none;
     outline: none;
-    border-bottom: 1px solid #c9c9cd;
+    border-bottom: 1px solid $borderColor;
     display: block;
     margin-bottom: 20px;
     font-family: 'Poppins', sans-serif;

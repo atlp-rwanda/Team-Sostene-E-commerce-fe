@@ -20,12 +20,12 @@ export default function HomeParallax() {
       }}
     >
       <p className="w-3/4 text-white text-center text-2xl desptop:text-3xl tablet:text-xl phone:text-xl">
-        Discover a World of Shopping Delight at ShopSpree. Shop the Latest Trends in Fashion, Home
-        Decor, Electronics, and More!
+        Discover a world of shopping delight at shopSpree. shop the latest trends in fashion, home
+        decor, electronics, and more!
       </p>
       <Link to="/">
         <button className="px-6 py-3 bg-orange text-white " onClick={scrollToSection}>
-          Start Shopping!
+          Start shopping!
         </button>
       </Link>
     </div>

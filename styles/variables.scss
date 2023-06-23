@@ -1,24 +1,26 @@
 // fonts
-$interBlack: "Inter-Black.ttf";
-$interBold: "Inter-Bold.ttf";
-$interExtraBold: "Inter-ExtraBold.ttf";
-$interExtraLight: "Inter-ExtraLight.ttf";
-$interMedium: "Inter-Medium.ttf";
-$interRegular: "Inter-Regular.ttf";
-$interThin: "Inter-Thin.ttf";
-$interSemiBold: "Inter-SemiBold.ttf";
+$popinsBlack: "Poppins-Black";
+$popinsBold: "Poppins-Bold";
+$popinsExtraBold: "Poppins-ExtraBold";
+$popinsExtraLight: "Poppins-ExtraLight";
+$popinsMedium: "Poppins-Medium";
+$popinsRegular: "Poppins-Regular";
+$popinsThin: "Poppins-Thin";
+$popinsSemiBold: "Poppins-SemiBold";
+
 $logoText: 'Roboto', san-serif;
 
 //  colors
 $red:#DB4444;
+$transparentRed:hsla(0, 100%, 50%, 0.7);
 $yellow:#FFAD33;
-$orange:#FF8C42;
 $black:#000000;
 $placeholderColor:#BFC3D1;
 $white:#ffffff;
 $lightBlack:#3c2a2a;
 $bgInput:#ECEDF2;
 $lightBlue:#54BAED;
+$pureBlue:#0288d1;
 $gray:rgba(0, 0, 0, 50%);
 $translucent: #0000001b;
 $pureGray:#D9D9D9;
@@ -35,7 +37,10 @@ $white-two: #f1f1f1;
 $darkGray:rgba(0, 0, 0, .7);
 $transparent-bg: #f0f0f0;
 $white-two: #f1f1f1;
-
+$darkenWhite: #e7e7e7;
+$secondaryBorderColor: #c2c2c3;
+$lightBlack: rgba(55, 54, 54, 0.235);
+$transparentBlack: #0000001f;
 
 // srceen sizes
 $sm:500px;

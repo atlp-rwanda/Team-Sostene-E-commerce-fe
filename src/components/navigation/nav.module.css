@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,900");
+@import '../../../styles/variables.scss';
+
 .app {
   width: 100%;
   color: #000000;
@@ -10,7 +12,7 @@
 
 .navbar {
   width: 100%;
-  font-family: "Inter-Regular.ttf";
+  font-family:'Poppins-Regular.ttf';
   font-size: 14px;
   color: #000000;
   box-sizing: border-box;
@@ -196,7 +198,7 @@ a {
 
 .top__bar strong {
   font-size: 25px;
-  font-family: "Roboto", san-serif;
+  font-family:'Poppins-Regular.ttf';
   font-weight: 900;
 }
 

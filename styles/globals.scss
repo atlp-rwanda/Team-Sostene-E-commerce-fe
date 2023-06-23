@@ -2,6 +2,8 @@
 @import './variables.scss';
 @import "./mixins.scss";
 @import  "./fonts.css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 
 // html,
 body {
@@ -16,13 +18,13 @@ body {
   display: flex;
   justify-content: center;
   height: fit-content;
-  font-family: $interRegular
+  font-family: $popinsRegular
 }
 
 a {
   color: $black;
   text-decoration: none;
-  font-family: $interRegular;
+  font-family: $popinsRegular;
   cursor: pointer;
   @include transition;
   &:hover{

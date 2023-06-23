@@ -164,8 +164,7 @@
 }
 .cardItem :global .prices .newPrice {
   color: #DB4444;
-  font-family: "Inter-Regular.ttf";
-  font-family: "Inter-Regular.ttf";
+  font-family:'Poppins-Regular.ttf';
   font-size: 1em;
 }
 @media screen and (max-width: 1600px) {
@@ -195,8 +194,7 @@
 }
 .cardItem :global .prices .oldPrice {
   color: rgba(0, 0, 0, 0.5);
-  font-family: "Inter-Regular.ttf";
-  font-family: "Inter-Regular.ttf";
+  font-family:'Poppins-Regular.ttf';
   font-size: 1em;
   text-decoration: line-through;
 }
@@ -227,7 +225,7 @@
 }
 .cardItem :global .ratingsCard {
   width: 100%;
-  font-family: "Inter-Regular.ttf";
+  font-family:'Poppins-Regular.ttf';
   font-size: 1em;
   padding: 0 10px;
 }

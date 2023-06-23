@@ -1,5 +1,6 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
+@import '../../../styles/fonts.css';
 
 .container {
   display: flex;
@@ -58,7 +59,7 @@ h2 {
 
   h3 {
     @include h1;
-    font-family: $interRegular;
+    font-family: $popinsRegular;
     text-align: center;
     font-weight: bold;
     width: 100%;
@@ -107,7 +108,7 @@ h2 {
     flex-direction: column;
     gap: 20px;
     .paragraph {
-      font-family: $interRegular;
+      font-family: $popinsRegular;
     }
   }
 }

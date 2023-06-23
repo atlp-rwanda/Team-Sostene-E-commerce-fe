@@ -77,12 +77,11 @@
 .sellerItems :global .topFilterBox .SearchInput {
   height: 100%;
   width: 22.4242424242%;
-  font-family: "Inter-Regular.ttf";
+  font-family:'Poppins-Regular.ttf';
   font-size: 1em;
   border-radius: 5px;
   color: #000000;
   background-color: #ECEDF2;
-  font-family: "Inter-Regular.ttf";
   padding-left: 1rem;
   border: none;
   outline: none;
@@ -153,11 +152,10 @@
   padding-left: 1rem;
   height: 100%;
   background-color: #ECEDF2;
-  font-family: "Inter-Regular.ttf";
+  font-family:'Poppins-Regular.ttf';
   justify-content: flex-end;
   align-items: center;
   border-radius: 5px;
-  font-family: "Inter-Regular.ttf";
   font-size: 1em;
 }
 @media screen and (max-width: 1600px) {
@@ -208,11 +206,10 @@
   border-radius: inherit;
   flex-grow: 1;
   display: flex;
-  font-family: "Inter-Regular.ttf";
+  font-family:'Poppins-Regular.ttf';
   font-size: 1em;
   border: none;
   outline: none;
-  font-family: "Inter-Regular.ttf";
   justify-content: flex-start;
   align-items: center;
 }

@@ -77,13 +77,13 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        background-color: $orange;
+        background-color: $yellow;
         color: $black;
         padding: 0 20px;
         @include transition;
         @include h6;
         &:hover {
-          background-color: lighten($color: $orange, $amount: 7);
+          background-color: lighten($color: $yellow, $amount: 7);
         }
       }
     }

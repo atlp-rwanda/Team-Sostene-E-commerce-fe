@@ -1,5 +1,7 @@
 @import '../../../../../styles/variables.scss';
 @import '../../../../../styles/mixins.scss';
+@import '../../../../../styles/fonts.css';
+
 .previewCard {
   :global {
     width: 100%;
@@ -87,12 +89,12 @@
         align-items: flex-start;
         padding: 0 1.6rem;
         .h5 {
-          font-family: $interBold;
+          font-family: $popinsBold;
           @include h5;
           margin-right: 5px;
         }
         .h6 {
-          font-family: $interRegular;
+          font-family: $popinsRegular;
           @include h6;
         }
         .pricing {
@@ -101,7 +103,7 @@
           grid-area: 5px;
         }
         .h3 {
-          font-family: $interBold;
+          font-family: $popinsBold;
           @include h3;
         }
       }
@@ -114,11 +116,11 @@
         width: 100%;
         padding: 0 1.6rem;
         .detailHead {
-          font-family: $interBold;
+          font-family: $popinsBold;
           @include h5;
         }
         .details{
-          font-family: $interRegular;
+          font-family: $popinsRegular;
           @include h6;
         }
       }

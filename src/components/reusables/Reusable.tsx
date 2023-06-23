@@ -18,19 +18,21 @@ export const Button: React.FC<ButtonProps> = (props) => {
   const buttonColor = styles[`color--${color || 'primary'}`];
 
   return (
-    <button
-      className={`${styles.btn} ${buttonSize} ${buttonColor}`}
-      onClick={onClick}
-      type={type || 'submit'}
-      disabled={loading_state}
-      {...restProps}
-    >
-      {loading_state ? (
-        <img src={loader} style={{ height: '25px', margin: 'auto' }} alt="loader" />
-      ) : (
-        text
-      )}
-    </button>
+    <div className={styles.reusableBtn}>
+      <button
+        className={`${styles.btn} ${buttonSize} ${buttonColor}`}
+        onClick={onClick}
+        type={type || 'submit'}
+        disabled={loading_state}
+        {...restProps}
+      >
+        {loading_state ? (
+          <img src={loader} style={{ height: '25px', margin: 'auto' }} alt="loader" />
+        ) : (
+          text
+        )}
+      </button>
+    </div>
   );
 };
 

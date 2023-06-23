@@ -60,6 +60,7 @@ export const useCreateCollection = () => {
       .then((response) => {
         setLoading(false);
         toast.success(response.data.message);
+        window.location.href = '/dashboard';
       })
       .catch((error) => {
         if (error.response.data.code === 409) {

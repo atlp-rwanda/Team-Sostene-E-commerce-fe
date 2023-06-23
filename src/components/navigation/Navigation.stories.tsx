@@ -3,13 +3,17 @@ import { BrowserRouter } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { Provider } from 'react-redux';
+import store from '../../redux/store';
 
 const Nav = () => {
   library.add(fab, fas);
   return (
-    <BrowserRouter>
-      <Navigation />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Navigation />
+      </BrowserRouter>
+    </Provider>
   );
 };
 export default {

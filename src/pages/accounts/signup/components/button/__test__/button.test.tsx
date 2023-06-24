@@ -16,4 +16,14 @@ describe('Button Element', () => {
     expect(buttonElement).toHaveAttribute('type', 'button');
     fireEvent.click(buttonElement);
   });
+  it('renders the button component with default', () => {
+    render(<Button size="" color="" value="Click me" onclick={vi.fn()} type="button" />);
+
+    const buttonElement = screen.getByText('Click me') as HTMLButtonElement;
+    expect(buttonElement).toBeInTheDocument();
+    expect(screen.getByText('Click me')).toBeInTheDocument();
+    expect(buttonElement.tagName).toBe('BUTTON');
+    expect(buttonElement).toHaveAttribute('type', 'button');
+    fireEvent.click(buttonElement);
+  });
 });

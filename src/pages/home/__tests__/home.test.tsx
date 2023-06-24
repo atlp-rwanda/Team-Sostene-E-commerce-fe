@@ -25,5 +25,10 @@ describe('Home Component', () => {
     const { getByTestId } = render(<MockElement />);
     const homeComponent = getByTestId('home');
     expect(homeComponent).toBeInTheDocument();
+    const { getAllByText, getAllByRole } = render(<MockElement />);
+    const img = getAllByRole('img');
+    const result1 = getAllByText('New Release');
+    expect(result1.length).toBeGreaterThan(0);
+    expect(img.length).toBeGreaterThan(0);
   });
 });

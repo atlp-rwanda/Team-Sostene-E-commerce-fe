@@ -55,7 +55,7 @@ export default function RatingsCounter(props: rating) {
               <img src={starIcon} alt="Star" className="startImage" />
             </div>
           )}
-          {rating === 5 && (
+          {rating >= 5 && (
             <div className="ratingBox">
               {[1, 2, 3, 4, 5].map((rating: number) => {
                 return <img src={starIconRated} key={rating} alt="Star" className="startImage" />;

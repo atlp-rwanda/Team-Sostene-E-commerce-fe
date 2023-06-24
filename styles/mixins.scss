@@ -74,7 +74,7 @@
 
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background: darken($color: $black, $amount: 20);
+    background: darken($color: $orange, $amount: 20);
     border-radius: 100px;
     cursor: pointer;
     @include mq($xls) {
@@ -84,9 +84,9 @@
 
   /* Handle on hover */
   &::-webkit-scrollbar-thumb:hover {
-    background: darken($color: $green, $amount: 5);
+    background: darken($color: $orange, $amount: 5);
     &::-webkit-scrollbar-track {
-      border: .5px solid $green;
+      border: .5px solid $orange;
     }
 
     @include mq($xls) {

@@ -20,8 +20,12 @@ export default defineConfig({
         '**/*.storybook',
         '**/*.stories.{ts,tsx}',
         '**/*.slice.{ts,tsx}',
+        '**/helpers/*.{ts,tsx}',
         '**/hooks/*.{ts,tsx}',
       ],
     },
+  },
+  build: {
+    sourcemap: false,
   },
 });

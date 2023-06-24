@@ -5,11 +5,12 @@ import { CART } from './redux/cartDataSlice';
 import imageReplacement from '/images/ImageReplacement.png';
 import { Link } from 'react-router-dom';
 import { useGetCart } from '../../pages/viewCart/redux/hooks';
+import { Rating } from '../Product/ProductCard';
 
 function CartBox(props: { cart: CART; loading: boolean; error: string }) {
   const { loading, error, cart } = props;
   return (
-    <div className="w-64 bg-white absolute top-12 right-10 border-translucent border">
+    <div className="w-64 bg-white absolute z-30 top-12 right-10 border-translucent border">
       <div className="p-2 bg-orange flex flex-row justify-between items-center ">
         <p className="font-semibold">Cart</p>
         <Link to="/cart" className={styles.link}>
@@ -18,18 +19,24 @@ function CartBox(props: { cart: CART; loading: boolean; error: string }) {
       </div>
       <div className={styles.cart__container}>
         {error != '' ? <p>{error}</p> : ''}
-        {loading ? <p className=" bg-orange my-1 p-1 h-1 rounded animate-pulse"></p> : ''}
-        <div className={styles.cart__scroll}>
-          {cart?.products.map((item, index) => (
-            <CartItem
-              key={index}
-              name={item.product.name}
-              price={item.product.price}
-              quantity={item.quantity}
-              image={item.product.image}
-            />
-          ))}
-        </div>
+        {loading ? (
+          <p className="flex items-center justify-center py-2">
+            <i className="fa fa-spinner fa-spin text-orange" aria-hidden="true"></i>
+          </p>
+        ) : (
+          <div className={styles.cart__scroll}>
+            {cart.products.map((item, index) => (
+              <CartItem
+                key={index}
+                id={item.product.id}
+                name={item.product.name}
+                price={item.product.price}
+                quantity={item.quantity}
+                image={item.product.image}
+              />
+            ))}
+          </div>
+        )}
       </div>
       <div className="flex flex-row items-center justify-between p-2 bg-orange">
         <div className="">Total Price</div>
@@ -39,19 +46,28 @@ function CartBox(props: { cart: CART; loading: boolean; error: string }) {
   );
 }
 
-export function CartItem(props: { name: string; price: number; quantity: number; image: string }) {
-  const { name, price, quantity, image } = props;
+export function CartItem(props: {
+  id: string;
+  name: string;
+  price: number;
+  quantity: number;
+  image: string;
+}) {
+  const { name, price, quantity, image, id } = props;
   const img = image === '' ? imageReplacement : image;
   return (
-    <div className={styles.item}>
-      <div className={styles.item__image}>
-        <img src={img} alt="image" />
+    <div className="flex flex-row items-start justify-between p-1 border border-translucent my-1">
+      <div className="mr-2">
+        <img src={img} className="w-20" alt="image" />
       </div>
-      <div className={styles.item__des}>
-        <div className={styles.item__name}>{name}</div>
+      <div className="flex flex-col w-full justify-start h-full">
+        <div className="text-xs font-semibold">{name}</div>
+        <div className=" text-xs  ">
+          <Rating id={id} />
+        </div>
         <div className={styles.item__num}>
-          <div className={styles.item__price}>{price}</div>
-          <div className={styles.item__qty}>x{quantity}</div>
+          <div className={styles.item__price}>${price}</div>
+          <div className="">x{quantity}</div>
         </div>
       </div>
     </div>
@@ -77,7 +93,7 @@ export function CartIcon() {
       </div>
       {view && (
         <div
-          className="w-screen h-screen absolute left-0 mt-4"
+          className="w-screen h-screen z-20 absolute left-0 top-0"
           onClick={() => setView(false)}
         ></div>
       )}

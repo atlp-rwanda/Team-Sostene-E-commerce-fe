@@ -30,7 +30,7 @@ export default function Icon() {
           <>
             <NotificationPane />
             <div
-              className=" z-[-1] w-screen h-screen absolute left-0 top-0 bottom-0 mt-12"
+              className=" z-40 w-screen h-screen absolute left-0 top-0 bottom-0"
               onClick={() => setviewNotification(false)}
             ></div>
           </>

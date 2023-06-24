@@ -10,6 +10,7 @@ type InitialCart_State = {
 export interface CART {
   products: {
     product: {
+      id: string;
       name: string;
       price: number;
       image: string;

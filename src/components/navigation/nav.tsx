@@ -65,7 +65,11 @@ const Navigation = () => {
     <div className={styles.navbar}>
       {isProfileIcon && (
         <div className={styles.profile} data-testid="right-nav">
-          <nav>
+          <div
+            className=" z-30 w-screen h-screen absolute  right-0 top-0 bottom-0"
+            onClick={() => setisProfileIcon(false)}
+          ></div>
+          <nav className="z-50 bg-white">
             <ul>
               <Link to="" className={styles.Link}>
                 <li>

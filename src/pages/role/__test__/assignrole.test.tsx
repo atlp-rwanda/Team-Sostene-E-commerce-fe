@@ -1,5 +1,5 @@
 import { fireEvent, render } from '@testing-library/react';
-import AssignRole, { RoleButtons, UserRow } from '../AssignRole';
+import AssignRole, { DisableButtons, RoleButtons, UserRow } from '../AssignRole';
 import { vi } from 'vitest';
 import axios from 'axios';
 import { Provider } from 'react-redux';
@@ -123,5 +123,32 @@ describe('Testing Assign Role Page', () => {
       </Provider>
     );
     expect(mockGet).toBeCalled();
+  });
+
+  test('Testing Buttons disable account', () => {
+    const mockPatch = vi.spyOn(axios, 'patch').mockResolvedValueOnce({
+      id: '12345',
+      email: 'e@mail.com',
+      username: 'testing',
+      role: 'Buyer',
+      status: 'ACTIVE',
+    });
+    const { getByTestId } = render(
+      <Provider store={store}>
+        <DisableButtons id="12345" status="ACTIVE" />
+      </Provider>
+    );
+    fireEvent.click(getByTestId('role-btn'));
+    expect(mockPatch).toBeCalled();
+  });
+  test('Testing Buttons disable account with error', () => {
+    const mockPatch = vi.spyOn(axios, 'patch').mockRejectedValueOnce({});
+    const { getByTestId } = render(
+      <Provider store={store}>
+        <DisableButtons id="123456" status="ACTIVE" />
+      </Provider>
+    );
+    fireEvent.click(getByTestId('role-btn'));
+    expect(mockPatch).toBeCalled();
   });
 });

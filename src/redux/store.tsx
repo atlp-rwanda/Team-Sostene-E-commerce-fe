@@ -19,7 +19,11 @@ import {
   resetPasswordReducer,
   forgotPasswordReducer,
 } from '../pages/accounts/resetPassword/redux/resetPasswordSlice';
-import { getUserReducer, setRoleReducer } from '../pages/role/redux/assignRolesSlice';
+import {
+  getUserReducer,
+  setRoleReducer,
+  disableAccountReducer,
+} from '../pages/role/redux/assignRolesSlice';
 import addToCartReducer from '../components/cart/redux/addToCartSlice';
 import cartDataReducer from '../components/cart/redux/cartDataSlice';
 import fetchTopProductsReducer from '../components/Product/redux/getTopProductsSlice';
@@ -41,6 +45,7 @@ const rootReducer = combineReducers({
   topProducts: fetchTopProductsReducer,
   getCart: getCartSlice,
   product: productReducer,
+  disableAccount: disableAccountReducer,
 });
 
 const persistConfig = {

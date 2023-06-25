@@ -35,6 +35,7 @@ import productSlice from './slices/productSlice';
 // import tfaReducer from '../pages/accounts/tfa/redux/tfaSlice';
 import orderStatus from '../pages/orders/redux/trackOrderSlice';
 import { checkoutReducer } from '../pages/checkout/redux/checkoutSlice';
+import profileReducer from '../pages/editProfiles/redux/userProfile';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -55,9 +56,10 @@ const rootReducer = combineReducers({
   disableAccount: disableAccountReducer,
   search: searchReducer,
   products: productSlice,
-  // add your new reducer created
   getOrderStatus: orderStatus,
   checkout: checkoutReducer,
+  profile: profileReducer,
+    // add your new reducer created
 });
 
 const persistConfig = {

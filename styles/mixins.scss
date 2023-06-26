@@ -74,7 +74,7 @@
 
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background: darken($color: $orange, $amount: 20);
+    background: $orange;
     border-radius: 100px;
     cursor: pointer;
     @include mq($xls) {

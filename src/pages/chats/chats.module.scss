@@ -1,0 +1,123 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/variables.scss';
+
+.chats {
+  :global {
+    @include pageSettings;
+    margin: 0;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+    background-color: darken($color: $white, $amount: 2);
+    padding: 0;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    .chat_container {
+      border-radius: 20px 20px 0 0;
+      background-color: $white;
+      display: flex;
+      flex-direction: column;
+      height: calc(100% - 150px);
+      overflow-y: auto;
+      @include scroll-bar;
+      gap: 30px;
+      width: 100%;
+      justify-content: flex-start;
+      @include mq($xlg) {
+        padding: 15px;
+      }
+      @include mq($md) {
+        gap: 15px;
+      }
+      .typing {
+        font-style: oblique;
+        font-size: 11px;
+        font-family: 'poppins', sans-serif;
+        color: $black;
+      }
+    }
+    .chat-form {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      height: fit-content;
+      @include h5;
+      background-color: $white;
+      align-items: flex-end;
+      gap: 5px;
+      width: 100%;
+      margin-bottom: 15px;
+      @include mq($xlg) {
+        left: 30px;
+        right: 30px;
+      }
+      @include mq($lg) {
+        right: 25px;
+        left: 25px;
+      }
+      @include mq($md) {
+        right: 20px;
+        left: 20px;
+      }
+      @include mq($xls) {
+        right: 15px;
+        left: 15px;
+      }
+      .messageTypingBox {
+        background-color: $pureGray;
+        flex-grow: 1;
+        height: 150px;
+        flex-grow: 1;
+        overflow: auto;
+        @include scroll-bar;
+        padding: 10px;
+        border-radius: 20px;
+        border: none;
+        margin-bottom: 20px;
+        &:focus {
+          border: none;
+          outline: none;
+        }
+        @include mq($xlg) {
+          height: 130px;
+        }
+        @include mq($lg) {
+          height: 120px;
+        }
+        @include mq($md) {
+          height: 100px;
+        }
+      }
+      .button {
+        background: $black;
+        height: 40px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        width: auto;
+        cursor: pointer;
+        @include transition;
+        color: $white;
+        &:hover {
+          background-color: lighten($color: $black, $amount: 7);
+        }
+      }
+    }
+  }
+}

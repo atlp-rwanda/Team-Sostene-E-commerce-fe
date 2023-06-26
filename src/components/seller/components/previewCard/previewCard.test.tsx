@@ -21,7 +21,7 @@ describe('PreviewCard', () => {
     };
     const { queryAllByText, getAllByTestId, getAllByAltText } = render(<PreviewCard card={card} />);
 
-    expect(getAllByAltText('Icon')).toHaveLength(2);
+    expect(getAllByAltText('Icon')).toHaveLength(1);
     expect(queryAllByText('$10')).toHaveLength(1);
     expect(getAllByTestId('carouselId')).toHaveLength(1);
     expect(getAllByTestId('previewCardId')).toHaveLength(1);

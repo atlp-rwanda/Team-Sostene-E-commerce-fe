@@ -16,15 +16,6 @@
       flex-direction: column;
       gap: pxToVh(26);
     }
-    .error {
-      @include h5;
-      font-family: $interRegular;
-      display: flex;
-      color: $red;
-      width: 100%;
-      justify-content: center;
-      align-items: center;
-    }
     .topFilterBox {
       width: 100%;
       display: flex;
@@ -124,6 +115,9 @@
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
+      .none{
+        margin: auto;
+      }
       @include mq($xlg) {
         gap: 15px;
       }
@@ -155,3 +149,12 @@
     }
   }
 }
+    .error {
+      @include h5;
+      font-family: $interRegular;
+      display: flex;
+      color: $red;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }

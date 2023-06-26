@@ -27,7 +27,6 @@ export default function PreviewCard(props: cardProp) {
       <div className="contentPreview">
         <div className="actionBts">
           <img src="./svgs/editBtn.svg" alt="Icon" className="icon iconEdit" />
-          <img src="./svgs/deleteBtn.svg" alt="Icon" className="icon iconDelete" />
         </div>
         <div className="carouselBox" data-testid="carouselId">
           <Carouselslider images={card.productImages} />

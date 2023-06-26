@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { useCollections, useCreateCollection } from './hooks';
+import { useNavigate } from 'react-router-dom';
 
 export default function CreateCollection() {
   const { handleCreate, error, loading } = useCreateCollection();
@@ -11,6 +12,7 @@ export default function CreateCollection() {
       nameRef.current.value = '';
     }
   };
+
   return (
     <div className="w-full h-96 flex items-start pt-20 justify-center">
       <div className="w-full max-w-xs">
@@ -47,6 +49,10 @@ export default function CreateCollection() {
 
 export function Collections() {
   const { loading, error, collections } = useCollections();
+  const navigate = useNavigate();
+  function redirection(cid: string) {
+    navigate(`/sellerItems?cid=${cid}`);
+  }
   return (
     <div className="w-full border-2 p-2 mt-10 border-fade">
       <div className="w-full text-2xl">Your collections</div>
@@ -62,6 +68,9 @@ export function Collections() {
             <button
               key={index}
               className="p-1 cursor-pointer  my-2 w-auto items-center text-center bg-orange text-white"
+              onClick={() => {
+                redirection(collection.id);
+              }}
             >
               {collection.name}
             </button>

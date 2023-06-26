@@ -32,4 +32,33 @@ export const handlers = [
       );
     }
   }),
+
+  rest.get(`${import.meta.env.VITE_BACKEND_URL}reviews/rating/:id`, async (req, res, ctx) => {
+    const { id } = req.params;
+    if (id === '1') {
+      return res(
+        ctx.status(200),
+        ctx.json({
+          Code: 200,
+          rating: 1,
+        })
+      );
+    } else if (id === '2') {
+      return res(
+        ctx.status(400),
+        ctx.json({
+          Code: 400,
+          rating: null,
+        })
+      );
+    } else if (id === '3') {
+      return res(
+        ctx.status(200),
+        ctx.json({
+          Code: 200,
+          rating: null,
+        })
+      );
+    }
+  }),
 ];

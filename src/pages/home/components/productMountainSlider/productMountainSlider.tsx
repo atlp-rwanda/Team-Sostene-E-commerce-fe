@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useRef } from 'react';
 import styles from './productMountainSlider.module.scss';
 import RecommendedProducts from '../recommendedProducts/recommendedProducts';
@@ -58,7 +59,7 @@ export default function ProductMountainSlider(props: ProductsProps) {
 
     currentAngle += deltaAngle;
     currentIndex = index;
-
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const cf = el.current!;
     cf.style.transform = `translateZ(-1250px) rotateY(${currentAngle}deg)`;
 

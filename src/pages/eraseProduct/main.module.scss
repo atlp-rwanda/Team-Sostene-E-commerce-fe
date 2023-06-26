@@ -1,0 +1,62 @@
+@import './../../../styles/variables.scss';
+@import './../../../styles/mixins.scss';
+
+
+
+.modal{
+  background-color: $white;
+  border: $borderColor;
+  padding: 5px;
+  height: 150px;
+  width: 50%;
+  margin: 150px auto;
+  text-align: center;
+  h2{
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 5px;
+  }
+  p{
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+
+  .button{
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+  .btn_container{
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    .delete{
+        background-color: $red;
+    }
+    .cancel{
+        background-color: $pureGray;
+    }
+  }
+}
+@include mq($md){
+    .modal{
+        height:170px;
+    }
+    .btn_container{
+        flex-wrap: wrap;
+    }
+}
+@include mq($xxsh){
+    .modal{
+        h2,p{
+            font-size: 4.5vw;
+        }
+    }
+}
+@include mq($xxs){
+    .modal{
+        min-width: 150px;
+        h2,p{
+            font-size: 15px;
+        }
+    }
+}

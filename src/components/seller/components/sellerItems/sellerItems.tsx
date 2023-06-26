@@ -2,18 +2,18 @@
 import { ChangeEvent, useEffect, useState } from 'react';
 import styles from './sellerItems.module.scss';
 import CardItem from '../cardItem/cardItem';
-import NotFoundSearch from '../../../../designComponents/notFoundSearch/notFoundSearch';
-import useFetch from '../../../../hooks/useFetch';
 import LoadingSpinner from '../../../../designComponents/loadingSpinner/loadingSpinner';
 import { useDispatch, useSelector } from 'react-redux';
-import { setPage, setSearch } from './sellerItemsFilters.slice';
+import { sellerProducts, setPage, setSearch } from './sellerItemsFilters.slice';
 import { RootState } from '../../../../redux/store';
-import axios from 'axios';
-import { BACKEND_URL } from '../../../../utils/constants';
+import { useLocation } from 'react-router';
+import { useAppDispatch, useAppSelector } from '../../../../redux/hooks';
+import Empty from '../../../../pages/emptyState/empty';
+import { useNavigate } from 'react-router-dom';
 
 //defines data
 export interface cardDetails {
-  products: {
+  product: {
     productImages: { url: string }[];
     details?: string;
     id: string;
@@ -35,44 +35,51 @@ export interface cardDetails {
 
 export default function SellerItems() {
   const dispatch = useDispatch();
+  const customDispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const queryParameter = new URLSearchParams(location.search);
+  const myParam = queryParameter.get('cid') || '';
   //redux get initial values from redux
   const search = useSelector((state: RootState) => state.filterCollectionProducts.search);
   const page = useSelector((state: RootState) => state.filterCollectionProducts.page);
-  //get instant data from db
-  const url = `${BACKEND_URL}/products/all?page=${page}&limit=10`;
-  const { data, isLoading, error } = useFetch(url);
-  const [initialData, setInitialData] = useState<cardDetails | undefined>(
-    data as cardDetails | undefined
-  );
-  const [loadingRefetch, setLoadingRefetch] = useState<boolean>(isLoading);
-  const [errorRefetch, setErrorRefetch] = useState<Error | null>(error);
 
+  const [initialData, setInitialData] = useState<cardDetails | undefined>();
+  const [loadingRefetch, setLoadingRefetch] = useState<boolean>(false);
+  const [cardData, setCardData] = useState<cardDetails>({
+    product: [],
+    message: '',
+    page: 1,
+    totalPages: 1,
+  });
+  const { products, loading, errors } = useAppSelector((state) => state.filterCollectionProducts);
   useEffect(() => {
     const handleRefetch = async (): Promise<void> => {
       setLoadingRefetch(true);
-      try {
-        const response = await axios.get(url);
-        setInitialData(response?.data);
-        setLoadingRefetch(false);
-      } catch (error) {
-        setErrorRefetch(error as Error);
-        setLoadingRefetch(false);
-      }
+      customDispatch(sellerProducts({ myParam, page }));
     };
     if (page > 0 && page <= 10) {
       handleRefetch();
     }
   }, [page]);
 
-  const cardData: cardDetails = {
-    products: initialData?.products || [],
-    message: initialData?.message || '',
-    page: initialData?.page || 1,
-    totalPages: initialData?.totalPages || 1,
+  const newData: cardDetails = {
+    product: products,
+    message: '',
+    page: 1,
+    totalPages: 1,
   };
 
-  const dataItems = cardData.products;
+  useEffect(() => {
+    setInitialData(newData);
+  }, [products]);
+
+  const dataItems = cardData.product;
   const [sellerItems, setSellerItems] = useState(dataItems);
+  useEffect(() => {
+    setCardData(newData);
+    setSellerItems(dataItems);
+  }, [initialData, dataItems]);
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch(setSearch(e.target.value));
@@ -85,6 +92,7 @@ export default function SellerItems() {
     dispatch(setSearch(''));
     dispatch(setPage(1));
     setSellerItems(dataItems);
+    navigate('/dashboard');
   };
   useEffect(() => {
     if (loadingRefetch === false) {
@@ -104,10 +112,13 @@ export default function SellerItems() {
     setSellerItems(filteredItems);
   }, [search]);
 
+  if (errors) {
+    return <div className={styles.error}>{errors}</div>;
+  }
   return (
     <div className={styles.sellerItems}>
       <div className="single">
-        {loadingRefetch && <LoadingSpinner />}
+        {loading && <LoadingSpinner />}
         <div className="topFilterBox">
           <input
             type="text"
@@ -135,11 +146,12 @@ export default function SellerItems() {
             </span>
           </div>
         </div>
-        {errorRefetch && <div className="error">{errorRefetch?.message}</div>}
         {initialData && (
           <div className="listItemsBox" data-testid="box_cardList">
             {sellerItems.length === 0 && (
-              <NotFoundSearch btnText="Reset" component={true} reset={handleResetSearch} />
+              <div className="none">
+                <Empty store={'collection'} data={'product'} reset={handleResetSearch} />
+              </div>
             )}
             {sellerItems &&
               sellerItems.length > 0 &&

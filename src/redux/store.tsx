@@ -28,6 +28,7 @@ import addToCartReducer from '../components/cart/redux/addToCartSlice';
 import cartDataReducer from '../components/cart/redux/cartDataSlice';
 import fetchTopProductsReducer from '../components/Product/redux/getTopProductsSlice';
 import getCartSlice from '../pages/viewCart/redux/getCartSlice';
+import chatsReducers from '../pages/chats/chats.slice';
 import productReducer from '../pages/product/redux/productSlice';
 import searchReducer from '../pages/search/redux/searchSlice';
 import productSlice from './slices/productSlice';
@@ -50,6 +51,7 @@ const rootReducer = combineReducers({
   topProducts: fetchTopProductsReducer,
   getCart: getCartSlice,
   product: productReducer,
+  chatsReducers,
   disableAccount: disableAccountReducer,
   search: searchReducer,
   products: productSlice,

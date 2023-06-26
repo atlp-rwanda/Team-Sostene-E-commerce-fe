@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { logout } from '../../helpers/auth';
 import Icon from '../notification/Icon';
 import NotificationPane from '../notification/notificationPane';
+import routes from '../../utils/routes';
 import { CartIcon } from '../cart/Cart';
 import {
   AdminComponent,
@@ -165,15 +166,16 @@ const Navigation = () => {
         <div className={styles.all}>
           <SearchBar />
           <ProtectedComponent>
-            <div className="flex justify-center items-center gap-3 laptop:w-28 laptop:gap-4 tablet:w-28 tablet:gap-4 phone:gap-1 sm:gap-1 sm:w-20">
+            <div className="flex justify-center items-center gap-2 laptop:w-28 laptop:gap-1 tablet:w-28 phone:gap-1 sm:gap-0 sm:w-20">
+              <Link to={routes.chats}>
+                <FontAwesomeIcon icon="message" className="px-2" aria-label="message" />
+              </Link>
               <div className="" onClick={handleCart}>
                 <CartIcon />
               </div>
-
               <div className="" onClick={handleNotifications}>
                 <Icon />
               </div>
-
               <FontAwesomeIcon
                 icon="user"
                 className={`${styles.light} ${styles.user} px-2`}

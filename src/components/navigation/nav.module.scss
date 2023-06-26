@@ -13,12 +13,12 @@
   z-index: 30;
   padding: 0;
   top: 0;
-} 
+}
 
 .navbar * {
   box-sizing: inherit;
   text-decoration: none;
-} 
+}
 
 ::-webkit-scrollbar {
   display: none;
@@ -57,10 +57,16 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 0px 10px;
+  @include mq($md){
+    justify-content: flex-start;
+  }
 
   .logo__icon {
     width: 10%;
     padding-left: 5%;
+    @include mq($md) {
+      padding-left: 10px;
+    }
   }
   .logo__text {
     height: 18px;
@@ -166,9 +172,15 @@ a {
   align-items: center;
   justify-content: space-between;
   width: 75%;
+  @include mq($md){
+    margin: 0 10px 0 auto;
+  }
   .searchContainer {
     position: relative;
     width: 80%;
+    @include mq($md) {
+      width: 70%;
+    }
     input {
       width: 100%;
     }
@@ -192,6 +204,9 @@ a {
   font-size: 25px;
   font-family: $logoText;
   font-weight: 900;
+  @include mq($md) {
+    font-size: 20px;
+  }
 }
 
 @mixin subNav($right: 0) {

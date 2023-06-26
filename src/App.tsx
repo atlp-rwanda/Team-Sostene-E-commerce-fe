@@ -31,6 +31,7 @@ import Search from './pages/search/Search';
 import { ToastContainer } from 'react-toastify';
 import Orders from './pages/orders/Orders';
 import Checkout from './pages/checkout/Checkout';
+import Main from './pages/editProfiles/Main/Main';
 
 function App() {
   library.add(fab, fas);
@@ -89,6 +90,7 @@ function App() {
           <Route path="/search/:query" element={<Search />}></Route>
           <Route path="/orders/*" element={<Orders />}></Route>
           <Route path="/checkout" element={<Checkout />}></Route>
+                    <Route path='/accounts/profile' element={<Main />}></Route>
         </Routes>
         {showNavbar && <Footer />}
         <ToastContainer />

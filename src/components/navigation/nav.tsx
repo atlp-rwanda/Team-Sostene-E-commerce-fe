@@ -75,7 +75,7 @@ const Navigation = () => {
           ></div>
           <nav className="z-50 bg-white">
             <ul>
-              <Link to="" className={styles.Link}>
+              <Link to="/accounts/profile" className={styles.Link}>
                 <li>
                   <FontAwesomeIcon icon="gear" className={`${styles.settings}`} />
                   &nbsp;&nbsp;Manage My Account

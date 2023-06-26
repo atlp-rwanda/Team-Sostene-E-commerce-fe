@@ -1,6 +1,7 @@
 import React, { ChangeEvent } from 'react';
 import styles from './Reusable.module.scss';
 import loader from '/svgs/spinner.svg';
+import { Link } from 'react-router-dom';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: string;
@@ -77,6 +78,32 @@ export const ErrorBox: React.FC<ErrorBoxProps> = (props) => {
       <div className={`${styles.errorMessage}`}>
         <p>{message}</p>
       </div>
+    </div>
+  );
+};
+
+export const SpinnerLoading = () => {
+  return (
+    <div className="w-full p-2 text-center">
+      <i className="fa fa-spinner fa-spin text-orange" aria-hidden="true"></i>
+    </div>
+  );
+};
+
+export const EmptyCart = () => {
+  return (
+    <div className="h-full w-full p-10 flex flex-col justify-center items-center">
+      <img
+        className="w-[20%] despktop:w-[25%] laptop:w-[30%] tablet:w-[50%] phone:w-[60%] sm:w-full"
+        src="/images/empty_cart.png"
+        alt="empty cart"
+      />
+      <p className="py-10 text-xl desktop:text-2xl desktop:py-12 font-normal text-center sm:text-lg">
+        You have no products in your cart
+      </p>
+      <Link to="/" className="w-96 desktop:w-[30%] sm:w-56">
+        <Button text="Go to shop" size="full" data-testid="go-to-shop" />
+      </Link>
     </div>
   );
 };

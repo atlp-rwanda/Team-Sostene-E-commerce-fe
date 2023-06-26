@@ -15,4 +15,3 @@ export const useGetCart = () => {
     handleGetCart,
   };
 };
-export { useAppDispatch, useAppSelector };

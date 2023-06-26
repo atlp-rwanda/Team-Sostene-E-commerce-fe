@@ -14,6 +14,7 @@ import {
   ReverseProtectedComponent,
   SellerComponent,
 } from '../roles/Protected';
+import SearchBar from '../searchBar/SearchBar';
 
 const logo = '/svgs/Vector.svg';
 
@@ -157,10 +158,7 @@ const Navigation = () => {
 
         <FontAwesomeIcon icon="bars" className={styles.bars} />
         <div className={styles.all}>
-          <div className={styles.searchContainer}>
-            <input type="text" placeholder="What are you looking for?" className={styles.search} />
-            <FontAwesomeIcon icon="magnifying-glass" className={styles.searchIcon} />
-          </div>
+          <SearchBar />
           <ProtectedComponent>
             <div className="flex justify-center items-center gap-3 laptop:w-28 laptop:gap-4 tablet:w-28 tablet:gap-4 phone:gap-1 sm:gap-1 sm:w-20">
               <div className="" onClick={handleCart}>

@@ -29,6 +29,7 @@ import cartDataReducer from '../components/cart/redux/cartDataSlice';
 import fetchTopProductsReducer from '../components/Product/redux/getTopProductsSlice';
 import getCartSlice from '../pages/viewCart/redux/getCartSlice';
 import productReducer from '../pages/product/redux/productSlice';
+import searchReducer from '../pages/search/redux/searchSlice';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -46,6 +47,7 @@ const rootReducer = combineReducers({
   getCart: getCartSlice,
   product: productReducer,
   disableAccount: disableAccountReducer,
+  search: searchReducer,
 });
 
 const persistConfig = {

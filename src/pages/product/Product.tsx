@@ -22,7 +22,11 @@ export default function ProductPage() {
         {result.error != '' ? <p>{result.error}</p> : ''}
         {result.product && !result.loading ? <Main product={result.product} /> : ''}
       </div>
-      <ParallaxBanner />
+      <ParallaxBanner
+        text="Elevate your lifestyle with these recommended gems."
+        image="https://wallpaperboat.com/wp-content/uploads/2019/09/autumn-forest-Wallpaper.jpg"
+        link="browse"
+      />
     </div>
   );
 }
@@ -134,22 +138,27 @@ export const useProductData = (id: string) => {
   return result;
 };
 
-function ParallaxBanner() {
+export function ParallaxBanner({
+  text,
+  link,
+  image,
+}: {
+  text: string;
+  link: string;
+  image: string;
+}) {
   return (
     <div
-      className="w-full h-32 justify-center object-center flex flex-wrap items-center"
+      className="w-full p-5 justify-center object-center flex flex-wrap items-center"
       style={{
-        background:
-          'url(https://wallpaperboat.com/wp-content/uploads/2019/09/autumn-forest-Wallpaper.jpg)',
+        background: `url(${image})`,
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed',
         backgroundSize: 'cover',
       }}
     >
-      <p className="mx-5 text-white text-xl text-center">
-        Elevate your lifestyle with these recommended gems.
-      </p>
-      <Link to="/">
+      <p className="mx-5 text-white text-xl text-center pb-5">{text}</p>
+      <Link to={`/${link}`}>
         <p className="p-3 bg-orange">Start exploring now!</p>
       </Link>
     </div>

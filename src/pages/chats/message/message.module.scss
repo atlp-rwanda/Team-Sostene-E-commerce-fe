@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import '../../../../styles/variables.scss';
 @import '../../../../styles/mixins.scss';
 
@@ -141,3 +142,148 @@
     }
   }
 }
+=======
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/mixins.scss';
+
+.messages {
+  :global {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    border-radius: 10px;
+    background-color: transparent;
+    .guess_who {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      background-color: transparent;
+      .message {
+        width: 40%;
+        height: fit-content;
+        padding: 8px;
+        @include h6;
+        font-family: 'poppins', sans-serif;
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        @include mq($xlg) {
+          gap: 15px;
+        }
+        @include mq($md) {
+          gap: 10px;
+          width: 50%;
+        }
+        @include mq($xls) {
+          gap: 15px;
+          width: 60%;
+        }
+        @include mq($xlsh) {
+          width: 70%;
+        }
+        @include mq($xxsh) {
+          width: 100%;
+        }
+
+        .info {
+          flex-grow: 1;
+          height: fit-content;
+          min-height: 60px;
+          padding: 8px;
+          position: relative;
+          .showOnHover {
+            font-size: 10px;
+            font-family: 'poppins', sans-serif;
+            color: $black;
+            @include transition;
+            position: absolute;
+            top: -15px;
+            height: fit-content;
+          }
+        }
+        .sender {
+          height: 60px;
+          aspect-ratio: 1/1;
+          width: auto;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @include h3;
+          color: $white;
+          font-weight: 900;
+          background-color: $translucent;
+          cursor: pointer;
+          @include transition;
+          @include mq($xls) {
+            height: 50px;
+          }
+          @include mq($xlsh) {
+            height: 40px;
+          }
+        }
+      }
+    }
+    .me {
+      align-items: flex-end;
+      .message {
+        .info {
+          background-color: $black;
+          color: $white;
+          border-radius: 10px 0 10px 10px;
+          .showOnHover {
+            right: 0;
+            font-style: oblique;
+          }
+        }
+        .sender {
+          color: $black;
+        }
+      }
+      .time {
+        margin-right: 80px;
+        font-size: 12px;
+        @include mq($xlg) {
+          margin-right: 75px;
+        }
+        @include mq($md) {
+          margin-right: 70px;
+          font-size: pxToRem(10);
+        }
+      }
+    }
+    .them {
+      align-items: flex-start;
+      .message {
+        flex-direction: row-reverse;
+        .info {
+          background-color: $orange;
+          color: $black;
+          border-radius: 0 10px 10px 10px;
+          .showOnHover {
+            left: 0;
+          }
+        }
+        .sender {
+          color: $orange;
+        }
+      }
+      .time {
+        margin-left: 80px;
+        font-size: 12px;
+        @include mq($xlg) {
+          margin-left: 75px;
+        }
+        @include mq($md) {
+          margin-left: 70px;
+          font-size: pxToRem(10);
+        }
+      }
+    }
+  }
+}
+>>>>>>> A seller should be to update the product in case he/she needs to - ensures that user have the form to update their certain products -allow user to view a way to update an image displayed on product also Delivers #185172094]

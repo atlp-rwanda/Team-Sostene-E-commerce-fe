@@ -4,7 +4,7 @@ import { scrollToTop } from '../../utils/scroll';
 function QuickLink() {
   return (
     <div className="w-full pb-3">
-      <div className="text-md py-3 font-bold">Quick links</div>
+      <div className="text-md py-3 font-bold">Quick Links</div>
 
       <Link to={'/'} onClick={scrollToTop}>
         <p className="text-[15px] py-3 hover:underline">Home</p>
@@ -16,7 +16,7 @@ function QuickLink() {
         <p className="text-[15px] py-3 hover:underline">Contact us</p>
       </Link>
 
-      <p className="text-[15px] py-3 hover:underline">Privacy policy</p>
+      <p className="text-[15px] py-3 hover:underline">Privacy Policy</p>
       <p className="text-[15px] py-3 hover:underline">Terms of use</p>
       <p className="text-[15px] py-3 hover:underline">FAQ</p>
     </div>

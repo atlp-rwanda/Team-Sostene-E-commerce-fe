@@ -2,7 +2,6 @@ import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export interface Product {
-  error: any;
   id: string;
   name: string;
   price: number;
@@ -22,7 +21,7 @@ export interface Product {
 
 export type Search_InitialState = {
   loading: boolean;
-  product: any;
+  product: Product;
   error: string;
 };
 

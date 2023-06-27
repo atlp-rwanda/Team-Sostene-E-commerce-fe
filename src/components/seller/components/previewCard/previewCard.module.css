@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .app {
   width: 100%;
   color: #000000;
@@ -304,4 +305,317 @@
   .previewCard :global .contentPreview .details .details {
     font-size: 0.6875em;
   }
+=======
+.app {
+  width: 100%;
+  color: #000000;
+}
+
+#root {
+  width: 100%;
+}
+
+.previewCard :global {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  min-height: 40vh;
+  margin: 0;
+  padding: 0;
+}
+.previewCard :global .contentPreview {
+  margin: 0;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+  position: relative;
+  min-height: 40vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 10px;
+}
+.previewCard :global .contentPreview::-webkit-scrollbar {
+  width: 7px;
+}
+@media screen and (max-width: 600px) {
+  .previewCard :global .contentPreview::-webkit-scrollbar {
+    display: none;
+  }
+}
+.previewCard :global .contentPreview::-webkit-scrollbar-track {
+  background: rgba(3, 3, 3, 0.5);
+}
+@media screen and (max-width: 600px) {
+  .previewCard :global .contentPreview::-webkit-scrollbar-track {
+    display: none;
+  }
+}
+.previewCard :global .contentPreview::-webkit-scrollbar-thumb {
+  background: #db5600;
+  border-radius: 100px;
+  cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  .previewCard :global .contentPreview::-webkit-scrollbar-thumb {
+    display: none;
+  }
+}
+.previewCard :global .contentPreview::-webkit-scrollbar-thumb:hover {
+  background: #ff7c29;
+}
+.previewCard :global .contentPreview::-webkit-scrollbar-thumb:hover::-webkit-scrollbar-track {
+  border: 0.5px solid #FF8C42;
+}
+@media screen and (max-width: 600px) {
+  .previewCard :global .contentPreview::-webkit-scrollbar-thumb:hover {
+    display: none;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .previewCard :global .contentPreview {
+    gap: 15px;
+  }
+}
+.previewCard :global .contentPreview .actionBts {
+  position: absolute;
+  width: 217px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: -2px;
+  left: 1.5rem;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 101;
+}
+@media screen and (max-width: 1600px) {
+  .previewCard :global .contentPreview .actionBts {
+    width: 180px;
+    height: 38px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .previewCard :global .contentPreview .actionBts {
+    width: 170px;
+    height: 35px;
+  }
+}
+@media screen and (max-width: 780px) {
+  .previewCard :global .contentPreview .actionBts {
+    width: 140px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .previewCard :global .contentPreview .actionBts {
+    width: 100px;
+    height: 30px;
+  }
+}
+.previewCard :global .contentPreview .actionBts .icon {
+  height: 100%;
+  width: auto;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.previewCard :global .contentPreview .actionBts .icon:hover {
+  transform: scale(1.1);
+}
+.previewCard :global .contentPreview .actionBts .iconEdit {
+  border-radius: 0 0 0 10px;
+  background-color: #00FF66;
+}
+.previewCard :global .contentPreview .actionBts .iconDelete {
+  border-radius: 0 0 10px 0;
+}
+.previewCard :global .contentPreview .carouselBox {
+  width: 100%;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  height: 50vh;
+}
+@media screen and (max-width: 1600px) {
+  .previewCard :global .contentPreview .carouselBox {
+    height: 50vh;
+  }
+}
+.previewCard :global .contentPreview .simpleDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 1.6rem;
+}
+.previewCard :global .contentPreview .simpleDetails .h5 {
+  font-family: "Inter-Bold.ttf";
+  font-size: 1.125em;
+  font-family: "Inter-SemiBold.ttf";
+  margin-right: 5px;
+}
+@media screen and (max-width: 1600px) {
+  .previewCard :global .contentPreview .simpleDetails .h5 {
+    font-size: 1.0625em;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .previewCard :global .contentPreview .simpleDetails .h5 {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 780px) {
+  .previewCard :global .contentPreview .simpleDetails .h5 {
+    font-size: 0.9375em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .previewCard :global .contentPreview .simpleDetails .h5 {
+    font-size: 0.875em;
+  }
+}
+@media screen and (max-width: 425px) {
+  .previewCard :global .contentPreview .simpleDetails .h5 {
+    font-size: 0.8125em;
+  }
+}
+.previewCard :global .contentPreview .simpleDetails .h6 {
+  font-family: "Inter-Regular.ttf";
+  font-family: "Inter-Regular.ttf";
+  font-size: 1em;
+}
+@media screen and (max-width: 1600px) {
+  .previewCard :global .contentPreview .simpleDetails .h6 {
+    font-size: 0.9375em;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .previewCard :global .contentPreview .simpleDetails .h6 {
+    font-size: 0.875em;
+  }
+}
+@media screen and (max-width: 780px) {
+  .previewCard :global .contentPreview .simpleDetails .h6 {
+    font-size: 0.8125em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .previewCard :global .contentPreview .simpleDetails .h6 {
+    font-size: 0.75em;
+  }
+}
+@media screen and (max-width: 425px) {
+  .previewCard :global .contentPreview .simpleDetails .h6 {
+    font-size: 0.6875em;
+  }
+}
+.previewCard :global .contentPreview .simpleDetails .pricing {
+  display: flex;
+  flex-direction: column;
+  grid-area: 5px;
+}
+.previewCard :global .contentPreview .simpleDetails .h3 {
+  font-family: "Inter-Bold.ttf";
+  font-size: 1.5625em;
+  font-family: "Inter-SemiBold.ttf";
+}
+@media screen and (max-width: 1600px) {
+  .previewCard :global .contentPreview .simpleDetails .h3 {
+    font-size: 1.4375em;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .previewCard :global .contentPreview .simpleDetails .h3 {
+    font-size: 1.25em;
+  }
+}
+@media screen and (max-width: 780px) {
+  .previewCard :global .contentPreview .simpleDetails .h3 {
+    font-size: 1.125em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .previewCard :global .contentPreview .simpleDetails .h3 {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 425px) {
+  .previewCard :global .contentPreview .simpleDetails .h3 {
+    font-size: 0.9375em;
+  }
+}
+.previewCard :global .contentPreview .details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0 1.6rem;
+}
+.previewCard :global .contentPreview .details .detailHead {
+  font-family: "Inter-Bold.ttf";
+  font-size: 1.125em;
+  font-family: "Inter-SemiBold.ttf";
+}
+@media screen and (max-width: 1600px) {
+  .previewCard :global .contentPreview .details .detailHead {
+    font-size: 1.0625em;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .previewCard :global .contentPreview .details .detailHead {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 780px) {
+  .previewCard :global .contentPreview .details .detailHead {
+    font-size: 0.9375em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .previewCard :global .contentPreview .details .detailHead {
+    font-size: 0.875em;
+  }
+}
+@media screen and (max-width: 425px) {
+  .previewCard :global .contentPreview .details .detailHead {
+    font-size: 0.8125em;
+  }
+}
+.previewCard :global .contentPreview .details .details {
+  font-family: "Inter-Regular.ttf";
+  font-family: "Inter-Regular.ttf";
+  font-size: 1em;
+}
+@media screen and (max-width: 1600px) {
+  .previewCard :global .contentPreview .details .details {
+    font-size: 0.9375em;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .previewCard :global .contentPreview .details .details {
+    font-size: 0.875em;
+  }
+}
+@media screen and (max-width: 780px) {
+  .previewCard :global .contentPreview .details .details {
+    font-size: 0.8125em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .previewCard :global .contentPreview .details .details {
+    font-size: 0.75em;
+  }
+}
+@media screen and (max-width: 425px) {
+  .previewCard :global .contentPreview .details .details {
+    font-size: 0.6875em;
+  }
+>>>>>>> A seller should be to update the product in case he/she needs to - ensures that user have the form to update their certain products -allow user to view a way to update an image displayed on product also Delivers #185172094]
 }/*# sourceMappingURL=previewCard.module.css.map */

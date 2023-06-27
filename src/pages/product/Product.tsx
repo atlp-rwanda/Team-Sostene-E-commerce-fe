@@ -4,7 +4,6 @@ import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { Product, getProduct } from './redux/productSlice';
 import ScrollToTop from './ScrollToTop';
 import { useAddToCart } from '../../components/cart/hooks';
-import Reviews from '../feebdacks/Reviews';
 
 export default function ProductPage() {
   const { id } = useParams<string>();
@@ -22,16 +21,13 @@ export default function ProductPage() {
         )}
         {result.error != '' ? <p>{result.error}</p> : ''}
         {result.product && !result.loading ? <Main product={result.product} /> : ''}
-        {result.product && !result.loading ? <Main product={result.product} productId={id} /> : ''}
-        </div>
+      </div>
       <ParallaxBanner
         text="Elevate your lifestyle with these recommended gems."
         image="https://wallpaperboat.com/wp-content/uploads/2019/09/autumn-forest-Wallpaper.jpg"
         link="browse"
       />
-            <Reviews productId={id} />
     </div>
-
   );
 }
 
@@ -40,7 +36,7 @@ function toDateFormat(date: string) {
   return dateFormatted.toLocaleDateString();
 }
 
-export function Main({ product }: { product: Product; productId?: string }) {
+export function Main({ product }: { product: Product }) {
   const { handleAddToCart } = useAddToCart();
   const createdAt = toDateFormat(product.createdAt);
   const expAt = toDateFormat(product.expDate);

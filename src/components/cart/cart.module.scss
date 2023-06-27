@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700');
 @import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
@@ -116,3 +117,122 @@
     width: 100px;
     border: 1px solid $transparentBlack;
 }
+=======
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700');
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.container {
+    position: absolute;
+    backdrop-filter: blur(2px);
+    width: 100%;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+    align-items: flex-start;
+}
+.icon svg{
+    width: 20px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.num__icon {
+    background: $yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 13px;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    margin-left: 10px;
+    top: 5px;
+}
+.cart {
+    width: 35%;
+    position: absolute;
+    background: $white;
+    right: 40px;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #0000001f;
+}
+.head {
+    width: 100%;
+    background: $yellow;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    padding: 0 5px;
+    border-bottom: 1px solid $lightGray;
+}
+.link {
+    padding: 5px;
+    background: $white;
+    border-radius: 2px;
+    color: $yellow;
+}
+.bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    background: $yellow;
+    border-top: 1px solid $lightGray;
+}
+.cart__container {
+    padding: 0 5px;
+}
+.cart__scroll {
+    max-height: 300px;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+.item {
+    margin: 5px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    border: 1px solid #00000048;
+}
+.item__des {
+    padding: 5px;
+    width: 100%;
+    height: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.item__num {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.item__name {
+    width: 100%;
+    color: $yellow;
+}
+.item__price {
+    font-style: italic;
+    font-weight: bold;
+}
+.item__qty {
+    background: $yellow;
+    padding: 3px;
+    border-radius: 3px;
+}
+.item__image img{
+    height: 80px;
+    width: 100px;
+    border: 1px solid #0000001f;
+}
+>>>>>>> A seller should be to update the product in case he/she needs to - ensures that user have the form to update their certain products -allow user to view a way to update an image displayed on product also Delivers #185172094]

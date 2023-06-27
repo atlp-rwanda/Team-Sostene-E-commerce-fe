@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { useRef, useState } from 'react';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import { useFetchUsers } from './hooks';
 import { setRole, disableAccount } from './redux/assignRolesSlice';
 
@@ -21,7 +21,7 @@ export default function AssignRole() {
   );
   return (
     <div className="w-full flex justify-center flex-col items-center pt-12">
-      {/* <ToastContainer /> */}
+      <ToastContainer />
       <div className="w-full flex justify-center flex-col items-right px-[3.5%] pb-2">
         <div className="pb-4 bg-white flex flex-row items-center justify-between p-2">
           <label htmlFor="table-search" className="sr-only">
@@ -203,10 +203,10 @@ export function DisableButtons({ id, status }: { id: string; status: string }) {
       <button
         data-testid="role-btn"
         onClick={handleSubmit}
-        className="p-1 px-2 bg-translucent w-40"
+        className="p-1 px-2 bg-translucent"
+        disabled={status === 'INACTIVE'}
       >
-        <i className="fa-solid fa-xmark"></i>
-        {status === 'ACTIVE' ? 'Disable Account' : 'Enable Account'}
+        <i className="fa-solid fa-xmark"></i>Disable Account
       </button>
     </div>
   );

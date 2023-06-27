@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
 @import '../../../styles/fonts.css';
@@ -127,3 +128,131 @@
     }
   }
 }
+=======
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+.home {
+  :global {
+    max-width: 100vw;
+    max-height: fit-content;
+    padding: 0;
+    .wrapperHome {
+      color: $black;
+      @include pageSettings;
+      gap: 0;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 0 !important;
+      @include scroll-bar;
+
+      .homeSlides {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        border-radius: 12px;
+        max-height: fit-content;
+        width: 100%;
+        padding: 0;
+      }
+      .title {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        padding: 0 30px;
+        @include h3;
+        font-family: 'poppins', sans-serif;
+        @include mq($xlg) {
+          padding: 0 20px;
+        }
+        @include mq($lg) {
+          padding: 0 15px;
+        }
+      }
+      .newProducts {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        background-color: transparent;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        height: 40vh;
+        @include mq($xxsh) {
+          display: none;
+        }
+        .slides_of_Products {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: calc(100% - 30px);
+          position: relative;
+          .bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            object-fit: cover;
+            opacity: 0.5;
+          }
+        }
+      }
+      .recommendedProducts {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        background-color: transparent;
+        height: fit-content;
+        margin: 0;
+        .productsLists {
+          padding-left: 20px;
+          width: 100%;
+          display: flex;
+          height: fit-content;
+          background-color: transparent;
+          // justify-content: center;
+          flex-wrap: wrap;
+          gap: 20px;
+          @include mq($xlg) {
+            gap: 15px;
+          }
+          @include mq($lg) {
+            gap: 10px;
+          }
+          .product {
+            width: calc(100% / 6 - 20px);
+            @include mq($xlg) {
+              width: calc(100% / 5 - 15px);
+            }
+            @include mq($lgsm) {
+              width: calc(100% / 4 - 15px);
+            }
+            @include mq($lg) {
+              width: calc(100% / 4 - 10px);
+            }
+            @include mq($md) {
+              width: calc(100% / 3 - 10px);
+            }
+            @include mq($xls) {
+              width: calc(100% / 2 - 10px);
+            }
+            @include mq($xlss) {
+              width: 100%;
+            }
+          }
+        }
+      }
+      .homeCards {
+        padding-top: 20px;
+      }
+    }
+  }
+}
+>>>>>>> A seller should be to update the product in case he/she needs to - ensures that user have the form to update their certain products -allow user to view a way to update an image displayed on product also Delivers #185172094]

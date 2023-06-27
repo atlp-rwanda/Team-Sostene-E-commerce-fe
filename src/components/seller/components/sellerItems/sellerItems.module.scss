@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import '../../../../../styles/variables.scss';
 @import '../../../../../styles/mixins.scss';
 @import '../../../../../styles/fonts.css';
@@ -169,3 +170,165 @@
       justify-content: center;
       align-items: center;
     }
+=======
+@import '../../../../../styles/variables.scss';
+@import '../../../../../styles/mixins.scss';
+.sellerItems {
+  :global {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    .single {
+      width: 100%;
+      flex-grow: 1;
+      height: 100%;
+      background-color: transparent;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: pxToVh(26);
+    }
+    .topFilterBox {
+      width: 100%;
+      display: flex;
+      gap: 15px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+      height: 40px;
+      padding: 5px 0;
+      @include mq($xls) {
+        flex-direction: column;
+        height: calc(41px * 3 + 45px);
+      }
+      .SearchInput {
+        height: 100%;
+        width: 22.42424242424242%;
+        @include h6;
+        border-radius: 5px;
+        color: $black;
+        background-color: $bgInput;
+        font-family: $interRegular;
+        padding-left: 1rem;
+        border: none;
+        outline: none;
+        &:focus {
+          border: none;
+          outline: none;
+        }
+        &::placeholder {
+          color: $placeholderColor;
+          font-weight: 500;
+          font-family: $interSemiBold;
+        }
+        @include mq($xls) {
+          width: 100%;
+        }
+      }
+      .page {
+        display: flex;
+        gap: 10px;
+        height: 100%;
+        align-items: center;
+        .inputPage {
+          width: 100px;
+          height: 100%;
+        }
+        @include mq($xls) {
+          width: 100%;
+        }
+      }
+      .filters {
+        display: flex;
+        width: 30%;
+        gap: 20px;
+        padding-left: 1rem;
+        height: 100%;
+        background-color: $bgInput;
+        font-family: $interRegular;
+        justify-content: flex-end;
+        align-items: center;
+        border-radius: 5px;
+        @include h6;
+        @include mq($lg) {
+          gap: 15px;
+        }
+        @include mq($md) {
+          width: 40%;
+        }
+        @include mq($xls) {
+          flex-grow: 1;
+          gap: 10px;
+          width: 100%;
+        }
+
+        .filterSelect {
+          height: 100%;
+          background-color: transparent;
+          border-radius: inherit;
+          flex-grow: 1;
+          display: flex;
+          @include h6;
+          border: none;
+          outline: none;
+          font-family: $interRegular;
+          justify-content: flex-start;
+          align-items: center;
+          &:focus {
+            border: none;
+            outline: none;
+          }
+        }
+      }
+    }
+
+    .listItemsBox {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      .none{
+        margin: auto;
+      }
+      @include mq($xlg) {
+        gap: 15px;
+      }
+      @include mq($xls) {
+        gap: 10px;
+      }
+      .card {
+        padding: 0;
+        margin: 0;
+        flex-grow: 0;
+        width: calc(100% / 5 - 20px);
+        height: auto;
+        @include mq($xlg) {
+          width: calc(100% / 5 - 15px);
+        }
+        @include mq($lg) {
+          width: calc(100% / 4 - 15px);
+        }
+        @include mq($md) {
+          width: calc(100% / 3 - 15px);
+        }
+        @include mq($xls) {
+          width: calc(100% / 2 - 10px);
+        }
+        @include mq($xxsh) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+    .error {
+      @include h5;
+      font-family: $interRegular;
+      display: flex;
+      color: $red;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+>>>>>>> A seller should be to update the product in case he/she needs to - ensures that user have the form to update their certain products -allow user to view a way to update an image displayed on product also Delivers #185172094]

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
 @import '../../../styles/fonts.css';
@@ -130,3 +131,136 @@ h2 {
     }
   }
 }
+=======
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 20px;
+  max-height: fit-content;
+  @include mq($md) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+h2 {
+  font-size: 36px;
+}
+
+.image {
+  :global {
+    aspect-ratio: 1/1;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+    @include mq(1025px) {
+      aspect-ratio: unset;
+      height: 100%;
+    }
+    @include mq($md) {
+      width: 100%;
+      height: 30vh;
+    }
+    .img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.team {
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 5%;
+
+  h3 {
+    @include h1;
+    font-family: $interRegular;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    font-size: 36px;
+  }
+
+  img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+  }
+
+  .photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    margin-left: 0;
+    padding: 0 20px;
+
+    h3 {
+      font-size: 28px;
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+      margin: 5px;
+    }
+  }
+}
+
+.text {
+  :global {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .paragraph {
+      font-family: $interRegular;
+    }
+  }
+}
+.aboutUS {
+  :global {
+    @include pageSettings;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-x: hidden;
+    .wrapperDiv {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+  }
+}
+>>>>>>> A seller should be to update the product in case he/she needs to - ensures that user have the form to update their certain products -allow user to view a way to update an image displayed on product also Delivers #185172094]

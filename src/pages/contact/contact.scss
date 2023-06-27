@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import '../../../styles/variables.scss';
 .contactBox {
   display: flex;
@@ -202,3 +203,209 @@
     }
   }
 }
+=======
+@import '../../../styles/variables.scss';
+.contactBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  gap: 10%;
+  margin: 0% 10%;
+}
+.container_contacts {
+  width: 50%;
+  float: right;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: bold;
+    padding-bottom: 15px;
+  }
+
+  p {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  form {
+    margin-top: 20px;
+
+    div {
+      margin-bottom: 15px;
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      textarea {
+        height: 120px;
+      }
+    }
+
+    button[type='submit'] {
+      padding: 10px 20px;
+      background-color: #ffad33;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contactBox {
+    flex-direction: column;
+    .container_contacts {
+      width: 100%;
+      float: none;
+      margin-bottom: 10%;
+
+      h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+
+      form {
+        margin-top: 15px;
+
+        div {
+          margin-bottom: 10px;
+
+          label {
+            font-size: 14px;
+          }
+
+          input,
+          textarea {
+            padding: 6px;
+          }
+        }
+
+        button[type='submit'] {
+          font-size: 14px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .contactBox {
+    margin: 15% 10%;
+    .container_contacts {
+      width: 100%;
+      margin-top: 10%;
+
+      h2 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+
+      form {
+        margin-top: 10px;
+
+        div {
+          margin-bottom: 10px;
+
+          label {
+            font-size: 12px;
+          }
+
+          input,
+          textarea {
+            padding: 6px;
+          }
+        }
+
+        button[type='submit'] {
+          font-size: 14px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.location {
+  margin-top: 10%;
+  width: 50%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+
+  .info-side {
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .down-side {
+    margin-top: 25%;
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .location {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .location {
+    margin-top: 10%;
+
+    .down-side {
+      margin-top: 30%;
+      h1 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}
+>>>>>>> A seller should be to update the product in case he/she needs to - ensures that user have the form to update their certain products -allow user to view a way to update an image displayed on product also Delivers #185172094]

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import '../../../../../styles/variables.scss';
 @import '../../../../../styles/mixins.scss';
 @import '../../../../../styles//fonts.css';
@@ -137,3 +138,142 @@
     }
   }
 }
+=======
+@import '../../../../../styles/variables.scss';
+@import '../../../../../styles/mixins.scss';
+.cardItem {
+  :global {
+    border: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 300px;
+    .cardContent {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      padding: 0;
+      margin: 0;
+      border: none;
+      cursor: pointer;
+      background-color: $white;
+      padding-bottom: 10px;
+      position: relative;
+      border: 1px solid $bgInput;
+
+      @include transition;
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+
+    .image {
+      border-radius: inherit;
+      padding: 0;
+      margin: 0;
+      background-color: $bgInput;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70%;
+      padding: 10px;
+      border-radius: 0 0 10px 10px;
+      @include mq($xlg) {
+        padding: 6px;
+      }
+      .imageProduct {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .delete {
+      top: 10px;
+      z-index: 2;
+      right: 10px;
+      background-color: $white;
+      cursor: pointer;
+      border-radius: 50%;
+      height: 30px;
+      width: auto;
+      @include transition;
+      &:hover {
+        transform: scale(1.2);
+      }
+      @include mq($xlg) {
+        height: 25px;
+        top: 6px;
+        right: 6px;
+      }
+      @include mq($lg) {
+        height: 20px;
+      }
+      @include mq($xls) {
+        height: 15px;
+      }
+    }
+    .discount {
+      top: 10px;
+      left: 10px;
+      background-color: $orange;
+      cursor: pointer;
+      color: $white;
+      display: flex;
+      width: 55px;
+      height: 26px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+
+      @include mq($xlg) {
+        top: 6px;
+        left: 6px;
+      }
+    }
+    .title {
+      font-family: $interBold;
+      @include h5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+      width: 100%;
+      padding: 0 10px;
+      @include mq($xlg) {
+        padding: 0 6px;
+      }
+    }
+    .prices {
+      display: flex;
+      width: 100%;
+      gap: 10px;
+      padding: 0 10px;
+      @include mq($xlg) {
+        padding: 0 6px;
+      }
+      .newPrice {
+        color: $red;
+        font-family: $interRegular;
+        @include h6;
+      }
+      .oldPrice {
+        color: $gray;
+        font-family: $interRegular;
+        @include h6;
+        text-decoration: line-through;
+      }
+    }
+    .ratingsCard {
+      width: 100%;
+      @include h6;
+      padding: 0 10px;
+      @include mq($xlg) {
+        padding: 0 6px;
+      }
+    }
+  }
+}
+>>>>>>> A seller should be to update the product in case he/she needs to - ensures that user have the form to update their certain products -allow user to view a way to update an image displayed on product also Delivers #185172094]

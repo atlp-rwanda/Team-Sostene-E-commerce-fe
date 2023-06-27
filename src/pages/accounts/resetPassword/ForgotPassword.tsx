@@ -3,7 +3,7 @@ import { forgot_password } from '../../../utils/constants';
 import { Button, ErrorBox, InputWithLabel } from '../../../components/reusables/Reusable';
 import { useFormik } from 'formik';
 import { useForgotPassword } from './hooks';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 
 interface FormValues {
   email: string;
@@ -53,9 +53,9 @@ export default function ForgotPassword() {
           onChange={formik.handleChange}
         />
         {formik.touched.email && formik.errors.email && <ErrorBox message={formik.errors.email} />}
-        <Button text={isSent.loading ? 'Sending ...' : 'Send link'} size="full" />
+        <Button text={isSent.loading ? 'Sending ...' : 'Send Link'} size="full" />
       </form>
-      {/* <ToastContainer /> */}
+      <ToastContainer />
     </div>
   );
 }

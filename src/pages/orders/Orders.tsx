@@ -2,15 +2,14 @@ import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { AccountsLoader } from '../../components/Loaders/Loaders';
 
-const AllOrders = lazy(() => import('./trackOrder'));
+const Orders = lazy(() => import('./trackOrder'));
 const SingleOrder = lazy(() => import('./viewSingleOrder'));
-
-export default function Order() {
+export default function Accounts() {
   return (
-    <div className="account__container" data-testid="orders">
+    <div className="account__container" data-testid="accounts">
       <Suspense fallback={<AccountsLoader />}>
         <Routes>
-          <Route path="/trackOrders" element={<AllOrders />}></Route>
+          <Route path="/trackOrders" element={<Orders />}></Route>
           <Route path="/singleOrder" element={<SingleOrder />}></Route>
         </Routes>
       </Suspense>

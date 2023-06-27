@@ -32,7 +32,7 @@ import { ToastContainer } from 'react-toastify';
 import Orders from './pages/orders/Orders';
 import Checkout from './pages/checkout/Checkout';
 import Main from './pages/editProfiles/Main/Main';
-import Reviews from './pages/feebdacks/Reviews';
+import UpdateProduct from './pages/updateProduct/update';
 
 function App() {
   library.add(fab, fas);
@@ -92,8 +92,7 @@ function App() {
           <Route path="/orders/*" element={<Orders />}></Route>
           <Route path="/checkout" element={<Checkout />}></Route>
           <Route path="/accounts/profile" element={<Main />}></Route>
-                    <Route path='/accounts/profile' element={<Main />}></Route>
-          <Route path='/reviews' element={<Reviews />}></Route>
+          <Route path="/sellerItems/editProduct" element={<UpdateProduct />}></Route>
         </Routes>
         {showNavbar && <Footer />}
         <ToastContainer />

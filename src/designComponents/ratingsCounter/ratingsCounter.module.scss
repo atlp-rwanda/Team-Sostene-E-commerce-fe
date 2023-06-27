@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
 @import '../../../styles/fonts.css';
@@ -30,3 +31,35 @@
     }
   }
 }
+=======
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+.ratingsCounter {
+  :global {
+    width: 100%;
+    background-color: transparent;
+    margin: 0;
+    padding: 3px 0;
+    .ratings {
+      width: 100%;
+      display: flex;
+      gap: 10px;
+      .ratingBox {
+        display: flex;
+        gap: 3px;
+        .startImage {
+          cursor: pointer;
+          @include transition;
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+      .ratingNumber {
+        @include h5;
+        font-family: $interBold;
+      }
+    }
+  }
+}
+>>>>>>> A seller should be to update the product in case he/she needs to - ensures that user have the form to update their certain products -allow user to view a way to update an image displayed on product also Delivers #185172094]

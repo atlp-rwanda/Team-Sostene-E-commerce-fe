@@ -8,10 +8,7 @@ import Copyright from './Copyright';
 function Footer() {
   return (
     <div className=" bg-black text-white mt-20">
-      <div
-        className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-5 space-x-5 static h-auto p-12"
-        style={{ fontFamily: 'poppins,sans-serif' }}
-      >
+      <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-5 space-x-5 static h-auto p-12">
         <Exclusive />
         <Support />
         <Account />

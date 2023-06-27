@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  @import '../../../../styles/variables.scss';
  @import '../../../../styles/fonts.css';
 
@@ -48,4 +49,54 @@ p{
   color: red;
   font-size: 12px;
   margin-bottom: 20px;
+=======
+ @import '../../../../styles/variables.scss';
+ @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+ $border-color: 1px solid rgb(193, 189, 189);
+$regular:'Inter-Regular.ttf';
+
+ .cardStyle {
+  font-family:'Poppins', sans-serif;
+    width: 40%;
+    min-width: 300px;
+    border-color: $white;
+    padding: 20px 0;
+    margin: 60px auto;
+    border:  $border-color;
+    background-color: $white-two;
+  }
+#signupForm{
+margin: 0% 10%;
+
+p{
+  margin-bottom: 40px;
+}
+}
+.formTitle{
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+  .inputDiv {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+.buttonWrapper {
+  margin-top: 40px;
+}
+.success{
+  text-align: center;
+  color: $green; 
+}
+.hide-form-password{
+  display: none;
+}
+.text_error{
+  color: red;
+  font-size: 12px;
+  margin-bottom: 20px;
+>>>>>>> A seller should be to update the product in case he/she needs to - ensures that user have the form to update their certain products -allow user to view a way to update an image displayed on product also Delivers #185172094]
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import '../../../../../styles/mixins.scss';
 @import '../../../../../styles/variables.scss';
 
@@ -89,3 +90,96 @@
     }
   }
 }
+=======
+@import '../../../../../styles/mixins.scss';
+@import '../../../../../styles/variables.scss';
+
+.recommendedProducts {
+  :global {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-items: center;
+    .imageBg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      @include background-img;
+    }
+    .view{
+      position: absolute;
+      top: 0;
+      width: fit-content;
+      padding: 10px 20px;
+      background-color: $green;
+      @include h6;
+      font-family: 'poppins', sans-serif;
+      color: $white;
+      cursor: pointer;
+      text-decoration: none;
+      @include transition;
+      border-radius: 5px;
+      &:hover{
+        background-color: darken($color: $green, $amount: 5);
+      }
+    }
+    .bottom {
+      padding: 10px;
+      gap: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      align-items: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: fit-content;
+      right: 0;
+      width: 100%;
+      z-index: 2;
+    }
+    .name {
+      width: 90%;
+      height: 40px;
+      color: $black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      background-color: $bgInput;
+      text-align: center;
+      @include h4;
+    }
+    .btns {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40px;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      .btn {
+        height: 100%;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        background-color: $orange;
+        color: $black;
+        padding: 0 20px;
+        @include transition;
+        @include h6;
+        &:hover {
+          background-color: lighten($color: $orange, $amount: 7);
+        }
+      }
+    }
+  }
+}
+>>>>>>> A seller should be to update the product in case he/she needs to - ensures that user have the form to update their certain products -allow user to view a way to update an image displayed on product also Delivers #185172094]

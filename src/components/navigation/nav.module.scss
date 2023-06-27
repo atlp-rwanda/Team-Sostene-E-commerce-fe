@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,900');
 @import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
@@ -342,3 +343,348 @@ a {
     min-width: 50%;
   }
 }
+=======
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,900');
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.navbar {
+  width: 100%;
+  font-family: $interRegular;
+  font-size: 14px;
+  color: $black;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  position: fixed;
+  z-index: 30;
+  padding: 0;
+  top: 0;
+}
+
+.navbar * {
+  box-sizing: inherit;
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+i {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.Link {
+  color: $black;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+} //global link styles
+.vectors {
+  display: flex;
+  align-items: center;
+}
+.right_nav {
+  nav {
+    display: none;
+  }
+}
+.top__bar {
+  z-index: 20;
+  position: fixed;
+  width: 100%;
+  background-color: $white;
+  height: 48px;
+  border-bottom: $borderColor;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px;
+  @include mq($md){
+    justify-content: flex-start;
+  }
+
+  .logo__icon {
+    width: 10%;
+    padding-left: 5%;
+    @include mq($md) {
+      padding-left: 10px;
+    }
+  }
+  .logo__text {
+    height: 18px;
+    font-weight: 900;
+  }
+  nav {
+    ul {
+      list-style: none;
+    }
+
+    li {
+      display: inline-block;
+      padding: 10px 40px;
+      font-size: 14px;
+      cursor: pointer;
+      &:hover {
+        background-color: $yellow;
+      }
+      @include transition;
+    }
+  }
+  .closeIcon {
+    font-size: 25px;
+  }
+  .bars {
+    display: none;
+  }
+  .house {
+    display: none;
+  }
+  .light {
+    cursor: pointer;
+  }
+}
+::-webkit-search-cancel-button{
+  position:relative;
+  right:25px;
+  cursor: pointer;
+  bottom: 5px;    
+}
+.m__logo {
+  display: none;
+}
+.hidden {
+  display: none;
+}
+.nav__wrap {
+  width: 100%;
+}
+.nav {
+  z-index: 10;
+  position: fixed;
+  top: 45px;
+  bottom: 0;
+  overflow: scroll;
+  background-color: $white;
+  box-shadow: $boxShadow;
+  &__label {
+    font-weight: 300;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 12px;
+    color: $greyLabel;
+    padding: 15px 24px;
+  }
+  &__item {
+    font-weight: 400;
+    display: block;
+    font-size: 14px;
+    color: $Boldgreylabel;
+    padding: 11px 25px;
+    display: flex;
+    align-items: center;
+    &.overview {
+      color: #0288d1;
+      border-bottom: $borderColor;
+      background-color: $sideNavHover;
+      height: 54px;
+      margin-bottom: 5px;
+    }
+    &:hover {
+      background-color: $sideNavHover;
+      cursor: pointer;
+    }
+    i {
+      display: flex;
+      justify-content: center;
+      width: 15px;
+      margin-right: 20px;
+    }
+  }
+
+  .nav__item {
+    span {
+      padding-left: 10px;
+    }
+  }
+}
+
+.all {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 75%;
+  @include mq($md){
+    margin: 0 10px 0 auto;
+  }
+  .searchContainer {
+    position: relative;
+    width: 80%;
+    @include mq($md) {
+      width: 70%;
+    }
+    input {
+      width: 100%;
+    }
+    .searchIcon {
+      position: absolute;
+      cursor: pointer;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: $lightBlack;
+    }
+  }
+}
+
+.top__bar strong span {
+  color: $yellow;
+}
+
+.top__bar strong {
+  font-size: 25px;
+  font-family: $logoText;
+  font-weight: 900;
+  @include mq($md) {
+    font-size: 20px;
+  }
+}
+
+@mixin subNav($right: 0) {
+  background-color: $white;
+  color: $black;
+  position: fixed;
+  top: 3rem;
+  right: $right;
+  width: 30%;
+  display: grid;
+  align-items: start;
+  z-index: 9999;
+  border: $borderColor;
+  nav {
+    ul {
+      list-style: none;
+      padding-left: 10px;
+    }
+    li {
+      padding: 10px 10px;
+      margin-right: 10px;
+      transition: all 0.4s ease 0s;
+      font-family: $interMedium;
+      font-size: 14px;
+      cursor: pointer;
+      &:hover {
+        background-color: $yellow;
+      }
+    }
+  }
+}
+
+.right_nav,
+.profile {
+  @include subNav();
+  .logout {
+    transform: rotate(180deg);
+  }
+  .cart,
+  .upperHeart {
+    display: none;
+  }
+}
+
+@include mq($lgd) {
+  // 1200px
+  .top__bar {
+    nav {
+      li {
+        padding: 15px;
+      }
+    }
+  }
+}
+@include mq($m-width) {
+  //1090px
+  .top__bar {
+    .all {
+      align-items: center;
+      gap: 15px;
+    }
+  }
+}
+@include mq($lgh) {
+  // 850px
+  .top__bar {
+    nav {
+      display: none;
+    }
+
+
+    .house {
+      display: block;
+    }
+  }
+  .right_nav {
+    nav {
+      display: block;
+    }
+  }
+}
+@include mq($xls) {
+  .top__bar {
+    strong {
+      display: none;
+    }
+    .logo__icon {
+      display: none;
+    }
+  }
+}
+@include mq($sm) {
+  .right_nav,
+  .profile {
+    nav {
+      ul {
+        li {
+          padding: 1vh 10px;
+          font-size: 3vw;
+        }
+        .cart,
+        .upperHeart {
+          display: block;
+        }
+      }
+    }
+  }
+  .top__bar {
+    justify-content: space-between;
+    min-width: 300px;
+    .all {
+      gap: 4vw;
+      width: 88%;
+
+      .searchIcon {
+        font-size: 4vw;
+      }
+    }
+  }
+  .cart,
+  .heart {
+    display: none;
+  }
+  .user,
+  .house {
+    font-size: 4vw;
+  }
+}
+@include mq($lgh) {
+  .right_nav,
+  .profile {
+    min-width: 50%;
+  }
+}
+>>>>>>> A seller should be to update the product in case he/she needs to - ensures that user have the form to update their certain products -allow user to view a way to update an image displayed on product also Delivers #185172094]

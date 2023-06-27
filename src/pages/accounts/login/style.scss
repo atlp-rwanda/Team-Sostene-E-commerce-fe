@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import '../../../../styles/variables.scss';
 @import '../../../../styles/mixins.scss';
 @import '../../../../styles/fonts.css';
@@ -188,3 +189,193 @@ $h1-font-family: 'Inter', sans-serif;
     }
   }
 }
+=======
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/mixins.scss';
+
+$h1-font-family: 'Inter', sans-serif;
+
+.account__container {
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: $interRegular;
+
+  .container {
+    width: 40%;
+    background: $white-two;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    padding-bottom: 30px;
+    margin-top: 50px;
+    border-radius: 3px;
+    border: 1px solid #00000018;
+    transition: 0.3s;
+  }
+}
+
+.form-body {
+  width: 95%;
+  margin: 0 auto;
+}
+.form-body h1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  text-align: center;
+}
+
+.form-body input {
+  width: 100%;
+  height: 3rem;
+  background-color: $white-two;
+  font-size: 16px;
+  font-family: $interRegular;
+  border: 0;
+  border-bottom: 1px solid black;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid $lightGray;
+}
+.form-body button {
+  width: 100%;
+  background-color: $yellow;
+  color: #ffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0.6rem 1.5em;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0;
+  font-family: $interRegular;
+  
+}
+.form-body a {
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.form-body a {
+  color: $black;
+  text-decoration: underline;
+}
+.form-body div {
+  margin-top: 20px;
+}
+#btn-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  padding-bottom: 30px;
+  margin-top: 50px;
+  border-radius: 3spx;
+  transition: 0.3s;
+}
+
+.form-body {
+  width: 95%;
+  margin: 0 auto;
+}
+.form-body h1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  text-align: center;
+}
+
+.form-body input {
+  width: 100%;
+  height: 3rem;
+  background-color: $white-two;
+  font-size: 18px;
+  border: 0;
+  border-bottom: 1px solid black;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid $lightGray;
+  font-family: $interRegular;
+}
+.form-body button {
+  width: 100%;
+  background-color: $yellow;
+  color: #ffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0.6rem 1.5em;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.form-body a {
+  margin-top: 20px;
+  padding: 5px;
+}
+.signup-tag {
+  color: $black;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 100;
+  opacity: 0.4;
+}
+.forget-tag {
+  color: $black;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 200;
+}
+.form-body a {
+  color: $black;
+  text-decoration: underline;
+}
+.form-body div {
+  margin-top: 20px;
+}
+.forgot-pass-link {
+  color: $yellow;
+  text-decoration: underline;
+  font-size: 16px;
+  margin: 0;
+  font-family: $interRegular;
+}
+
+#btn-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: $mdb) {
+  .account__container {
+    .container {
+      width: 50%;
+      font-size: small;
+    }
+  }
+}
+@media screen and (max-width: $md) {
+  .account__container {
+    .container {
+      width: 70%;
+      font-size: small;
+    }
+    .loader {
+      width: 70%;
+    }
+  }
+}
+@media screen and (max-width: $sm) {
+  .account__container {
+    .container {
+      width: 90%;
+      justify-content: center;
+      height: auto;
+      font-size: small;
+    }
+    .loader {
+      width: 90%;
+    }
+  }
+}
+>>>>>>> A seller should be to update the product in case he/she needs to - ensures that user have the form to update their certain products -allow user to view a way to update an image displayed on product also Delivers #185172094]

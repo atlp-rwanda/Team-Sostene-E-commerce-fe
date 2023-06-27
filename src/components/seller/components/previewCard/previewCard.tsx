@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import Carouselslider from '../../../../designComponents/carouselslider/carouselslider';
+import routes from '../../../../utils/routes';
 import styles from './previewCard.module.scss';
 
 interface cardProp {
@@ -27,7 +29,9 @@ export default function PreviewCard(props: cardProp) {
       {card && (
         <div className="contentPreview">
           <div className="actionBts">
-            <img src="./svgs/editBtn.svg" alt="Icon" className="icon iconEdit" />
+            <Link to={`/sellerItems/editProduct?pid=${card.id}`}>
+              <img src="./svgs/editBtn.svg" alt="Icon" className="icon iconEdit" />
+            </Link>
           </div>
           <div className="carouselBox" data-testid="carouselId">
             <Carouselslider images={card.productImages} />
@@ -59,3 +63,5 @@ export default function PreviewCard(props: cardProp) {
     </div>
   );
 }
+
+<img src="./svgs/editBtn.svg" alt="Icon" className="icon iconEdit" />;

@@ -20,7 +20,7 @@ const routes: appRoutes = {
   changePass: '/accounts/change/password',
   addToCart: '/addToCart',
   chats: '/chats',
-  profile: '/accounts/profile'
+  profile: '/accounts/profile',
 };
 
 export default routes;

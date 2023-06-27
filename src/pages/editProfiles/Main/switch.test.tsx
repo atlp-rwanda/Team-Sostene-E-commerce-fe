@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import { useEffect } from 'react';
 import { Provider } from 'react-redux';
@@ -16,29 +17,29 @@ describe('handleOnChange function', () => {
     const mockDispatch = vi.fn();
     store.dispatch = mockDispatch;
     vi.spyOn(hooks, 'useProfileData').mockReturnValue({
-    user: {
-      username: '',
-  email: 'seller@example.com',
-  role: '',
-  passwordStatus: '',
-    },
-    loading: false,
-    error: null,
-    profile: {
-      names: '',
-    gender: '',
-    birthdate: '',
-    language: '',
-    city: '',
-    street: '',
-    currency: '',
-    postalCode: '',
-    country: '',
-    accountNumber: '',
-    accountName: '',
-    telephone: '',
-    }
-    })
+      user: {
+        username: '',
+        email: 'seller@example.com',
+        role: '',
+        passwordStatus: '',
+      },
+      loading: false,
+      error: null,
+      profile: {
+        names: '',
+        gender: '',
+        birthdate: '',
+        language: '',
+        city: '',
+        street: '',
+        currency: '',
+        postalCode: '',
+        country: '',
+        accountNumber: '',
+        accountName: '',
+        telephone: '',
+      },
+    });
   });
   const mockFormData: Profile = {
     names: '',
@@ -200,7 +201,7 @@ describe('handleOnChange function', () => {
             // Add other properties as needed
           }));
         }
-      }, [profile, setProfileAvailable, setFormData]);
+      }, []);
 
       return <div>Test Component</div>;
     };
@@ -217,22 +218,21 @@ describe('handleOnChange function', () => {
     expect(setFormData).toBeCalledWith(expect.any(Function));
   });
 });
-describe('testing the button of create profile',() => {
+describe('testing the button of create profile', () => {
   beforeEach(() => {
-    
     const mockDispatch = vi.fn();
     store.dispatch = mockDispatch;
     vi.spyOn(hooks, 'useProfileData').mockReturnValue({
-    user: {
-      username: '',
-  email: 'seller@example.com',
-  role: '',
-  passwordStatus: '',
-    },
-    loading: false,
-    error: null,
-    profile: undefined,
-    })
+      user: {
+        username: '',
+        email: 'seller@example.com',
+        role: '',
+        passwordStatus: '',
+      },
+      loading: false,
+      error: null,
+      profile: undefined,
+    });
   });
 
   it('finds element with text Create Profile', async () => {
@@ -247,4 +247,4 @@ describe('testing the button of create profile',() => {
       expect(store.dispatch).toHaveBeenCalled;
     });
   });
-})
+});

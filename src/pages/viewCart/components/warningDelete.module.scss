@@ -1,0 +1,83 @@
+@import '../../../../styles/mixins.scss';
+@import '../../../../styles/variables.scss';
+.warningDelete {
+  :global {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px 20px;
+    position: relative;
+    .message {
+      position: absolute;
+      top: 5px;
+      width: fit-content;
+      right: 5px;
+      background-color: $green;
+      color: $white;
+    }
+    .error {
+      background-color: $red;
+    }
+    .explanation {
+      .title {
+        margin-top: 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        @include h3;
+        font-weight: 600;
+        font-family: 'poppins', sans-serif;
+      }
+      .details {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        @include h5;
+        padding: 0 50px;
+        opacity: 0.7;
+        margin: 1rem 0;
+        text-align: center;
+        font-family: 'poppins', sans-serif;
+      }
+    }
+    .actionsBox {
+      display: flex;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      .btnx {
+        border-radius: 5px;
+        height: 40px;
+        width: 30%;
+        padding: 0 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        @include h6;
+        font-family: 'poppins', sans-serif;
+        @include mq($xlg) {
+          padding: 0 15px;
+        }
+        @include mq($md) {
+          padding: 0 10px;
+        }
+        cursor: pointer;
+        border: none;
+      }
+      .clear {
+        background-color: $red;
+      }
+      .cancel {
+        background-color: $placeholderColor;
+        color: $black;
+      }
+    }
+  }
+}

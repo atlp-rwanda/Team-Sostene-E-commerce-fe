@@ -35,7 +35,22 @@ export const createProfileSlice = createSlice({
   name: 'profile',
   initialState,
   reducers: {
-    setData: (state, action: { type: string; payload: { names: string,gender:string,birthdate:string,city:string,street: string,language:string,accountName:string,telephone:string, } }) => {
+    setData: (
+      state,
+      action: {
+        type: string;
+        payload: {
+          names: string;
+          gender: string;
+          birthdate: string;
+          city: string;
+          street: string;
+          language: string;
+          accountName: string;
+          telephone: string;
+        };
+      }
+    ) => {
       state.names = action.payload.names;
       state.gender = action.payload.gender;
       state.birthdate = action.payload.birthdate;
@@ -44,14 +59,11 @@ export const createProfileSlice = createSlice({
       state.language = action.payload.language;
       state.accountName = action.payload.accountName;
       state.telephone = action.payload.telephone;
-
     },
   },
 });
 
-export const {
-  setData
-} = createProfileSlice.actions;
+export const { setData } = createProfileSlice.actions;
 
 const editProfileReducers = createProfileSlice.reducer;
 

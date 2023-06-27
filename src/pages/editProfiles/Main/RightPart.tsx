@@ -320,7 +320,7 @@ function RightPart() {
             className="p-2 underline text-orange font-bold"
             role="submit-btns"
           >
-          Create Profile
+            Create Profile
           </button>
         </div>
       )}

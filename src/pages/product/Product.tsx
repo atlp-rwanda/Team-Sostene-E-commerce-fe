@@ -56,7 +56,15 @@ export function Main({ product }: { product: Product; productId?: string }) {
               with bonus: {product.bonus}%
             </p>
           </div>
-          <p className="text-md p-1 border-b border-b-translucent">Category: {product.category}</p>
+          <p className="text-md p-1 border-b border-b-translucent">
+            Category:{' '}
+            <Link
+              to={`/category/${product.category}`}
+              className="hover:text-orange transition hover:underline"
+            >
+              {product.category}
+            </Link>
+          </p>
           <p className="text-sm my-3 italic ">
             mfg.: {createdAt}, exp.: {expAt}
           </p>

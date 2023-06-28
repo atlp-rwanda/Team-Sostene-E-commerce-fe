@@ -122,7 +122,9 @@ export function CategoryCard({ text }: { text: string }) {
         alt="animated"
       />
       <div className="w-full flex flex-col p-2 items-center justify-center">
-        <a className="w-full text-white">See more</a>
+        <Link to={`/category/${text}`} className="w-full text-white">
+          See More
+        </Link>
       </div>
     </div>
   );

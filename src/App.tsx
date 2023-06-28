@@ -33,6 +33,7 @@ import Orders from './pages/orders/Orders';
 import Checkout from './pages/checkout/Checkout';
 import Main from './pages/editProfiles/Main/Main';
 import Reviews from './pages/feebdacks/Reviews';
+import Categories from './pages/categories/Categories';
 
 function App() {
   library.add(fab, fas);
@@ -92,8 +93,9 @@ function App() {
           <Route path="/orders/*" element={<Orders />}></Route>
           <Route path="/checkout" element={<Checkout />}></Route>
           <Route path="/accounts/profile" element={<Main />}></Route>
-                    <Route path='/accounts/profile' element={<Main />}></Route>
-          <Route path='/reviews' element={<Reviews />}></Route>
+          <Route path="/accounts/profile" element={<Main />}></Route>
+          <Route path="/reviews" element={<Reviews />}></Route>
+          <Route path="/category/:cat" element={<Categories />}></Route>
         </Routes>
         {showNavbar && <Footer />}
         <ToastContainer />

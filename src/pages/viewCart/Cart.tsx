@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 import routes from '../../utils/routes';
 import { Cart, CartProduct } from '../../utils/types/product';
 import axios from 'axios';
+import WarningDelete from './components/warningDelete';
+import PopUpMaker from '../../designComponents/popupMaker/popUpMaker';
 
 function CartTable() {
   const [editPermission, setEditPermission] = useState(false);
@@ -16,6 +18,7 @@ function CartTable() {
   const [prodQuantity, setprodQuantity] = useState({ id: 'id', qty: 1 });
   const [messageErrorUpdate, setMessageErrorUpdate] = useState<Error | null>(null);
   const { handleGetCart, result } = useGetCart();
+  const [deleteWarning, setDeleteWarning] = useState(false);
 
   const token = useAppSelector((state) => state.token.value);
   const headers = {
@@ -23,7 +26,6 @@ function CartTable() {
   };
   useEffect(() => {
     handleGetCart();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -34,6 +36,9 @@ function CartTable() {
 
   const handlePermissionToEdit = () => {
     setEditPermission(true);
+  };
+  const handleAskTodelete = () => {
+    setDeleteWarning(true);
   };
 
   const handleDeleteItem = async (id: string) => {
@@ -209,9 +214,18 @@ function CartTable() {
                 </Link>
               </div>
             </div>
+            {deleteWarning && (
+              <PopUpMaker
+                Component={WarningDelete}
+                setIsPopupOpen={setDeleteWarning}
+                handleGetCart={handleGetCart}
+              />
+            )}
             {editPermission && (
               <div className="btnDeleteBox">
-                <button className=" delete">Clear All Items</button>
+                <button className=" delete" onClick={handleAskTodelete}>
+                  Clear All Items
+                </button>
               </div>
             )}
           </div>

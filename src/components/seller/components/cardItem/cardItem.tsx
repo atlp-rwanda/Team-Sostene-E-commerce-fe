@@ -76,7 +76,7 @@ export default function CardItem(props: cardDetails) {
   return (
     <div className={styles.cardItem} data-testid="cardItemId">
       {isPopupOpen && (
-        <PopUpMaker Component={PreviewCard} card={product} setIsPopupOpen={setIsPopupOpen} />
+        <PopUpMaker card={product} Component={PreviewCard} setIsPopupOpen={setIsPopupOpen} />
       )}
       <div className="cardContent" onClick={handlePreviewCard}>
         <div

@@ -90,7 +90,7 @@ function App() {
           <Route path="/search/:query" element={<Search />}></Route>
           <Route path="/orders/*" element={<Orders />}></Route>
           <Route path="/checkout" element={<Checkout />}></Route>
-                    <Route path='/accounts/profile' element={<Main />}></Route>
+          <Route path="/accounts/profile" element={<Main />}></Route>
         </Routes>
         {showNavbar && <Footer />}
         <ToastContainer />

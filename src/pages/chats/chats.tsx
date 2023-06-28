@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './chats.module.scss';
 import initializeSocket from '../../components/notification/sockets';
@@ -53,7 +54,7 @@ const Chats: React.FC = () => {
     return () => {
       socket.disconnect();
     };
-  }, []);
+  }, [socket]);
 
   useEffect(() => {
     if (messageContainerRef.current) {

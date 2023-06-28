@@ -2,7 +2,7 @@ import Carouselslider from '../../../../designComponents/carouselslider/carousel
 import styles from './previewCard.module.scss';
 
 interface cardProp {
-  card: {
+  card?: {
     productImages: { url: string }[];
     details?: string;
     id: string;
@@ -24,36 +24,38 @@ export default function PreviewCard(props: cardProp) {
 
   return (
     <div className={styles.previewCard} data-testid="previewCardId">
-      <div className="contentPreview">
-        <div className="actionBts">
-          <img src="./svgs/editBtn.svg" alt="Icon" className="icon iconEdit" />
-        </div>
-        <div className="carouselBox" data-testid="carouselId">
-          <Carouselslider images={card.productImages} />
-        </div>
-        <div className="simpleDetails">
-          <div className="pricing">
-            <div className="h6">
-              <span className="h5">New Price: </span>${card.price}
-            </div>
-            <div className="h6">
-              <span className="h5">Discount: </span>$30%
-            </div>
+      {card && (
+        <div className="contentPreview">
+          <div className="actionBts">
+            <img src="./svgs/editBtn.svg" alt="Icon" className="icon iconEdit" />
           </div>
-          <div className="h3">{card.name}</div>
-          {card.ratings && (
-            <div className="h6">
-              <span className="h5">Ratings: </span>${card.ratings}
+          <div className="carouselBox" data-testid="carouselId">
+            <Carouselslider images={card.productImages} />
+          </div>
+          <div className="simpleDetails">
+            <div className="pricing">
+              <div className="h6">
+                <span className="h5">New Price: </span>${card.price}
+              </div>
+              <div className="h6">
+                <span className="h5">Discount: </span>$30%
+              </div>
+            </div>
+            <div className="h3">{card.name}</div>
+            {card.ratings && (
+              <div className="h6">
+                <span className="h5">Ratings: </span>${card.ratings}
+              </div>
+            )}
+          </div>
+          {card.details && (
+            <div className="details">
+              <div className="detailHead">Details: </div>
+              <div className="body">{card.details} </div>
             </div>
           )}
         </div>
-        {card.details && (
-          <div className="details">
-            <div className="detailHead">Details: </div>
-            <div className="body">{card.details} </div>
-          </div>
-        )}
-      </div>
+      )}
     </div>
   );
 }

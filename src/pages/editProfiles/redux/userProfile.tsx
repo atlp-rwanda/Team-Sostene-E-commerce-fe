@@ -1,19 +1,18 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-
 export interface Profile {
-    names: string;
-    gender: string;
-    birthdate: string;
-    language: string;
-    city: string;
-    street: string;
-    currency: string;
-    postalCode: string;
-    country: string;
-    accountNumber: string;
-    accountName: string;
-    telephone: string; 
+  names: string;
+  gender: string;
+  birthdate: string;
+  language: string;
+  city: string;
+  street: string;
+  currency: string;
+  postalCode: string;
+  country: string;
+  accountNumber: string;
+  accountName: string;
+  telephone: string;
 }
 
 export type Profile_InitialState = {
@@ -46,13 +45,13 @@ const ProfileSlice = createSlice({
   initialState,
   reducers: {
     addProfile: (state, action: PayloadAction<Profile>) => {
-        state.profile = action.payload;
-      },
+      state.profile = action.payload;
+    },
     updateProfile: (state, action: PayloadAction<Profile>) => {
-        state.profile = action.payload;
-      },
-},
+      state.profile = action.payload;
+    },
+  },
 });
-export const {addProfile, updateProfile} = ProfileSlice.actions
+export const { addProfile, updateProfile } = ProfileSlice.actions;
 const profileReducer = ProfileSlice.reducer;
 export default profileReducer;

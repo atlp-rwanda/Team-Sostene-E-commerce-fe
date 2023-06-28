@@ -4,7 +4,8 @@ import OutsideClickHandler from 'react-outside-click-handler';
 
 interface Props {
   setIsPopupOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  card: {
+  handleGetCart?: () => void;
+  card?: {
     productImages: { url: string }[];
     details?: string;
     id: string;

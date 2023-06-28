@@ -59,7 +59,7 @@ const rootReducer = combineReducers({
   getOrderStatus: orderStatus,
   checkout: checkoutReducer,
   profile: profileReducer,
-    // add your new reducer created
+  // add your new reducer created
 });
 
 const persistConfig = {

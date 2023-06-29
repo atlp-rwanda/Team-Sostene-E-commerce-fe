@@ -19,6 +19,7 @@ export interface Result {
 }
 
 export type Search_InitialState = {
+  search: any;
   loading: boolean;
   result: Result[];
   error: string;
@@ -28,6 +29,7 @@ const initialState: Search_InitialState = {
   loading: false,
   result: [],
   error: '',
+  search: undefined
 };
 
 function rejectWithValue(error: string) {

@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { it, describe, expect } from 'vitest';
+import { it, describe, expect, vi } from 'vitest';
 import Navigation from '../nav';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { BrowserRouter } from 'react-router-dom';
@@ -8,6 +8,12 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { Provider } from 'react-redux';
 import store from '../../../redux/store';
 import { setToken } from '../../../redux/slices/tokenSlice';
+
+vi.mock('darkreader', () => ({
+  enable: vi.fn(),
+  disable: vi.fn(),
+  setFetchMethod: vi.fn(),
+}));
 
 const MockNav = () => {
   library.add(fab, fas);
@@ -19,7 +25,8 @@ const MockNav = () => {
     </Provider>
   );
 };
-describe('tetsing the nav', function () {
+
+describe('testing the nav', function () {
   beforeAll(() => {
     localStorage.setItem('authenticationMethod', 'app');
   });

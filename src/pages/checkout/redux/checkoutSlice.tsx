@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 type InitialState = {
+  checkout: any;
   loading: boolean;
   data: SUCCESS;
   error: string;
@@ -19,6 +21,7 @@ const initialState: InitialState = {
     message: '',
   },
   error: '',
+  checkout: undefined,
 };
 
 function rejectWithValue(error: string) {

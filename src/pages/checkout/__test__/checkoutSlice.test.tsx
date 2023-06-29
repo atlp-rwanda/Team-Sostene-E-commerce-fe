@@ -107,4 +107,42 @@ describe('Checkout tests', () => {
       }
     );
   });
+  it('should dispatch product action correctly', async () => {
+    const store = configureStore({
+      reducer: checkoutReducer,
+    });
+    const errorMessage = 'Some error message';
+    const postSpy = vi.spyOn(axios, 'post').mockRejectedValueOnce({
+      response: {
+        status: 404,
+        data: {
+          message: errorMessage,
+        },
+      },
+    });
+    const checkoutDetails = {
+      token: 'exampleTok!en',
+      firstName: 'examplefname',
+      lastName: 'examplelname',
+      phoneNumber: '099999999',
+      streetAddress: 'kkkk8988',
+      country: 'Rwanda',
+      city: 'Kigali',
+      postalCode: '00000',
+    };
+    try {
+      await store.dispatch(checkout(checkoutDetails));
+    } catch (error) {
+      const rejectedValue = store.getState().checkout.error;
+      expect(rejectedValue).toEqual(errorMessage);
+    }
+    await store.dispatch(checkout(checkoutDetails));
+    expect(postSpy).toBeCalledWith(
+      `${import.meta.env.VITE_BACKEND_URL}users/shipping-address`,
+      shippingDetails,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
+  });
 });

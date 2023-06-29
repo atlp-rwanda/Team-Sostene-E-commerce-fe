@@ -36,6 +36,8 @@ import productSlice from './slices/productSlice';
 import orderStatus from '../pages/orders/redux/trackOrderSlice';
 import { checkoutReducer } from '../pages/checkout/redux/checkoutSlice';
 import profileReducer from '../pages/editProfiles/redux/userProfile';
+import markOneAsReadReducer from '../components/notification/redux/markOneAsReadSlice';
+import markAllAsReadReducer from '../components/notification/redux/markAllAsReadSlice';
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -60,6 +62,8 @@ const rootReducer = combineReducers({
   checkout: checkoutReducer,
   profile: profileReducer,
   // add your new reducer created
+  markOneNotification: markOneAsReadReducer,
+  markAllNotificationsAsRead: markAllAsReadReducer,
 });
 
 const persistConfig = {

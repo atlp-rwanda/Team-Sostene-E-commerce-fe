@@ -2,6 +2,8 @@ import { render, screen } from '@testing-library/react';
 import NoticationPane from '../notificationPane';
 import * as NotificationsHooks from '../hooks';
 import { vi } from 'vitest';
+import { Provider } from 'react-redux';
+import store from '../../../redux/store';
 
 describe('Testing', () => {
   test('Render component', () => {
@@ -35,7 +37,11 @@ describe('Testing', () => {
       };
     };
     vi.spyOn(NotificationsHooks, 'useNotifications').mockImplementation(data);
-    render(<NoticationPane />);
+    render(
+      <Provider store={store}>
+        <NoticationPane />
+      </Provider>
+    );
     const isRendered = screen.getByTestId('notifications-pane');
     expect(isRendered).toBeInTheDocument();
   });

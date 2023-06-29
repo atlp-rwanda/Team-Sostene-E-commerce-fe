@@ -1,10 +1,22 @@
 import styles from './pane.module.scss';
 import { useNotifications } from './hooks';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useAllAsRead, useMarkAsRead } from './hooks';
 
 export default function NotificationPane() {
   const { notifications, count, loading } = useNotifications();
   const formatDate = (date: string) => {
     return new Date(date).toLocaleDateString();
+  };
+  const { markAll, isAllMarked } = useAllAsRead();
+  const handleMarkAll = () => {
+    markAll();
+  };
+  const { handleMark, isMarked } = useMarkAsRead();
+  const handleClick = (id: string) => {
+    return () => {
+      handleMark(id);
+    };
   };
 
   return (
@@ -14,11 +26,20 @@ export default function NotificationPane() {
           <i className="fa fa-spinner fa-spin text-white" aria-hidden="true"></i>
         </p>
       ) : (
-        <>
-          <div className={`bg-orange p-3`}>
+        <div>
+          <div className={`bg-orange p-3 flex flex-row justify-between`}>
             <p className={styles.text}>
               {notifications.length} Notifications <b>({count})</b>
             </p>
+            <div className={styles.btn_all}>
+              <button onClick={handleMarkAll}>
+                {isAllMarked.loading ? (
+                  <FontAwesomeIcon icon="circle-notch" spin={true} />
+                ) : (
+                  <FontAwesomeIcon icon="check" className={`text-white`} />
+                )}
+              </button>
+            </div>
           </div>
           <div className="p-1 flex flex-col h-64 overflow-scroll bg-white border border-translucent">
             {notifications.map((item) => (
@@ -27,14 +48,24 @@ export default function NotificationPane() {
                 <div className="pl-1 border-l border-translucent my-1">{item.message}</div>
                 <div className="w-full items-center flex flex-row justify-between">
                   <div className="text-gray text-xs italic">{formatDate(item.date)}</div>
-                  <div className="p-1">
-                    <i className="fa fa-check text-orange" aria-hidden="true"></i>
-                  </div>
+                  {item.read ? (
+                    ''
+                  ) : (
+                    <div className={styles.markOne}>
+                      <button onClick={handleClick(item.notificationId)}>
+                        {isMarked.loading ? (
+                          <FontAwesomeIcon icon="circle-notch" spin={isMarked.loading} />
+                        ) : (
+                          <FontAwesomeIcon icon="check" />
+                        )}
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
           </div>
-        </>
+        </div>
       )}
     </div>
   );

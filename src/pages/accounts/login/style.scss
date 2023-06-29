@@ -1,5 +1,6 @@
 @import '../../../../styles/variables.scss';
 @import '../../../../styles/mixins.scss';
+@import '../../../../styles/fonts.css';
 
 $h1-font-family: 'Inter', sans-serif;
 
@@ -9,7 +10,7 @@ $h1-font-family: 'Inter', sans-serif;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  font-family: $interRegular;
+  font-family: $popinsRegular;
 
   .container {
     width: 40%;
@@ -22,7 +23,7 @@ $h1-font-family: 'Inter', sans-serif;
     padding-bottom: 30px;
     margin-top: 50px;
     border-radius: 3px;
-    border: 1px solid #00000018;
+    border: 1px solid $transparentBlack;
     transition: 0.3s;
   }
 }
@@ -42,7 +43,7 @@ $h1-font-family: 'Inter', sans-serif;
   height: 3rem;
   background-color: $white-two;
   font-size: 16px;
-  font-family: $interRegular;
+  font-family: $popinsRegular;
   border: 0;
   border-bottom: 1px solid black;
   outline: none;
@@ -52,14 +53,14 @@ $h1-font-family: 'Inter', sans-serif;
 .form-body button {
   width: 100%;
   background-color: $yellow;
-  color: #ffff;
+  color: $white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 0.6rem 1.5em;
   border: 0;
   border-radius: 4px;
   cursor: pointer;
   margin: 0;
-  font-family: $interRegular;
+  font-family: $popinsRegular;
   
 }
 .form-body a {
@@ -105,12 +106,12 @@ $h1-font-family: 'Inter', sans-serif;
   outline: none;
   border: none;
   border-bottom: 1px solid $lightGray;
-  font-family: $interRegular;
+  font-family: $popinsRegular;
 }
 .form-body button {
   width: 100%;
   background-color: $yellow;
-  color: #ffff;
+  color: $white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 0.6rem 1.5em;
   border: 0;
@@ -144,7 +145,7 @@ $h1-font-family: 'Inter', sans-serif;
   text-decoration: underline;
   font-size: 16px;
   margin: 0;
-  font-family: $interRegular;
+  font-family: $popinsRegular;
 }
 
 #btn-section {
@@ -158,6 +159,7 @@ $h1-font-family: 'Inter', sans-serif;
   .account__container {
     .container {
       width: 50%;
+      min-width: 310px;
       font-size: small;
     }
   }

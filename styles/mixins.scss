@@ -13,7 +13,7 @@
 
 @mixin h3 {
   margin-top: 16px;
-  font-family: $interBold;
+  font-family: $popinsBold;
   font-weight: 600;
   font-size: (16px);
   letter-spacing: 0.17em;
@@ -74,7 +74,7 @@
 
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background: $orange;
+    background: $yellow;
     border-radius: 100px;
     cursor: pointer;
     @include mq($xls) {
@@ -84,9 +84,9 @@
 
   /* Handle on hover */
   &::-webkit-scrollbar-thumb:hover {
-    background: darken($color: $orange, $amount: 5);
+    background: darken($color: $yellow, $amount: 5);
     &::-webkit-scrollbar-track {
-      border: .5px solid $orange;
+      border: .5px solid $yellow;
     }
 
     @include mq($xls) {
@@ -225,7 +225,7 @@
 //  all page font-sizes
 
 @mixin body{
-  font-family: $interRegular;
+  font-family: $popinsRegular;
   font-size: pxToEm(14);
   @include mq($xlg){
     font-size: pxToEm(13);
@@ -243,7 +243,7 @@
 }
 
 @mixin h6{
-  font-family: $interRegular;
+  font-family: $popinsRegular;
   font-size: pxToEm(16);
   @include mq($xlg){
     font-size: pxToEm(15);
@@ -264,7 +264,7 @@
 }
 @mixin h5{
   font-size: pxToEm(18);
-  font-family: $interSemiBold;
+  font-family: $popinsSemiBold;
   @include mq($xlg){
     font-size: pxToEm(17);
   }
@@ -284,7 +284,7 @@
 }
 @mixin h4{
   font-size: pxToEm(20);
-  font-family: $interSemiBold;
+  font-family: $popinsSemiBold;
   @include mq($xlg){
     font-size: pxToEm(18);
   }
@@ -304,7 +304,7 @@
 }
 @mixin h3{
   font-size: pxToEm(25);
-  font-family: $interSemiBold;
+  font-family: $popinsSemiBold;
   @include mq($xlg){
     font-size: pxToEm(23);
   }
@@ -324,7 +324,7 @@
 }
 @mixin h2{
   font-size: pxToEm(30);
-  font-family: $interBold;
+  font-family: $popinsBold;
   @include mq($xlg){
     font-size: pxToEm(27);
   }
@@ -344,7 +344,7 @@
 }
 @mixin h1{
   font-size: pxToEm(35);
-  font-family: $interBold;
+  font-family: $popinsBold;
   @include mq($xlg){
     font-size: pxToEm(31);
   }

@@ -10,6 +10,7 @@ import loader from '/svgs/spinner.svg';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
+import { isLoggedIn } from '../../../helpers/auth';
 
 function Signup() {
   const dispatch = useAppDispatch();
@@ -86,67 +87,71 @@ function Signup() {
   };
 
   return (
-    <div className="signup__container">
-      <h1>Create an account</h1>
-      <h3>Enter your details below</h3>
-      <form onSubmit={handleSubmit} data-testid="signup">
-        <div ref={validate} className="error"></div>
+    <>
+      {!isLoggedIn() && (
+        <div className="signup__container">
+          <h1>Create an account</h1>
+          <h3>Enter your details below</h3>
+          <form onSubmit={handleSubmit} data-testid="signup">
+            <div ref={validate} className="error"></div>
 
-        <Input
-          name={'username'}
-          textId="name"
-          placeholder={'Name'}
-          value={formData.username}
-          onChange={handleInputChange}
-          className={usernameError ? 'error' : ''}
-          size={'long'}
-          type={'text'}
-        />
-        <Input
-          name={'email'}
-          textId="email"
-          placeholder={'Email or Phone Number'}
-          value={formData.email}
-          onChange={handleInputChange}
-          className={emailError ? 'error' : ''}
-          size={'long'}
-          type={'text'}
-        />
-        <Input
-          name={'password'}
-          textId="pass"
-          placeholder={'Password'}
-          value={formData.password}
-          onChange={handleInputChange}
-          className={passwordError ? 'error' : ''}
-          size={'long'}
-          type={'password'}
-        />
+            <Input
+              name={'username'}
+              textId="name"
+              placeholder={'Name'}
+              value={formData.username}
+              onChange={handleInputChange}
+              className={usernameError ? 'error' : ''}
+              size={'long'}
+              type={'text'}
+            />
+            <Input
+              name={'email'}
+              textId="email"
+              placeholder={'Email or Phone Number'}
+              value={formData.email}
+              onChange={handleInputChange}
+              className={emailError ? 'error' : ''}
+              size={'long'}
+              type={'text'}
+            />
+            <Input
+              name={'password'}
+              textId="pass"
+              placeholder={'Password'}
+              value={formData.password}
+              onChange={handleInputChange}
+              className={passwordError ? 'error' : ''}
+              size={'long'}
+              type={'password'}
+            />
 
-        <div className="btn_wrapper">
-          <button
-            className="btnSignup"
-            data-testid="signup-form"
-            type="submit"
-            disabled={loading}
-            onClick={handleSubmit}
-          >
-            {loading ? (
-              <img src={loader} style={{ height: '25px' }} alt="loader" />
-            ) : (
-              'Create an account'
-            )}
-          </button>
+            <div className="btn_wrapper">
+              <button
+                className="btnSignup"
+                data-testid="signup-form"
+                type="submit"
+                disabled={loading}
+                onClick={handleSubmit}
+              >
+                {loading ? (
+                  <img src={loader} style={{ height: '25px' }} alt="loader" />
+                ) : (
+                  'Create an account'
+                )}
+              </button>
+            </div>
+
+            <h2>
+              Already have an account? <Link to="/accounts/login">Login</Link>
+            </h2>
+          </form>
+          <div>
+            <ToastContainer />
+          </div>
         </div>
-
-        <h2>
-          Already have an account? <Link to="/accounts/login">Login</Link>
-        </h2>
-      </form>
-      <div>
-        <ToastContainer />
-      </div>
-    </div>
+      )}
+    </>
   );
 }
 

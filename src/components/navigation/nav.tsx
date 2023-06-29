@@ -78,14 +78,14 @@ const Navigation = () => {
               <Link to="/accounts/profile" className={styles.Link}>
                 <li>
                   <FontAwesomeIcon icon="gear" className={`${styles.settings}`} />
-                  &nbsp;&nbsp;Manage My Account
+                  &nbsp;&nbsp;Manage my account
                 </li>
               </Link>
               <AdminComponent>
                 <Link to="/manage_users" className={styles.Link}>
                   <li>
                     <i className="fa fa-users" aria-hidden="true"></i>
-                    &nbsp;&nbsp;Manage Users
+                    &nbsp;&nbsp;Manage users
                   </li>
                 </Link>
               </AdminComponent>
@@ -99,7 +99,7 @@ const Navigation = () => {
               <Link to="#" className={styles.Link}>
                 <li className={styles.cart}>
                   <FontAwesomeIcon icon="cart-shopping" className={`${styles.light}`} />
-                  &nbsp;&nbsp;My Cart
+                  &nbsp;&nbsp;My cart
                 </li>
               </Link>
 
@@ -121,14 +121,14 @@ const Navigation = () => {
                 <Link to="/edit/password" className={styles.Link}>
                   <li>
                     <FontAwesomeIcon icon="lock" className={`${styles.settings}`} />
-                    &nbsp;&nbsp;Change Password
+                    &nbsp;&nbsp;Change password
                   </li>
                 </Link>
               )}
               <Link to="/" onClick={() => logout()} className={styles.Link}>
                 <li>
                   <FontAwesomeIcon icon="arrow-right-from-bracket" className={`${styles.logout}`} />
-                  &nbsp;&nbsp;LogOut
+                  &nbsp;&nbsp;Logout
                 </li>
               </Link>
             </ul>

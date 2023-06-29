@@ -10,6 +10,7 @@ import { Cart, CartProduct } from '../../utils/types/product';
 import axios from 'axios';
 import WarningDelete from './components/warningDelete';
 import PopUpMaker from '../../designComponents/popupMaker/popUpMaker';
+import { EmptyCart } from '../../components/reusables/Reusable';
 
 function CartTable() {
   const [editPermission, setEditPermission] = useState(false);
@@ -100,7 +101,8 @@ function CartTable() {
       )}
       {cartData && cartData.products.length === 0 && (
         <div className="cardBox">
-          <h1 className="cartEmpty">You have no products in your cart 🛒...</h1>
+          <EmptyCart />
+          {/* <h1 className="cartEmpty">You have no products in your cart 🛒...</h1> */}
         </div>
       )}
       {cartData && cartData.products.length > 0 && (

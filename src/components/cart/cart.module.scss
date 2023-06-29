@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700');
 @import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
+@import '../../../styles/fonts.css';
 
 .container {
     position: absolute;
@@ -42,7 +43,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid #0000001f;
+    border: 1px solid $transparentBlack;
 }
 .head {
     width: 100%;
@@ -82,7 +83,7 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    border: 1px solid #00000048;
+    border: 1px solid $transparentBlack;
 }
 .item__des {
     padding: 5px;
@@ -113,5 +114,5 @@
 .item__image img{
     height: 80px;
     width: 100px;
-    border: 1px solid #0000001f;
+    border: 1px solid $transparentBlack;
 }

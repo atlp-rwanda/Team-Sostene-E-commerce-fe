@@ -82,7 +82,7 @@ tbody tr:nth-child(even) {
 }
 
 tbody td {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid $white;
 }
 
 tbody td:last-child {
@@ -103,7 +103,7 @@ tfoot {
 
 tfoot td {
   padding-top: 12px;
-  border-top: 2px solid white;
+  border-top: 2px solid $white;
 }
 .delete {
   background-color: $red;
@@ -113,7 +113,7 @@ tfoot td {
   align-items: center;
   justify-content: center;
   color: $white;
-  font-family: $interRegular;
+  font-family: $popinsRegular;
   border: non;
   cursor: pointer;
   border-radius: 5px;
@@ -129,13 +129,13 @@ tfoot td {
 .return-btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: white;
-  color: #000;
+  background-color: $white;
+  color: $black;
   font-size: 12px;
   font-weight: 500;
   text-align: center;
   text-decoration: none;
-  border: 1px solid #c2c2c3;
+  border: 1px solid $secondaryBorderColor;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
@@ -150,7 +150,7 @@ tfoot td {
   }
 
   &:hover {
-    background-color: darken(#e7e7e7, 5%);
+    background-color: darken($darkenWhite , 5%);
   }
 
   &:focus {
@@ -161,13 +161,13 @@ tfoot td {
 .update-btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: white;
-  color: #000;
+  background-color: $white;
+  color: $black;
   font-size: 12px;
   font-weight: 500;
   text-align: center;
   text-decoration: none;
-  border: 1px solid #c2c2c3;
+  border: 1px solid $secondaryBorderColor;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
@@ -182,7 +182,7 @@ tfoot td {
   }
 
   &:hover {
-    background-color: darken(#e7e7e7, 5%);
+    background-color: darken($darkenWhite, 5%);
   }
 
   &:focus {
@@ -198,7 +198,7 @@ tfoot td {
     width: 100%;
     height: 100%;
     z-index: 2;
-    background-color: rgba(55, 54, 54, 0.235);
+    background-color: $lightBlack;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -217,7 +217,7 @@ tfoot td {
   width: fit-content;
   padding: 10px;
   color: $white;
-  font-family: $interRegular;
+  font-family: $popinsRegular;
   @include h6;
   background-color: $red;
   position: absolute;
@@ -312,13 +312,13 @@ tfoot td {
     }
   }
   .cartTotal {
-    background-color: #f5f5f5;
+    background-color: $white;
     padding: 20px;
     border-radius: 4px;
     margin-top: 10px;
     width: 25vw;
     height: 22vh;
-    border: 1px solid #c9c4c4;
+    border: $borderColor;
     margin: 0;
     margin-top: 2rem;
     @include mq($md) {
@@ -344,8 +344,8 @@ tfoot td {
 
       button {
         padding: 10px 20px;
-        background-color: #ff8c42;
-        color: white;
+        background-color: $yellow;
+        color: $white;
         font-size: 16px;
         font-family: 'Poppins', sans-serif;
         font-weight: bold;
@@ -372,7 +372,7 @@ tfoot td {
         }
 
         &:hover {
-          background-color: darken(#ff8c42, 10%);
+          background-color: darken($yellow, 10%);
         }
       }
     }

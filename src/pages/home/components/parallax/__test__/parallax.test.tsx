@@ -13,12 +13,10 @@ describe('Testing Rendering of Parallax on the homepage', () => {
         </BrowserRouter>
       </Provider>
     );
-    const message = getByText(
-      'Discover a World of Shopping Delight at ShopSpree. Shop the Latest Trends in Fashion, Home Decor, Electronics, and More!'
-    );
+    const message = getByText(/Discover a world of shopping delight at shopSpree/i);
     expect(message).toBeInTheDocument();
 
-    const buttonText = getByText('Start Shopping!');
+    const buttonText = getByText('Start shopping!');
     expect(buttonText).toBeInTheDocument();
   });
 });

@@ -116,7 +116,7 @@
       .message {
         flex-direction: row-reverse;
         .info {
-          background-color: $orange;
+          background-color: $yellow;
           color: $black;
           border-radius: 0 10px 10px 10px;
           .showOnHover {
@@ -124,7 +124,7 @@
           }
         }
         .sender {
-          color: $orange;
+          color: $yellow;
         }
       }
       .time {

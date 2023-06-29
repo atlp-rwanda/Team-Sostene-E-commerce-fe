@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import {
   InputWithLabel,
   ErrorBox,
@@ -7,7 +8,7 @@ import {
 } from '../../components/reusables/Reusable';
 import * as yup from 'yup';
 import { useFormik } from 'formik';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { useCheckout } from './hooks';
 import { useGetCart } from '../../pages/viewCart/redux/hooks';
 import { isLoggedIn } from '../../helpers/auth';
@@ -26,10 +27,13 @@ interface checkoutDetails {
 }
 
 export default function Checkout() {
-  const { result } = useGetCart();
+  const { result, handleGetCart } = useGetCart();
   const { isSuccess, handleSubmit } = useCheckout();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    handleGetCart();
+  }, []);
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -79,7 +83,6 @@ export default function Checkout() {
     <>
       {isLoggedIn() && (
         <div className=" flex justify-center items-center pt-16 sm:pt-6 phone:pt-10">
-          <ToastContainer />
           {result.data.products.length === 0 && !result.loading ? (
             <div className="h-[75vh] mt-6">
               <EmptyCart />

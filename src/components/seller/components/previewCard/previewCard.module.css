@@ -146,9 +146,8 @@
   padding: 0 1.6rem;
 }
 .previewCard :global .contentPreview .simpleDetails .h5 {
-  font-family: "Inter-Bold.ttf";
+  font-family:'Poppins-Bold.ttf';
   font-size: 1.125em;
-  font-family: "Inter-SemiBold.ttf";
   margin-right: 5px;
 }
 @media screen and (max-width: 1600px) {
@@ -177,8 +176,7 @@
   }
 }
 .previewCard :global .contentPreview .simpleDetails .h6 {
-  font-family: "Inter-Regular.ttf";
-  font-family: "Inter-Regular.ttf";
+  font-family:'Poppins-Regular.ttf';
   font-size: 1em;
 }
 @media screen and (max-width: 1600px) {
@@ -214,7 +212,6 @@
 .previewCard :global .contentPreview .simpleDetails .h3 {
   font-family: "Inter-Bold.ttf";
   font-size: 1.5625em;
-  font-family: "Inter-SemiBold.ttf";
 }
 @media screen and (max-width: 1600px) {
   .previewCard :global .contentPreview .simpleDetails .h3 {
@@ -251,9 +248,8 @@
   padding: 0 1.6rem;
 }
 .previewCard :global .contentPreview .details .detailHead {
-  font-family: "Inter-Bold.ttf";
   font-size: 1.125em;
-  font-family: "Inter-SemiBold.ttf";
+  font-family:'Poppins-SemiBold.ttf';
 }
 @media screen and (max-width: 1600px) {
   .previewCard :global .contentPreview .details .detailHead {
@@ -281,8 +277,7 @@
   }
 }
 .previewCard :global .contentPreview .details .details {
-  font-family: "Inter-Regular.ttf";
-  font-family: "Inter-Regular.ttf";
+  font-family:'Poppins-Regular.ttf';
   font-size: 1em;
 }
 @media screen and (max-width: 1600px) {

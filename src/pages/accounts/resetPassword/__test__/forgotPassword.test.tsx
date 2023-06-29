@@ -14,10 +14,10 @@ describe('Testing Rendering of Forgot password pages', () => {
         </BrowserRouter>
       </Provider>
     );
-    const submitButton = getByText('Send Link');
+    const submitButton = getByText('Send link');
     fireEvent.click(submitButton);
 
-    const title = getByText('Forgot Password');
+    const title = getByText('Forgot password');
     expect(title).toBeInTheDocument();
 
     fireEvent.change(getByTestId('email'), { target: { value: 'test@mail.com' } });

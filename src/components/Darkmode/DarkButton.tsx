@@ -2,24 +2,26 @@ import { enable as enableDarkMode, disable as disableDarkMode, setFetchMethod } 
 import { useState, useEffect } from 'react';
 
 export function DarkButton() {
-  const [dark, setDark] = useState(Boolean(localStorage.getItem('dark')) || false);
+  const darkstored = localStorage.getItem('dark') || 'false';
+  const [dark, setDark] = useState(darkstored);
   useEffect(() => {
     setFetchMethod(window.fetch);
-    dark
+    dark === 'true'
       ? enableDarkMode({
           brightness: 100,
           contrast: 100,
           sepia: 10,
         })
       : disableDarkMode();
-    localStorage.setItem('dark', `${dark}`);
   }, [dark]);
-
   return (
     <div className="flex flex-row justify-end items-end">
       <label className="relative ml-6 inline-flex items-center mr-5 cursor-pointer">
         <input
-          onClick={() => setDark((prev) => !prev)}
+          onClick={() => {
+            setDark((prev) => (prev === 'false' ? 'true' : 'false'));
+            localStorage.setItem('dark', dark === 'false' ? 'true' : 'false');
+          }}
           data-testid="dark-button"
           type="checkbox"
           value=""

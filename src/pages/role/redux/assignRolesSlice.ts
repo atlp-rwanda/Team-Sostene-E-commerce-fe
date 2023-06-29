@@ -10,12 +10,20 @@ interface USER {
 }
 interface INITIAL_STATE {
   loading: boolean;
-  users: USER[];
+  users: {
+    users: USER[];
+    pages: number;
+    totalPages: number;
+  };
   error: string;
 }
 const initialState: INITIAL_STATE = {
   loading: false,
-  users: [],
+  users: {
+    users: [],
+    pages: 1,
+    totalPages: 1,
+  },
   error: '',
 };
 
@@ -23,36 +31,46 @@ function rejectWithValue(error: string) {
   throw new Error(error);
 }
 
-export const getUsers = createAsyncThunk('get/users', async ({ token }: { token: string }) => {
-  return axios
-    .get(`${import.meta.env.VITE_BACKEND_URL}users/all`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-    .then((response) => {
-      const usersArr = response.data.users.map((users: USER) => {
+export const getUsers = createAsyncThunk(
+  'get/users',
+  async (
+    { token, page, limit }: { token: string; page: number; limit: string },
+    { rejectWithValue }
+  ) => {
+    return axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}users/all?page=${page}&limit=${limit}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        const usersArr = response.data.users.map((users: USER) => {
+          return {
+            id: users.id,
+            email: users.email,
+            username: users.username,
+            role: users.role,
+            status: users.status,
+          };
+        });
         return {
-          id: users.id,
-          email: users.email,
-          username: users.username,
-          role: users.role,
-          status: users.status,
+          users: usersArr as USER[],
+          page: response.data.page as number,
+          totalPage: response.data.totalPages as number,
         };
+      })
+      .catch((error) => {
+        switch (error.response.status) {
+          case 500:
+            return rejectWithValue('Internal Error.');
+          case 400:
+            return rejectWithValue('Please Login.');
+          default:
+            return rejectWithValue(error.response.data.error);
+        }
       });
-      return usersArr;
-    })
-    .catch((error) => {
-      switch (error.response.status) {
-        case 500:
-          return rejectWithValue('Internal Error.');
-        case 400:
-          return rejectWithValue('Please Login.');
-        default:
-          return rejectWithValue(error.response.data.error);
-      }
-    });
-});
+  }
+);
 
 export const getUsersSlice = createSlice({
   name: 'fetchUsers',
@@ -62,11 +80,16 @@ export const getUsersSlice = createSlice({
     builder.addCase(getUsers.pending, (state) => {
       state.loading = true;
     });
-    builder.addCase(getUsers.fulfilled, (state, action: PayloadAction<USER[]>) => {
-      state.loading = false;
-      state.users = action.payload;
-      state.error = '';
-    });
+    builder.addCase(
+      getUsers.fulfilled,
+      (state, action: PayloadAction<{ users: USER[]; page: number; totalPage: number }>) => {
+        state.loading = false;
+        state.users.users = action.payload.users;
+        state.users.pages = action.payload.page;
+        state.users.totalPages = action.payload.totalPage;
+        state.error = '';
+      }
+    );
     builder.addCase(getUsers.rejected, (state, action) => {
       state.loading = false;
       state.error = action.error.message || 'Unknown Error';
@@ -115,7 +138,7 @@ export const setRolesSlice = createSlice({
     });
     builder.addCase(setRole.fulfilled, (state, action: PayloadAction<USER[]>) => {
       state.loading = false;
-      state.users = action.payload;
+      state.users.users = action.payload;
       state.error = '';
     });
     builder.addCase(setRole.rejected, (state, action) => {

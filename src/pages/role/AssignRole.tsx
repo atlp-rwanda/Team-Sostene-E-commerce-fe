@@ -15,10 +15,27 @@ interface USER {
 
 export default function AssignRole() {
   const [searchTerm, setSearchTerm] = useState('');
-  const data = useFetchUsers();
-  const filteredItems = data.users.filter((item) =>
+  const [page, setPage] = useState(1);
+  const data = useFetchUsers(page, '10');
+  const filteredItems = data.users.users.filter((item) =>
     item.username.toLowerCase().includes(searchTerm.toLowerCase())
   );
+  const elements = [];
+
+  for (let i = 1; i <= data.users.totalPages; i++) {
+    elements.push(
+      <button
+        onClick={() => setPage(i)}
+        key={i}
+        className={`p-1 px-2 border-r ${
+          i === data.users.pages ? 'bg-translucent' : ''
+        } border-translucent`}
+      >
+        {i}
+      </button>
+    );
+  }
+
   return (
     <div className="w-full flex justify-center flex-col items-center pt-12">
       {/* <ToastContainer /> */}
@@ -55,7 +72,7 @@ export default function AssignRole() {
           </div>
         </div>
       </div>
-      <div className="relative overflow-auto w-11/12 max-h-[70vh] shadow-md sm:rounded-lg">
+      <div className="relative overflow-auto w-11/12 min-h-[60vh] shadow-md sm:rounded-lg">
         {data.loading ? (
           <div className="w-full p-2 text-center">
             <i className="fa fa-spinner fa-spin text-orange" aria-hidden="true"></i>
@@ -100,6 +117,28 @@ export default function AssignRole() {
           </table>
         )}
         {data.error != '' ? <div className="w-full p-2 text-center">{data.error}</div> : ''}
+      </div>
+      <div className="border border-translucent flex rounded-sm flex-row m-5 border-gray">
+        {data.users.pages === 1 ? (
+          <button className=" p-1 opacity-20 cursor-default" disabled>
+            <i className="fa fa-chevron-left cursor-default" aria-hidden="true"></i>
+          </button>
+        ) : (
+          <button onClick={() => setPage((prev) => prev - 1)} className=" p-1">
+            <i className="fa fa-chevron-left" aria-hidden="true"></i>
+          </button>
+        )}
+
+        <div className=" flex flex-row">{elements}</div>
+        {data.users.users.length != 10 ? (
+          <button className=" p-1 opacity-20 cursor-default" disabled>
+            <i className="fa fa-chevron-right cursor-default" aria-hidden="true"></i>
+          </button>
+        ) : (
+          <button onClick={() => setPage((prev) => prev + 1)} className=" p-1">
+            <i className="fa fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        )}
       </div>
     </div>
   );

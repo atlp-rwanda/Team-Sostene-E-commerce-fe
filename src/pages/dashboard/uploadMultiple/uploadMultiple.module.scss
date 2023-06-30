@@ -1,0 +1,155 @@
+@import '../../../../styles/mixins.scss';
+@import '../../../../styles/variables.scss';
+
+.multipleUpload {
+  :global {
+    position: relative;
+    min-height: 100%;
+    min-height: 200px;
+    padding: 0;
+    width: 100%;
+    border-radius: inherit;
+    display: flex;
+    gap: 0;
+    @include mq($md) {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .dragable {
+      margin: 0;
+      flex-grow: 1;
+      inset: 0;
+      z-index: 3;
+      padding: 20px;
+      display: flex;
+      border-radius: inherit;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100%;
+      width: 100%;
+      gap: 30px;
+      .details{
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      @include mq($xlg) {
+        padding: 15px;
+        gap: 25px;
+      }
+      @include mq($lg) {
+        padding: 10px;
+        gap: 20px;
+      }
+      @include mq($xls) {
+        gap: 15px;
+      }
+      .uploadBox {
+        height: 40px;
+        aspect-ratio: 1/1;
+        width: auto;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $orange;
+        cursor: pointer;
+        @include transition;
+        @include mq($lg) {
+          height: 30px;
+        }
+        &:hover {
+          background-color: darken($color: $orange, $amount: 8);
+        }
+        .iconi {
+          max-height: 25px;
+          max-width: 25px;
+          @include mq($lg) {
+            max-height: 15px;
+            max-width: 15px;
+          }
+        }
+      }
+    }
+    .imageWraper {
+      width: auto;
+      flex-grow: 1;
+      max-width: 50%;
+      padding: 5px;
+      border-radius: inherit;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      @include mq($md) {
+        max-width: 100%;
+      }
+      .singleImg {
+        height: 100px;
+        border-radius: 15px;
+        aspect-ratio: 1/1;
+        width: auto;
+        position: relative;
+        padding: 0;
+        @include background-img;
+        @include mq($xlg) {
+          border-radius: 13px;
+          height: 90px;
+        }
+        @include mq($lg) {
+          border-radius: 10px;
+          height: 80px;
+        }
+
+        .deletebtn {
+          background-color: $orange;
+          width: 20px !important;
+          aspect-ratio: 1/1;
+          height: auto;
+          position: absolute;
+          z-index: 10;
+          top: -10px;
+          right: -10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          border-radius: 1px solid transparent;
+          @include transition;
+          visibility: hidden;
+          cursor: pointer;
+          @include mq($lg) {
+            width: 15px;
+          }
+          &:hover {
+            transform: scale(1.4);
+            border-color: $red;
+          }
+          .icon {
+            max-width: 12px;
+            max-height: 12px;
+            @include mq($lg) {
+              max-width: 10px;
+              max-height: 10px;
+            }
+            @include mq($md) {
+              max-width: 9px;
+              max-height: 9px;
+            }
+          }
+        }
+        &:hover {
+          .deletebtn {
+            visibility: visible;
+          }
+        }
+      }
+    }
+    .drag-active {
+      background-color: darken($color: $pureGray, $amount: 6);
+      border: 2px dashed $orange;
+    }
+  }
+}

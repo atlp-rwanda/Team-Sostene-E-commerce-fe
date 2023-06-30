@@ -29,7 +29,8 @@ interface ProductsProps {
 
 export default function ProductMountainSlider(props: ProductsProps) {
   const { imageData } = props;
-  const dataImagesDoubled = [...imageData, ...imageData];
+  const newData = imageData.slice(-20);
+  const dataImagesDoubled = [...newData];
   const el = useRef<HTMLDivElement>(null);
   let angleUnit: number, currentIndex: number, currentAngle: number;
   const navigate = useNavigate();

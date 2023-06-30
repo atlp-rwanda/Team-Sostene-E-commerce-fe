@@ -39,7 +39,7 @@ export default function CardItem(props: cardDetails) {
           `${import.meta.env.VITE_BACKEND_URL}reviews/rating/${product.id}`
         );
         if (response.data.rating) {
-          setRating(response.data.rating);
+          setRating(Math.ceil(response.data.rating));
         } else {
           setRating(0);
         }
@@ -103,8 +103,8 @@ export default function CardItem(props: cardDetails) {
         <div className="title">{product.name}</div>
         <div className="prices">
           <span className="newPrice">${product.price}</span>
+          <div className="ratingsCard">{!loading && <RatingsCounter rating={rating} />}</div>
         </div>
-        <div className="ratingsCard">{!loading && <RatingsCounter rating={rating} />}</div>
       </div>
     </div>
   );

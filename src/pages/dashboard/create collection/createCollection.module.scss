@@ -1,0 +1,50 @@
+@import '../../../../styles/mixins.scss';
+@import '../../../../styles/variables.scss';
+
+#collectionBox {
+  :global {
+    .collectionBtn {
+      position: relative;
+      @include transition;
+      .delete {
+        background-color: $white;
+        padding: 5px;
+        cursor: pointer;
+        @include transition;
+        height: 20px;
+        aspect-ratio: 1/1;
+        width: auto;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: -7px;
+        right: -7px;
+        z-index: 2;
+        visibility: hidden;
+        &:hover {
+          transform: scale(1.02);
+          border: 1px solid $orange;
+        }
+        .icon {
+          width: 10px;
+          height: 10px;
+        }
+      }
+      .name {
+        background-color: transparent;
+        cursor: pointer;
+        inset: 0;
+        border-radius: inherit;
+        @include transition;
+      }
+      &:hover {
+        background-color: darken($color: $orange, $amount: 5);
+        .delete {
+          visibility: visible;
+        }
+      }
+    }
+  }
+}

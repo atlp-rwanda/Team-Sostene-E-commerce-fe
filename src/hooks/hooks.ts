@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react';
-import { useAppSelector } from '../../../redux/hooks';
+import { useAppSelector } from '../redux/hooks';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
-interface Collection {
+export interface CollectionInterface {
   name: string;
   id: string;
 }
 
 export const useCollections = () => {
-  const [collections, setCollections] = useState<Collection[]>([]);
+  const [collections, setCollections] = useState<CollectionInterface[]>([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const tokenOne = useAppSelector((state) => state.token.value);
@@ -42,6 +43,8 @@ export const useCreateCollection = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const token = useAppSelector((state) => state.token.value);
+  const navigate = useNavigate();
+
   const handleCreate = (name: string) => {
     setLoading(true);
     setError('');
@@ -60,7 +63,7 @@ export const useCreateCollection = () => {
       .then((response) => {
         setLoading(false);
         toast.success(response.data.message);
-        window.location.href = '/dashboard';
+        navigate(-1);
       })
       .catch((error) => {
         if (error.response.data.code === 409) {

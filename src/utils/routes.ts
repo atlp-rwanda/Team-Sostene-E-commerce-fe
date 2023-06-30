@@ -5,6 +5,8 @@ interface appRoutes {
   login: string;
   signup: string;
   about: string;
+  collection: (cid: string) => string;
+  addProduct: (cid: string, cname: string) => string;
   changePass: string;
   addToCart: string;
   chats: string;
@@ -18,6 +20,8 @@ const routes: appRoutes = {
   login: '/accounts/login',
   signup: '/accounts/signup',
   about: '/about_us',
+  collection: (cid) => `/sellerItems?cid=${cid}`,
+  addProduct: (cid, cname) => `/dashboard/addProduct/${cid}/${cname}`,
   changePass: '/accounts/change/password',
   addToCart: '/addToCart',
   chats: '/chats',

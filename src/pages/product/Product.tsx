@@ -21,17 +21,15 @@ export default function ProductPage() {
           ''
         )}
         {result.error != '' ? <p>{result.error}</p> : ''}
-        {result.product && !result.loading ? <Main product={result.product} /> : ''}
         {result.product && !result.loading ? <Main product={result.product} productId={id} /> : ''}
-        </div>
+      </div>
       <ParallaxBanner
         text="Elevate your lifestyle with these recommended gems."
         image="https://wallpaperboat.com/wp-content/uploads/2019/09/autumn-forest-Wallpaper.jpg"
         link="browse"
       />
-            <Reviews productId={id} />
+      <Reviews productId={id} />
     </div>
-
   );
 }
 

@@ -10,6 +10,7 @@ import { useLocation } from 'react-router';
 import { useAppDispatch, useAppSelector } from '../../../../redux/hooks';
 import Empty from '../../../../pages/emptyState/empty';
 import { useNavigate } from 'react-router-dom';
+import routes from '../../../../utils/routes';
 
 //defines data
 export interface cardDetails {
@@ -40,6 +41,7 @@ export default function SellerItems() {
   const location = useLocation();
   const queryParameter = new URLSearchParams(location.search);
   const myParam = queryParameter.get('cid') || '';
+  const collectionName = queryParameter.get('cname') || '';
   //redux get initial values from redux
   const search = useSelector((state: RootState) => state.filterCollectionProducts.search);
   const page = useSelector((state: RootState) => state.filterCollectionProducts.page);
@@ -92,7 +94,7 @@ export default function SellerItems() {
     dispatch(setSearch(''));
     dispatch(setPage(1));
     setSellerItems(dataItems);
-    navigate('/dashboard');
+    navigate(routes.addProduct(myParam, collectionName));
   };
   useEffect(() => {
     if (loadingRefetch === false) {

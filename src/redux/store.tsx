@@ -13,6 +13,7 @@ import {
 import storage from 'redux-persist/es/storage';
 import tokenReducer from './slices/tokenSlice';
 import signupSlice from './slices/signup';
+import collectionsReducers from '../pages/dashboard/collections.slice';
 import usertfaVerifyReducers from '../pages/accounts/tfa/redux/tfaSlice';
 import filterCollectionProductsReducer from '../components/seller/components/sellerItems/sellerItemsFilters.slice';
 import {
@@ -30,6 +31,7 @@ import fetchTopProductsReducer from '../components/Product/redux/getTopProductsS
 import getCartSlice from '../pages/viewCart/redux/getCartSlice';
 import chatsReducers from '../pages/chats/chats.slice';
 import productReducer from '../pages/product/redux/productSlice';
+import productsAddReducers from '../pages/dashboard/addProductToCollection/addProduct.slice';
 import searchReducer from '../pages/search/redux/searchSlice';
 import productSlice from './slices/productSlice';
 // import tfaReducer from '../pages/accounts/tfa/redux/tfaSlice';
@@ -48,9 +50,11 @@ const rootReducer = combineReducers({
   resetPassword: resetPasswordReducer,
   forgotPassword: forgotPasswordReducer,
   getUsers: getUserReducer,
+  collectionsReducers,
   setRole: setRoleReducer,
   addToCart: addToCartReducer,
   cartData: cartDataReducer,
+  productsAddReducers,
   topProducts: fetchTopProductsReducer,
   getCart: getCartSlice,
   product: productReducer,

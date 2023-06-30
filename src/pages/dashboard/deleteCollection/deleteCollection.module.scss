@@ -1,0 +1,92 @@
+@import '../../../../styles/mixins.scss';
+@import '../../../../styles/variables.scss';
+
+.delete_collection {
+  :global {
+    width: 100%;
+    border-radius: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 1rem;
+    position: relative;
+    .message {
+      position: absolute;
+      top: 5px;
+      width: fit-content;
+      right: 5px;
+      background-color: $green;
+      color: $white;
+    }
+    .error {
+      background-color: $red;
+    }
+    .explanation {
+      background-color: transparent;
+      .title {
+        margin-top: 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include h2;
+        font-family: 'poppins', sans-serif;
+      }
+      .details {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        @include h5;
+        padding: 0 15%;
+        opacity: 0.7;
+        margin: 1rem 0;
+        font-family: 'poppins', sans-serif;
+        @include mq($lg) {
+          padding: 0 10%;
+        }
+        @include mq($md) {
+          padding: 0 5%;
+        }
+        @include mq($xls) {
+          padding: 0;
+        }
+      }
+    }
+    .actionsBox {
+      display: flex;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .btnx {
+        border-radius: 5px;
+        height: 40px;
+        width: fit-content;
+        padding: 0 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        @include h6;
+        font-family: 'poppins', sans-serif;
+        @include mq($xlg) {
+          padding: 0 15px;
+        }
+        @include mq($md) {
+          padding: 0 10px;
+        }
+        cursor: pointer;
+        border: none;
+      }
+      .clear {
+        background-color: $red;
+      }
+      .cancel {
+        background-color: $placeholderColor;
+        color: $black;
+      }
+    }
+  }
+}

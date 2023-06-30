@@ -1,0 +1,197 @@
+@import '../../../../styles/mixins.scss';
+@import '../../../../styles/variables.scss';
+
+.addProduct {
+  :global {
+    width: 100%;
+    @include pageSettings;
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      @include h5;
+      font-family: 'poppins', sans-serif;
+      .collectionName {
+        font-weight: 900;
+        @include h4;
+        font-family: 'poppins', sans-serif;
+      }
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      margin-top: 30px;
+      background-color: transparent;
+      border: 1px solid $orange;
+      border-radius: 20px;
+      padding: 20px;
+      position: relative;
+      .loadingSpinner {
+        position: absolute;
+        background-color: $pureGrayOpaque;
+        border-radius: inherit;
+        padding: 20px;
+        z-index: 20px;
+        inset: 0;
+        display: flex;
+        justify-content: flex;
+        align-items: center;
+      }
+      @include mq($xlg) {
+        gap: 15px;
+        padding: 15px;
+      }
+      @include mq($xls) {
+        gap: 10px;
+        padding: 10px;
+      }
+      .wrapper {
+        border-radius: inherit;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+        background-color: $pureGray;
+        @include mq($xlg) {
+          gap: 13px;
+          padding: 13px;
+        }
+        @include mq($xls) {
+          gap: 10px;
+          padding: 10px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .name {
+          @include h6;
+          font-family: 'poppins', sans-serif;
+        }
+        .error {
+          color: $red;
+          font-family: 'poppins', sans-serif;
+          font-size: 10px;
+          @include mq($xls) {
+            font-size: 8px;
+          }
+        }
+        .left_two {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          flex-grow: 1;
+          border: none;
+          background-color: transparent;
+          @include mq($xls) {
+            width: 100%;
+          }
+          .inputBox {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            width: 100%;
+            background-color: transparent;
+            .emailTitle {
+              @include h6;
+              font-family: 'poppins', sans-serif;
+              background-color: $bgInput;
+              color: $black;
+              height: 40px;
+              width: 100%;
+              border-radius: 10px;
+              padding: 10px 15px;
+              @include mq($lg) {
+                padding: 6px 10px;
+              }
+              @include mq($xls) {
+                padding: 5px 10px;
+              }
+              &::placeholder {
+                color: inputbackground;
+                font-family: inherit;
+              }
+              &:focus {
+                border: none;
+                outline: none;
+                box-shadow: none;
+              }
+            }
+          }
+        }
+      }
+      .wrapper2 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .left_two {
+          width: 100%;
+          flex-direction: row;
+          @include mq($xls) {
+            flex-direction: column;
+          }
+          .inputBox {
+            flex-grow: 1;
+          }
+        }
+        .area {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          .textArea {
+            border-radius: 20px;
+            padding: 10px 15px;
+            @include mq($lg) {
+              padding: 6px 10px;
+            }
+            @include mq($xls) {
+              padding: 5px 10px;
+            }
+            &:focus {
+              outline: none;
+              box-shadow: none;
+              border: none;
+            }
+          }
+        }
+      }
+      .wrapper3 {
+        min-height: 200px;
+        padding: 0;
+        max-height: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        align-items: flex-start;
+        .error {
+          padding: 5px 10px;
+        }
+      }
+      .action {
+        display: flex;
+        justify-content: space-between;
+        .submitBtn {
+          background-color: $orange;
+          color: $white;
+          @include transition;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 15px;
+          &:hover {
+            background-color: darken($color: $orange, $amount: 8);
+          }
+        }
+        .viewBtn {
+          @include transition;
+          background-color: darken($color: $pureGray, $amount: 5);
+          color: $black;
+
+          &:hover {
+            background-color: darken($color: $pureGray, $amount: 8);
+          }
+        }
+      }
+    }
+  }
+}

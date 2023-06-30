@@ -16,6 +16,7 @@ import {
   SellerComponent,
 } from '../roles/Protected';
 import SearchBar from '../searchBar/SearchBar';
+import { DarkButton } from '../Darkmode/DarkButton';
 
 const value = true;
 
@@ -198,6 +199,7 @@ const Navigation = () => {
           <div className={`${styles.nav__item} ${styles.overview}`}>
             <FontAwesomeIcon icon="house" className={styles.nav__toggle} />
             <span>Overview</span>
+            <DarkButton />
           </div>
           <label className={styles.nav__label}>COMPUTER & ELECTRONICS</label>
           <div className={styles.nav__item}>

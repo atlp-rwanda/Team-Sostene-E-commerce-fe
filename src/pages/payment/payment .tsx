@@ -7,11 +7,9 @@ import { ButtonLoader } from '../../components/Loaders/Loaders';
 import { useFormik } from 'formik';
 import { validationSchema } from './Schema/validationSchema';
 import { useRef, useState, useEffect, ChangeEvent } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Page404 from '../page404/page404';
 
 const Payment = () => {
-  const navigate = useNavigate();
   const [isPending, setisPending] = useState(false);
   const errorDiv = useRef<HTMLDivElement | null>(null);
 
@@ -34,7 +32,7 @@ const Payment = () => {
     setisPending(true);
     try {
       await makePayment(myParam, values);
-      navigate(`/checkout/redirect?rid=${myParam}`, { replace: true });
+      window.location.reload();
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       if (error.response.data.message) {

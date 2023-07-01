@@ -202,49 +202,49 @@ const Navigation = () => {
             <DarkButton />
           </div>
           <label className={styles.nav__label}>COMPUTER & ELECTRONICS</label>
-          <div className={styles.nav__item}>
+          <Link to="/category/Mobile Phones & Tablets" className={styles.nav__item}>
             <FontAwesomeIcon icon="mobile" className={styles.nav__toggle} />
             <span>Mobile Phones & Tablets</span>
-          </div>
-          <div className={styles.nav__item}>
+          </Link>
+          <Link to="/category/Computer & Laptops" className={styles.nav__item}>
             <FontAwesomeIcon icon="desktop" />
             <span>Computer & Laptops</span>
-          </div>
-          <div className={styles.nav__item}>
+          </Link>
+          <Link to="/category/Audio & video" className={styles.nav__item}>
             <FontAwesomeIcon icon="podcast" />
             <span>Audio & video</span>
-          </div>
-          <div className={styles.nav__item}>
+          </Link>
+          <Link to="/category/Gaming" className={styles.nav__item}>
             <FontAwesomeIcon icon="gamepad" />
             <span>Gaming</span>
-          </div>
+          </Link>
 
           <label className={styles.nav__label}>Fashion</label>
-          <div className={styles.nav__item}>
+          <Link to="/category/Men's Fashion" className={styles.nav__item}>
             <FontAwesomeIcon icon="person" />
             <span>Men's Fashion</span>
-          </div>
-          <div className={styles.nav__item}>
+          </Link>
+          <Link to="/category/Female's Fashion" className={styles.nav__item}>
             <FontAwesomeIcon icon="person-dress" />
             <span>Female's Fashion</span>
-          </div>
-          <div className={styles.nav__item}>
+          </Link>
+          <Link to="/category/Jewelry & Watches" className={styles.nav__item}>
             <FontAwesomeIcon icon="ring" />
             <span>Jewelry & Watches</span>
-          </div>
-          <div className={styles.nav__item}>
+          </Link>
+          <Link to="/category/Accessories" className={styles.nav__item}>
             <FontAwesomeIcon icon="baby-carriage" />
             <span>Accessories</span>
-          </div>
+          </Link>
           <label className={styles.nav__label}>Sports & Outdoors</label>
-          <div className={styles.nav__item}>
+          <Link to="/category/Sports Equipment" className={styles.nav__item}>
             <FontAwesomeIcon icon="baseball-bat-ball" />
             <span>Sports Equipment</span>
-          </div>
-          <div className={styles.nav__item}>
+          </Link>
+          <Link to="/category/Fitness & Exercise" className={styles.nav__item}>
             <FontAwesomeIcon icon="dumbbell" />
             <span>Fitness & Exercise</span>
-          </div>
+          </Link>
         </div>
       </nav>
     </div>

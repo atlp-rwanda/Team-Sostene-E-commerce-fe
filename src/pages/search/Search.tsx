@@ -24,7 +24,7 @@ export default function Search() {
   );
 }
 
-const NoResult = (props: { query: string }) => {
+export const NoResult = (props: { query: string }) => {
   return (
     <div className="text-black w-full flex items-center flex-col pt-44 justify-center">
       <img
